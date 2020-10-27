@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C1EBF8"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="140dp"
+        android:layout_height="116dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wheaton" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="180dp"
+        android:layout_height="321dp"
+        android:layout_marginTop="32dp"
+        android:text="Lyons Bucks can be used like cash or a debit card on your Wheaton ID. Additional Lyons Bucks may added at any time during the semester and in any denomination. For use at all campus dining locations."
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/whatAreLyonB"
+        app:layout_constraintTop_toBottomOf="@+id/whatAreLyonB" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="180dp"
+        android:layout_height="321dp"
+        android:text="Your card works as a debit card for Lyons Bucks and can be used at any of the dining locations on campus. Lyon Bucks add variety and flexibility to your meal plan. Additional Lyon Bucks can be added to your dining card at any time. All you need to do is speak to a representative at the greeter station to purchase any amount needed. "
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@+id/whatAreLyonB2"
+        app:layout_constraintTop_toTopOf="@+id/text2" />
+
+    <TextView
+        android:id="@+id/whatAreLyonB"
+        android:layout_width="177dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="60dp"
+        android:background="#0040FF"
+        android:gravity="center"
+        android:text="What Are Lyon Bucks?"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <TextView
+        android:id="@+id/whatAreLyonB2"
+        android:layout_width="177dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:background="#0040FF"
+        android:gravity="center"
+        android:text="What Are Lyon Bucks?"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/whatAreLyonB"
+        app:layout_constraintTop_toTopOf="@+id/whatAreLyonB" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
