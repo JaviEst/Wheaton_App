@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".DiningActivity"
+    tools:context=".Dining.DiningActivity"
     tools:openDrawer="start">
 
     <LinearLayout
@@ -35,6 +35,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu" />
+        app:menu="@menu/dining_drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

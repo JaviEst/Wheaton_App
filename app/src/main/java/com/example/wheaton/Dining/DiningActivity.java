@@ -1,7 +1,6 @@
-package com.example.wheaton;
+package com.example.wheaton.Dining;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,9 +9,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
+import com.example.wheaton.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class DiningActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
