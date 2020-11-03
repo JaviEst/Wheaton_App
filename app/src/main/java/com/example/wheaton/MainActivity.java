@@ -3,6 +3,8 @@ package com.example.wheaton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
@@ -25,10 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> {
-            String[] titles = new String[]{"Dining", "Events", "Home", "Map", "Athletics"};
+            String[] titles = new String[]{"Library", "Dining", "Events", "Home", "Map", "Athletics", "First Year"};
             tab.setText(titles[position]);
-            viewPager2.setCurrentItem(position+1);
+            viewPager2.setCurrentItem(3);
         }).attach();
+
 
     }
 
