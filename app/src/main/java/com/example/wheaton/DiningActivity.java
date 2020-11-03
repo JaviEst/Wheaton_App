@@ -1,4 +1,4 @@
-package com.example.wheaton.Dining;
+package com.example.wheaton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -10,7 +10,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.wheaton.R;
+import com.example.wheaton.Dining.BalfourFragment;
+import com.example.wheaton.Dining.ChaseFragment;
+import com.example.wheaton.Dining.DavisFragment;
+import com.example.wheaton.Dining.DiningFragment;
+import com.example.wheaton.Dining.EmersonFragment;
+import com.example.wheaton.Dining.LyonBucksFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class DiningActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -19,13 +24,13 @@ public class DiningActivity extends AppCompatActivity implements NavigationView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dining);
+        setContentView(R.layout.dining);
 
         Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
 
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        drawer = findViewById(R.id.dining_drawer_menu);
+        NavigationView navigationView = findViewById(R.id.dining_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
@@ -35,7 +40,7 @@ public class DiningActivity extends AppCompatActivity implements NavigationView.
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new DiningFragment()).commit();
+                    new dining_fragment()).commit();
             navigationView.setCheckedItem(R.id.nav_dining);
         }
     }
@@ -45,7 +50,7 @@ public class DiningActivity extends AppCompatActivity implements NavigationView.
         switch (item.getItemId()){
             case R.id.nav_dining:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DiningFragment()).commit();
+                        new dining_fragment()).commit();
                 break;
             case R.id.nav_chase:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
