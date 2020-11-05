@@ -1,8 +1,5 @@
 package com.example.wheaton;
 
-<<<<<<< HEAD
-public class map_fragment {
-=======
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
 
 public class map_fragment extends Fragment {
 
@@ -25,5 +23,5 @@ public class map_fragment extends Fragment {
         root_view = inflater.inflate(R.layout.map, container, false);
         return root_view;
     }
->>>>>>> First_Year
+
 }
