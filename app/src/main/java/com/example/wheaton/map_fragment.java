@@ -44,10 +44,23 @@ public class map_fragment extends Fragment {
     }
 
     public void searchBarFunc(){
+        TextView test = root_view.findViewById(R.id.midTV);
         AutoCompleteTextView auto = root_view.findViewById(R.id.searchBar);
+        test.setText(auto.getText());
 
     }
 
+    public void show2Buttons(){
+
+    }
+
+    public void show3Buttons(){
+
+    }
+
+    public void show4Buttons(){
+
+    }
 
     private static final String[] BUILDINGS = new String[] {
       "Old Science Center", "Mars Center for Science and Technology", "Filene Center", "Wallace Library", "Office of the Registrar", "Balfour Hood", "Admissions Office", "Student Financial Services",
