@@ -1,4 +1,4 @@
-package com.example.wheaton;
+package com.example.wheaton.Dining;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -7,15 +7,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.example.wheaton.Dining.BalfourFragment;
-import com.example.wheaton.Dining.ChaseFragment;
-import com.example.wheaton.Dining.DavisFragment;
-import com.example.wheaton.Dining.DiningFragment;
-import com.example.wheaton.Dining.EmersonFragment;
-import com.example.wheaton.Dining.LyonBucksFragment;
+import com.example.wheaton.R;
+import com.example.wheaton.dining_fragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class DiningActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,6 +41,11 @@ public class DiningActivity extends AppCompatActivity implements NavigationView.
                     new dining_fragment()).commit();
             navigationView.setCheckedItem(R.id.nav_dining);
         }
+    }
+
+    public void BalfourButton(View view){
+        Intent i = new Intent(this, BalfourFragment.class);
+        startActivity(i);
     }
 
     @Override
