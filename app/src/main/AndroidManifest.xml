@@ -4,11 +4,18 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/wheatonlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/wheatonlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".imp_phone_num"></activity>
+        <activity android:name=".financial_aid_office" />
+        <activity android:name=".admissions_office" />
+        <activity android:name=".registrar_office" />
+        <activity android:name=".academic_calendar" />
+        <activity android:name=".clubs" />
+        <activity android:name=".education" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
