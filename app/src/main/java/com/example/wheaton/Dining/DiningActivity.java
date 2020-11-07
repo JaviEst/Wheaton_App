@@ -43,11 +43,6 @@ public class DiningActivity extends AppCompatActivity implements NavigationView.
         }
     }
 
-    public void BalfourButton(View view){
-        Intent i = new Intent(this, BalfourFragment.class);
-        startActivity(i);
-    }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
@@ -55,6 +50,7 @@ public class DiningActivity extends AppCompatActivity implements NavigationView.
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new dining_fragment()).commit();
                 break;
+                /*
             case R.id.nav_chase:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ChaseFragment()).commit();
@@ -76,11 +72,11 @@ public class DiningActivity extends AppCompatActivity implements NavigationView.
                         new LyonBucksFragment()).commit();
                 break;
 
+                 */
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)){
