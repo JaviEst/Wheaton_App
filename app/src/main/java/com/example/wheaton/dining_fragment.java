@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
         import androidx.fragment.app.Fragment;
 
 import com.example.wheaton.Dining.BalfourActivity;
+import com.example.wheaton.Dining.ChaseActivity;
+import com.example.wheaton.Dining.DavisActivity;
+import com.example.wheaton.Dining.EmersonActivity;
 
 public class dining_fragment extends Fragment {
 
@@ -36,6 +39,50 @@ public class dining_fragment extends Fragment {
                 }
             }
         });
+
+        Button Chase = root_view.findViewById(R.id.ChaseButton);
+        Chase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent bal = new Intent(getContext(), ChaseActivity.class);
+                try{
+                    startActivity(bal);
+                }catch (android.content.ActivityNotFoundException ex){
+                    Toast toast = Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            }
+        });
+        Button Emerson = root_view.findViewById(R.id.EmersonButton);
+        Emerson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent bal = new Intent(getContext(), EmersonActivity.class);
+                try{
+                    startActivity(bal);
+                }catch (android.content.ActivityNotFoundException ex){
+                    Toast toast = Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            }
+        });
+
+        Button Davis = root_view.findViewById(R.id.DavisButton);
+        Davis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent bal = new Intent(getContext(), DavisActivity.class);
+                try{
+                    startActivity(bal);
+                }catch (android.content.ActivityNotFoundException ex){
+                    Toast toast = Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            }
+        });
+
+
+
         return root_view;
     }
 
