@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,7 +27,7 @@ public class first_year_fragment extends Fragment {
         root_view = inflater.inflate(R.layout.first_year, container, false);
 
         // Move to majors and minors intent
-        Button education = root_view.findViewById(R.id.edu_button);
+        ImageButton education = root_view.findViewById(R.id.edu_button);
         education.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +45,7 @@ public class first_year_fragment extends Fragment {
         });
 
         // Move to clubs/organizations intent
-        Button clubs = root_view.findViewById(R.id.clubs_button);
+        ImageButton clubs = root_view.findViewById(R.id.clubs_button);
         clubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +63,7 @@ public class first_year_fragment extends Fragment {
         });
 
         // Move to academic calendar intent
-        Button academic_calendar = root_view.findViewById(R.id.academic_calendar_button);
+        ImageButton academic_calendar = root_view.findViewById(R.id.academic_calendar_button);
         academic_calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +81,7 @@ public class first_year_fragment extends Fragment {
         });
 
         // Move to registrar intent
-        Button reg_office = root_view.findViewById(R.id.reg_office_button);
+        ImageButton reg_office = root_view.findViewById(R.id.reg_office_button);
         reg_office.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +99,7 @@ public class first_year_fragment extends Fragment {
         });
 
         // Move to admissions intent
-        Button adm_office = root_view.findViewById(R.id.adm_office_button);
+        ImageButton adm_office = root_view.findViewById(R.id.adm_office_button);
         adm_office.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,7 +117,7 @@ public class first_year_fragment extends Fragment {
         });
 
         // Move to financial intent
-        Button fin_aid_office = root_view.findViewById(R.id.fin_aid_office_button);
+        ImageButton fin_aid_office = root_view.findViewById(R.id.fin_aid_office_button);
         fin_aid_office.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,7 +135,7 @@ public class first_year_fragment extends Fragment {
         });
 
         // Move to important phone numbers intent
-        Button important_num = root_view.findViewById(R.id.important_num_button);
+        ImageButton important_num = root_view.findViewById(R.id.important_num_button);
         important_num.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,9 +151,6 @@ public class first_year_fragment extends Fragment {
                 }
             }
         });
-
-
-
 
         return root_view;
     }

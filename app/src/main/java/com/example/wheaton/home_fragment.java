@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,8 +19,7 @@ public class home_fragment extends Fragment {
     // Declare view
     View root_view;
 
-    public home_fragment() {
-    }
+    public home_fragment() {}
 
 
     @Nullable
@@ -28,7 +28,7 @@ public class home_fragment extends Fragment {
         root_view = inflater.inflate(R.layout.home, container, false);
 
         // Move to library fragment when on click of library button
-        Button library = root_view.findViewById(R.id.library_button);
+        ImageButton library = root_view.findViewById(R.id.library_button);
         library.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +37,7 @@ public class home_fragment extends Fragment {
         });
 
         // Move to dining fragment when on click of dining button
-        Button dining = root_view.findViewById(R.id.dining_button);
+        ImageButton dining = root_view.findViewById(R.id.dining_button);
         dining.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,7 +46,7 @@ public class home_fragment extends Fragment {
         });
 
         // Move to events fragment when on click of events button
-        Button events = root_view.findViewById(R.id.events_button);
+        ImageButton events = root_view.findViewById(R.id.events_button);
         events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +55,7 @@ public class home_fragment extends Fragment {
         });
 
         // Move to map fragment when on click of map button
-        Button map = root_view.findViewById(R.id.map_button);
+        ImageButton map = root_view.findViewById(R.id.map_button);
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +64,7 @@ public class home_fragment extends Fragment {
         });
 
         // Move to athletics fragment when on click of athletics button
-        Button athletics = root_view.findViewById(R.id.athletics_button);
+        ImageButton athletics = root_view.findViewById(R.id.athletics_button);
         athletics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +73,7 @@ public class home_fragment extends Fragment {
         });
 
         // Move to first_years fragment when on click of first_years button
-        Button first_years = root_view.findViewById(R.id.first_years_button);
+        ImageButton first_years = root_view.findViewById(R.id.first_years_button);
         first_years.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

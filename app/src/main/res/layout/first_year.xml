@@ -35,71 +35,79 @@
         app:layout_constraintGuide_percent="0.5" />
 
 
-    <Button
+    <ImageButton
         android:id="@+id/edu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Majors and Minors"
+        android:background="#FAFAFA"
+        android:src="@drawable/majorsblue"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/clubs_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clubs"
+        android:background="#FAFAFA"
+        android:src="@drawable/clubsblue"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/academic_calendar_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Academic Calendar"
+        android:background="#FAFAFA"
+        android:src="@drawable/academiccalendarblue"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <Button
+
+    <ImageButton
         android:id="@+id/reg_office_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrar Office"
+        android:background="#FAFAFA"
+        android:src="@drawable/registrarblue"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <Button
+    <ImageButton
         android:id="@+id/adm_office_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Admissions Office"
+        android:background="#FAFAFA"
+        android:src="@drawable/admissionsblue"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
-    <Button
+    <ImageButton
         android:id="@+id/fin_aid_office_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Financial Aid Office"
+        android:background="#FAFAFA"
+        android:src="@drawable/financialaidblue"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
-    <Button
+    <ImageButton
         android:id="@+id/important_num_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Important Contacts"
+        android:background="#FAFAFA"
+        android:src="@drawable/importantcontactsblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline"
         app:layout_constraintStart_toStartOf="parent"
