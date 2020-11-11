@@ -5,6 +5,8 @@ import android.os.Bundle;
         import android.view.View;
         import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -80,6 +82,41 @@ public class dining_fragment extends Fragment {
                 }
             }
         });
+
+        Button MealPlansButton = root_view.findViewById(R.id.MealPlansButton);
+        MealPlansButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LinearLayout MPAndLB = root_view.findViewById(R.id.MPAndLB);
+                MPAndLB.setVisibility(View.INVISIBLE);
+
+                LinearLayout LAndM = root_view.findViewById(R.id.LAndM);
+                LAndM.setVisibility(View.INVISIBLE);
+
+                ScrollView DiningFacilities = root_view.findViewById(R.id.DiningFacilities);
+                DiningFacilities.setVisibility(View.VISIBLE);
+
+                Button BackButtonDining = root_view.findViewById(R.id.BackButtonDining);
+                BackButtonDining.setVisibility(View.VISIBLE);
+            }
+        });
+
+        Button BackButtonDining = root_view.findViewById(R.id.BackButtonDining);
+        BackButtonDining.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ScrollView DiningFacilities = root_view.findViewById(R.id.DiningFacilities);
+                DiningFacilities.setVisibility(View.INVISIBLE);
+
+                LinearLayout MPAndLB = root_view.findViewById(R.id.MPAndLB);
+                MPAndLB.setVisibility(View.VISIBLE);
+
+                LinearLayout LAndM = root_view.findViewById(R.id.LAndM);
+                LAndM.setVisibility(View.VISIBLE);
+
+            }
+        });
+
 
 
 
