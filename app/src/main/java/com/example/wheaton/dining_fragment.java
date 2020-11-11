@@ -83,8 +83,8 @@ public class dining_fragment extends Fragment {
             }
         });
 
-        Button MealPlansButton = root_view.findViewById(R.id.MealPlansButton);
-        MealPlansButton.setOnClickListener(new View.OnClickListener() {
+        Button LocationsButton = root_view.findViewById(R.id.LocationsButton);
+        LocationsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 LinearLayout MPAndLB = root_view.findViewById(R.id.MPAndLB);
@@ -114,9 +114,11 @@ public class dining_fragment extends Fragment {
                 LinearLayout LAndM = root_view.findViewById(R.id.LAndM);
                 LAndM.setVisibility(View.VISIBLE);
 
+                Button BackButtonDining = root_view.findViewById(R.id.BackButtonDining);
+                BackButtonDining.setVisibility(View.INVISIBLE);
+
             }
         });
-
 
 
 
