@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wheaton">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,11 +10,11 @@
         android:roundIcon="@drawable/wheatonlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".imp_phone_num"></activity>
+        <activity android:name=".academic_calendar"></activity>
+        <activity android:name=".imp_phone_num" />
         <activity android:name=".financial_aid_office" />
         <activity android:name=".admissions_office" />
         <activity android:name=".registrar_office" />
-        <activity android:name=".academic_calendar" />
         <activity android:name=".clubs" />
         <activity android:name=".education" />
         <activity android:name=".MainActivity">
