@@ -18,14 +18,14 @@ public class academic_calendar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_academic_calendar);
 
+        // Get intent
+        Intent call_intent = getIntent();
+
         // Set up and call web view
         webView = (WebView) findViewById(R.id.academic_web_view);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(getString(R.string.academic_calendar_url));
 
         WebSettings webSettings = webView.getSettings();
-
-        // Get intent
-        Intent call_intent = getIntent();
     }
 }
