@@ -46,6 +46,6 @@
     <string name="financial_contact_info">For more information please contact us at: </string>
     <string name="financial_office_email">sfs@wheatoncollege.edu</string>
 
-    <string name="financial_website_info">Or visit us in our <a href="https://wheatoncollege.edu/about-wheaton-college/offices-services/student-financial-services/">website</a>.</string>
+    <string name="financial_website_info">Or visit us in our <a href="https://wheatoncollege.edu/about-wheaton-college/offices-services/student-financial-services/">website</a>.\n</string>
 
 </resources>

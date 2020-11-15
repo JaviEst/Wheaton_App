@@ -83,19 +83,19 @@ public class imp_phone_num extends AppCompatActivity {
     private void generate_list(){
         phone_num_list = new ArrayList<phone_nums>();
 
-        phone_num_list.add(new phone_nums(getString(R.string.main_wheaton), getString(R.string.main_wheaton_number)));
+        phone_num_list.add(new phone_nums(getString(R.string.crisis_line), getString(R.string.crisis_line_number)));
+        phone_num_list.add(new phone_nums(getString(R.string.campus_emergency), getString(R.string.campus_emergency_number)));
+        phone_num_list.add(new phone_nums(getString(R.string.medical_center), getString(R.string.medical_center_number)));
+        phone_num_list.add(new phone_nums(getString(R.string.counseling_center), getString(R.string.counseling_center_number)));
+        phone_num_list.add(new phone_nums(getString(R.string.public_safety), getString(R.string.public_safety_number)));
         phone_num_list.add(new phone_nums(getString(R.string.bus_service), getString(R.string.bus_service_number)));
         phone_num_list.add(new phone_nums(getString(R.string.tech_support), getString(R.string.tech_support_number)));
         phone_num_list.add(new phone_nums(getString(R.string.physical_plant), getString(R.string.physical_plant_number)));
         phone_num_list.add(new phone_nums(getString(R.string.registrar_office), getString(R.string.registrar_office_number)));
         phone_num_list.add(new phone_nums(getString(R.string.admissions_office), getString(R.string.admissions_office_number)));
         phone_num_list.add(new phone_nums(getString(R.string.financial_aid_office), getString(R.string.financial_aid_office_number)));
-        phone_num_list.add(new phone_nums(getString(R.string.medical_center), getString(R.string.medical_center_number)));
-        phone_num_list.add(new phone_nums(getString(R.string.counseling_center), getString(R.string.counseling_center_number)));
-        phone_num_list.add(new phone_nums(getString(R.string.public_safety), getString(R.string.public_safety_number)));
-        phone_num_list.add(new phone_nums(getString(R.string.campus_emergency), getString(R.string.campus_emergency_number)));
         phone_num_list.add(new phone_nums(getString(R.string.anonymous_line), getString(R.string.anonymous_line_number)));
-        phone_num_list.add(new phone_nums(getString(R.string.crisis_line), getString(R.string.crisis_line_number)));
+        phone_num_list.add(new phone_nums(getString(R.string.main_wheaton), getString(R.string.main_wheaton_number)));
     }
 
 }

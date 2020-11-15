@@ -16,5 +16,5 @@
     <string name="registrar_contact_info">For more information please contact us at: </string>
     <string name="registrar_office_email">registrar@wheatoncollege.edu</string>
 
-    <string name="registrar_website_info">Or visit us in our <a href="https://wheatoncollege.edu/about-wheaton-college/offices-services/registrar/">website</a>.</string>
+    <string name="registrar_website_info">Or visit us in our <a href="https://wheatoncollege.edu/about-wheaton-college/offices-services/registrar/">website</a>.\n</string>
 </resources>

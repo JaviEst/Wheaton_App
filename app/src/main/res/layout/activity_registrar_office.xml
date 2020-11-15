@@ -39,7 +39,7 @@
                 android:layout_marginLeft="10dp"
                 android:text="@string/registrar_name"
                 android:textColor="#000000"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -51,7 +51,7 @@
                 android:autoLink="web"
                 android:text="@string/course_schedule_link"
                 android:textColor="#000000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:onClick="course_link"/>
 
             <TextView
@@ -62,7 +62,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/registrar_description"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -72,7 +72,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/registrar_final_grades"
                 android:textColor="#000000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -81,7 +81,7 @@
                 android:layout_marginLeft="10dp"
                 android:text="@string/registrar_final_grades_info"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -91,7 +91,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/registrar_major"
                 android:textColor="#000000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -100,7 +100,7 @@
                 android:layout_marginLeft="10dp"
                 android:text="@string/registrar_major_info"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                 android:layout_marginLeft="10dp"
                 android:text="@string/registrar_contact_info"
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/reg_num"
@@ -118,7 +118,7 @@
                 android:layout_marginLeft="20dp"
                 android:autoLink="phone"
                 android:text="@string/registrar_office_number"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -126,7 +126,7 @@
                 android:layout_marginLeft="20dp"
                 android:autoLink="email"
                 android:text="@string/registrar_office_email"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/reg_link"
@@ -137,7 +137,7 @@
                 android:layout_marginLeft="10dp"
                 android:text="@string/registrar_website_info"
                 android:textColor="#000000"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:onClick="reg_link"/>
 
         </LinearLayout>
