@@ -29,11 +29,11 @@ public class registrar_office extends AppCompatActivity {
         TextView phone_num = findViewById(R.id.reg_num);
         Linkify.addLinks(phone_num, Linkify.PHONE_NUMBERS);
 
-        // Make a textview clickable
+        // Make textview clickable
         TextView website_reg = findViewById(R.id.reg_link);
         website_reg.setClickable(true);
 
-        // Make a textview clickable
+        // Make textview clickable
         TextView website_courses = findViewById(R.id.course_link);
         website_courses.setClickable(true);
     }
