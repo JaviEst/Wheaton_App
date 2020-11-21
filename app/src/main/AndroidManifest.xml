@@ -10,13 +10,13 @@
         android:roundIcon="@drawable/wheatonlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".academic_calendar"></activity>
-        <activity android:name=".imp_phone_num" />
-        <activity android:name=".financial_aid_office" />
-        <activity android:name=".admissions_office" />
-        <activity android:name=".registrar_office" />
-        <activity android:name=".clubs" />
-        <activity android:name=".education" />
+        <activity android:name=".First_Year.academic_calendar"></activity>
+        <activity android:name=".First_Year.imp_phone_num" />
+        <activity android:name=".First_Year.financial_aid_office" />
+        <activity android:name=".First_Year.admissions_office" />
+        <activity android:name=".First_Year.registrar_office" />
+        <activity android:name=".First_Year.clubs" />
+        <activity android:name=".First_Year.education" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

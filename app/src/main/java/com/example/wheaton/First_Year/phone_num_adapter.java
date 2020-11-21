@@ -1,7 +1,6 @@
-package com.example.wheaton;
+package com.example.wheaton.First_Year;
 
 import android.app.Activity;
-import android.content.Context;
 import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.wheaton.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class phone_num_adapter extends ArrayAdapter<phone_nums> {
 

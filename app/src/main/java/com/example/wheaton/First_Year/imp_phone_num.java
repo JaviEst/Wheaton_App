@@ -1,16 +1,14 @@
-package com.example.wheaton;
+package com.example.wheaton.First_Year;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.telephony.PhoneNumberUtils;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.wheaton.R;
 
 import java.util.ArrayList;
 

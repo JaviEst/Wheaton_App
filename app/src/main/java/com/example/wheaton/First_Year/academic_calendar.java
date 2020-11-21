@@ -1,4 +1,4 @@
-package com.example.wheaton;
+package com.example.wheaton.First_Year;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.example.wheaton.R;
 
 public class academic_calendar extends AppCompatActivity {
 

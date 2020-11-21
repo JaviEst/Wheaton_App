@@ -6,13 +6,17 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.wheaton.First_Year.admissions_office;
+import com.example.wheaton.First_Year.financial_aid_office;
+import com.example.wheaton.First_Year.imp_phone_num;
+import com.example.wheaton.First_Year.registrar_office;
 
 public class first_year_fragment extends Fragment {
 
@@ -31,7 +35,7 @@ public class first_year_fragment extends Fragment {
         education.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent edu = new Intent(getContext(), education.class);
+                Intent edu = new Intent(getContext(), com.example.wheaton.First_Year.education.class);
 
                 try {
                     startActivity(edu);
@@ -49,7 +53,7 @@ public class first_year_fragment extends Fragment {
         clubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent clubs = new Intent(getContext(), clubs.class);
+                Intent clubs = new Intent(getContext(), com.example.wheaton.First_Year.clubs.class);
 
                 try {
                     startActivity(clubs);
@@ -67,7 +71,7 @@ public class first_year_fragment extends Fragment {
         academic_calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent academic = new Intent(getContext(), academic_calendar.class);
+                Intent academic = new Intent(getContext(), com.example.wheaton.First_Year.academic_calendar.class);
 
                 try {
                     startActivity(academic);

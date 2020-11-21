@@ -1,4 +1,4 @@
-package com.example.wheaton;
+package com.example.wheaton.First_Year;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +15,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.wheaton.R;
 
 public class registrar_office extends AppCompatActivity {
 

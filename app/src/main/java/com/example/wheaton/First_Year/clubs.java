@@ -1,9 +1,11 @@
-package com.example.wheaton;
+package com.example.wheaton.First_Year;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.wheaton.R;
 
 public class clubs extends AppCompatActivity {
 
