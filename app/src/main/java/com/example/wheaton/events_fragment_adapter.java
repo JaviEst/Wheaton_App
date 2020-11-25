@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -52,8 +53,14 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         TextView titleTV = listItemView.findViewById(R.id.title);
         titleTV.setText(currentEvent.getTitle());
 
+        String dateFormatted = null;
+        try {
+            dateFormatted = formatDate(currentEvent.getDate());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         TextView dateTV = listItemView.findViewById(R.id.date);
-        dateTV.setText(currentEvent.getDate());
+        dateTV.setText(dateFormatted);
 
         TextView locationTV = listItemView.findViewById(R.id.location);
         locationTV.setText(currentEvent.getLocation());
@@ -71,6 +78,15 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         showingInfoMenu.setVisibility(currentEvent.getButtonVisibility());
 
         return listItemView;
+    }
+
+    public String formatDate(String input) throws ParseException {
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = parser.parse(input);
+        SimpleDateFormat formatter = new SimpleDateFormat("MMM-dd-yyyy hh:mm aa");
+        String formattedDate = formatter.format(date);
+
+        return formattedDate;
     }
 
     private class LoadImage extends AsyncTask<String,Void, Bitmap> {

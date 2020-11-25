@@ -1,5 +1,6 @@
 package com.example.wheaton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -22,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
@@ -41,6 +43,7 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     private int position = -1;
     private int lastPosition;
     private ConstraintLayout lastOptions;
+    public String filters = "";
 
 
     public events_fragment(){}
@@ -68,6 +71,7 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
 
         getLoaderManager().initLoader(0,null, this);
+
 
         // Create a list of earthquakes.
         events = new ArrayList<events_fragment_class>();
@@ -109,18 +113,28 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
                 adapter.notifyDataSetChanged();
 
                 Button moreInfo = view.findViewById(R.id.moreInfoButton);
-//                moreInfo.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        Intent goToItem = new Intent(view.getContext(), )
-//
-//
-//                        if(options.getVisibility() == View.VISIBLE){
-//                            events.get(position).setButtonVisibility(View.GONE);
-//                            adapter.notifyDataSetChanged();
-//                        }
-//                    }
-//                });
+                moreInfo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent goToItem = new Intent(view.getContext(), event_fragment_item.class);
+                        goToItem.putExtra("title",events.get(position).getTitle());
+                        goToItem.putExtra("date",events.get(position).getDate());
+                        goToItem.putExtra("largeImage",events.get(position).getLargeimage());
+                        goToItem.putExtra("location",events.get(position).getLocation());
+                        goToItem.putExtra("cost",events.get(position).getCost());
+                        goToItem.putExtra("filter",events.get(position).getFilter());
+                        goToItem.putExtra("organizerName",events.get(position).getOrganName());
+                        goToItem.putExtra("organizerPhone",events.get(position).getOrganPhone());
+                        goToItem.putExtra("organizerEmail",events.get(position).getOrganEmail());
+                        goToItem.putExtra("link",events.get(position).getLink());
+                        startActivity(goToItem);
+
+                        if(options.getVisibility() == View.VISIBLE){
+                            events.get(position).setButtonVisibility(View.GONE);
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
 
 
 
@@ -170,8 +184,19 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
 
     private void buttonFilter(){
-        Button filter = root_view.findViewById(R.id.filterButton);
-        Toast.makeText(getActivity(), "test", Toast.LENGTH_SHORT).show();
+        Intent goToFilter = new Intent(getContext(), event_fragment_filter.class);
+        goToFilter.putExtra("events", events);
+        startActivityForResult(goToFilter,1);
+
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == -1) {
+                filters = data.getStringExtra("filters");
+            }
+        }
     }
 
 

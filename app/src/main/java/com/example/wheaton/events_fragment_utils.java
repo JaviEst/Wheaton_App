@@ -4,9 +4,13 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.apache.commons.text.StringEscapeUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,8 +20,10 @@ import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+
 
 /**
  * Utility class with methods to help perform the HTTP request and
@@ -148,42 +154,94 @@ public final class events_fragment_utils {
             if (eventsArray.length() > 0) {
                 for(int i = 0; i < eventsArray.length(); i++) {
 
-                    // Extract out the first feature (which is an earthquake)
+                    // Extract out the first feature (which is an event)
                     JSONObject firstEvent = eventsArray.getJSONObject(i);
 
                     // VENUE or LOCATION
                     Object venueTest = firstEvent.get("venue");
-                    String location = "";
-                    if(venueTest instanceof JSONArray){
-                        location = "Unknown Location";
-
-                    }
-                    else if(venueTest instanceof JSONObject){
+                    String location = "Unknown Location";
+                    try {
                         JSONObject venueArray = firstEvent.getJSONObject("venue");
                         location = venueArray.getString("venue");
+                        location = StringEscapeUtils.unescapeHtml4(location);
+                    }catch (JSONException e){
                     }
 
-                    // IMAGE
+                    // IMAGES
                     String image = "";
+                    String largeimage = "";
                     try{
                         JSONObject imageArray = firstEvent.getJSONObject("image");
                         JSONObject sizesArray = imageArray.getJSONObject("sizes");
                         JSONObject thumbnailArray = sizesArray.getJSONObject("thumbnail");
                         image = thumbnailArray.getString("url");
+                        JSONObject mediumImgArray = sizesArray.getJSONObject("medium");
+                        largeimage = mediumImgArray.getString("url");
+
                     }
                     catch (JSONException e){
                     }
 
 
-                    // Extract out the title, number of people, and perceived strength values
-                    String title = firstEvent.getString("title");
+                    // COST
+                    String cost = "N/A";
+                    try{
+                        cost = firstEvent.getString("cost");
+                    }catch (JSONException e){
+                    }
+                    if(cost.equals("")){
+                        cost = "N/A";
+                    }
 
+                    // FILTER
+                    String filter = "N/A";
+                    try {
+                        JSONArray filterArray = firstEvent.getJSONArray("categories");
+                        for(int j = 0; j < filterArray.length(); j++){
+                            JSONObject filterObject = filterArray.getJSONObject(j);
+                            if(j == 0){
+                                filter = filterObject.getString("name");
+                            }
+                            else{
+                                filter = filter + ", " + filterObject.getString("name");
+                            }
+                        }
+                    }catch (JSONException e){
+                    }
+
+                    // ORGANIZER
+                    String organizerName = "N/A";
+                    String organizerPhone = "N/A";
+                    String organizerEmail = "N/A";
+                    try{
+                        JSONArray organizerArray = firstEvent.getJSONArray("organizer");
+                        JSONObject firstOrganizer = organizerArray.getJSONObject(0);
+                        organizerName = firstOrganizer.getString("organizer");
+                        organizerPhone = firstOrganizer.getString("phone");
+                        organizerEmail = firstOrganizer.getString("email");
+
+                    }catch(JSONException e){
+                    }
+
+                    // LINK
+                    String link = "";
+                    try{
+                        link = firstEvent.getString("url");
+                    }catch(JSONException e){
+                    }
+
+
+                    // EVENT TITLE
+                    String title = firstEvent.getString("title");
+                    title = StringEscapeUtils.unescapeHtml4(title);
+
+
+                    // EVENT DATE
                     String date = firstEvent.getString("date");
 
 
-
                     // Create a new {@link Event} object
-                    earthquakes.add(new events_fragment_class(title,date,image,location));
+                    earthquakes.add(new events_fragment_class(title,date,image,location,largeimage,cost,filter,organizerName,organizerPhone,organizerEmail,link));
                 }
             }
         } catch (JSONException e) {
@@ -193,5 +251,6 @@ public final class events_fragment_utils {
         // Return the list of earthquakes
         return earthquakes;
     }
+
 
 }
