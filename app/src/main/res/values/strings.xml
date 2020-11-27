@@ -9,4 +9,7 @@
     <string name="admissions_office_url">https://wheatoncollege.edu/admission/#main-content</string>
 
     <string name="financial_office_url">https://wheatoncollege.edu/about-wheaton-college/offices-services/student-financial-services/#main-content</string>
+
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
 </resources>
