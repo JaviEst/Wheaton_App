@@ -63,7 +63,7 @@ public class map_fragment extends Fragment {
 
 
     private static final String[] BUILDINGS = new String[] {
-      "Old_Science_Center", "Mars Center for Science and Technology", "Filene Center", "Wallace Library", "Office of the Registrar", "Balfour Hood", "Admissions Office", "Student Financial Services",
+            "Old_Science_Center", "Mars Center for Science and Technology", "Filene Center", "Wallace Library", "Office of the Registrar", "Balfour Hood", "Admissions Office", "Student Financial Services",
             "Cole Memorial Chapel", "Knapton Hall", "Mary Lyon Hall", "Park Hall", "Larcom Hall", "Emerson Dining Hall", "Center for Global Education", "Mars Arts and Humanities", "Marshal Center for Intercultural Learning",
             "Watson Fine Arts Center", "Hebe Hall",  "Public Safety", "Clark Athletic Field", "Clark Recreation Center", "Softball Field", "Tennis Courts", "Haas Athletic Center", "Keefe Field", "Mirrione Stadium", "Nordin Field", "Sidell Stadium",
             "Chase Dining Hall", "Davis Spencer Cafe", "Hood Cafe", "The Lyons Den", "Parking Lot 1", "Parking Lot 2", "Parking Lot 3", "Parking Lot 4", "Parking Lot 10", "Parking Lot 1A", "Parking Lot 7", "Parking Lot 8", "Parking Lot 9",
