@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Wheaton</string>
+    <string name="app_name">Wheaton College</string>
+
+    <string name="academic_calendar_url">https://wheatoncollege.edu/academics/academic-calendar/#academic-year-2020-2021</string>
+
+    <string name="registrar_office_url">https://wheatoncollege.edu/about-wheaton-college/offices-services/registrar/#main-content</string>
+    <string name="course_schedule_url">https://bvm30-dxe-03.wheatonma.edu:7341/StudentRegistrationSsb/ssb/term/termSelection?mode=search</string>
+
+    <string name="admissions_office_url">https://wheatoncollege.edu/admission/#main-content</string>
+
+    <string name="financial_office_url">https://wheatoncollege.edu/about-wheaton-college/offices-services/student-financial-services/#main-content</string>
 </resources>
