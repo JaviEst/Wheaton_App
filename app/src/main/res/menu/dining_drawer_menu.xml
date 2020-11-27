@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dining"
+            android:icon="@drawable/ic_dining"
+            android:title="Main Dining Page" />
+
+    </group>
+
+    <item android:title="Dining Locations">
+        <menu>
+            <item
+                android:id="@+id/nav_chase"
+                android:icon="@drawable/ic_chase"
+                android:title="Chase Dining" />
+            <item
+                android:id="@+id/nav_emerson"
+                android:icon="@drawable/ic_emerson"
+                android:title="Emerson Dining" />
+            <item
+                android:id="@+id/nav_balfour"
+                android:icon="@drawable/ic_balfour"
+                android:title="Hood Eco Cafe" />
+            <item
+                android:id="@+id/nav_davis"
+                android:icon="@drawable/ic_davis"
+                android:title="Davis Spencer Cafe" />
+            <item
+                android:id="@+id/nav_lyonBucks"
+                android:icon="@drawable/ic_lyon_bucks"
+                android:title="Lyon Bucks" />
+        </menu>
+    </item>
+
+</menu>

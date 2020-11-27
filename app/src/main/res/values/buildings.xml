@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Pine_Hall">Pine Hall</string>
+    <string name="Old_Science_Center">Old Science Center</string>
+    <string name="Mars_Science_Center">Mars Center for Science and Technology</string>
+    <string name = "Wallace_Library">Wallace Library</string>
+    <string name = "Registrar_Office">Office of the Registrar</string>
+    <string name = "Balfour_Hood">Balfour Hood</string>
+    <string name = "Admissions_Office">Admissions Office</string>
+    <string name = "SFS">Student Financial Services</string>
+    <string name = "Chapel">Cole Memorial Chapel</string>
+    <string name = "Knapton_Hall">Knapton Hall</string>
+    <string name = "Mary_Lyon">Mary Lyon Hall</string>
+    <string name = "Park_Hall">Park Hall</string>
+    <string name = "Larcom_Hall">Larcom Hall</string>
+    <string name = "Emerson_Dining">Emerson Dining Hall</string>
+    <string name = "Global_Education">Center for Global Education</string>
+    <string name = "Mars_Arts_Humanities">Mars Arts and Humanities</string>
+    <string name = "Marshal_Center">Marshal Center for Intercultural Learning</string>
+    <string name = "Watson_Fine_Arts">Watson Fine Arts Center</string>
+    <string name = "Hebe_Hall">Hebe Hall</string>
+    <string name = "Public_Safety">Public Safety</string>
+    <string name = "Clark_Athletic_Field">Clark Athletic Field</string>
+    <string name = "Clark_Rec_Center">Clark Recreational Center</string>
+    <string name = "Softball_Field">Softball Field</string>
+    <string name = "Tennis_Courts">Tennis Courts</string>
+    <string name = "Haas_Athletic_Center">Haas Athletic Center</string>
+    <string name = "Keefe_Field">Keefe Field</string>
+    <string name = "Mirrione_Stadium">Mirrione Stadium</string>
+    <string name = "Nordin_Field">Nordin Field</string>
+    <string name = "Sidell_Stadium">Sidell Stadium</string>
+    <string name = "Chase">Chase Dining Hall</string>
+    <string name = "Davis_Spencer_Cafe">Davis Spencer Cafe</string>
+    <string name = "Hood_Cafe">Hood Cafe</string>
+    <string name = "Lyons_Den">The Lyons Den</string>
+    <string name = "Lot_1">Parking Lot 1</string>
+    <string name = "Lot_2">Parking Lot 2</string>
+    <string name = "Lot_3">Parking Lot 3</string>
+    <string name = "Lot_4">Parking Lot 4</string>
+    <string name = "Lot_10">Parking Lot 10</string>
+    <string name = "Lot_1A">Parking Lot 1A</string>
+    <string name = "Lot_7">Parking Lot 7</string>
+    <string name = "Lot_8">Parking Lot 8</string>
+    <string name = "Lot_9">Parking Lot 9</string>
+    <string name = "Beard_Hall">Beard Hall</string>
+    <string name = "Chapin_Hall">Chapin Hall</string>
+    <string name = "Clark_Hall">Clark Hall</string>
+    <string name = "Carigin_Hall">Craigin Hall</string>
+    <string name = "Everett_Hall">Everett Hall</string>
+    <string name = "Gebbie_Hall">Gebbie Hall</string>
+    <string name = "Keefe_Hall">Keefe Hall</string>
+    <string name = "Kilham_Hall">Kilham Hall</string>
+    <string name = "Mcintire_Hall">Mcintire Hall</string>
+    <string name = "Meadows">Meadows</string>
+    <string name = "Metcalf_Hall">Metcalf Hall</string>
+    <string name = "Stanton_Hall">Stanton Hall</string>
+    <string name = "Young_Hall">Young Hall</string>
+    <string name = "New_Science_Center">New Science Center</string>
+    <string name = "Science_Center">Science Center</string>
+    <string name = "Meneely">Meneely</string>
+
+
+
+</resources>
