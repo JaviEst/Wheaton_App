@@ -10,6 +10,8 @@
         android:roundIcon="@drawable/wheatonlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".events.event_fragment_filter"></activity>
+        <activity android:name=".events.event_fragment_item" />
         <activity android:name=".athletics.onlineLinks" />
         <activity android:name=".First_Year.academic_calendar"></activity>
         <activity android:name=".First_Year.imp_phone_num" />
