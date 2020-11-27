@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admissions_name">Welcome to the Admissions Office</string>
+
+    <string name="admissions_description">Who are we, really? Here are a few facts about us—some interesting tidbits about the Wheaton experience, our campus and our current student body.</string>
+
+    <string name="ad_key_nums">Key Numbers</string>
+    <string name="ad_established">Established</string>
+    <string name="ad_established_year">1834</string>
+
+    <string name="ad_maj_min">Majors and Minors</string>
+    <string name="ad_maj_min_num">100+</string>
+
+    <string name="ad_campus_size">400-acre campus</string>
+    <string name="ad_campus_location">Norton,\nMassachusetts</string>
+
+    <string name="ad_distance">Distance in miles from \ncampus to Boston/Providence</string>
+    <string name="ad_distance_num">35/25</string>
+
+
+    <string name="ad_campus">Campus</string>
+    <string name="ad_res_halls">Residence Halls</string>
+    <string name="ad_res_halls_num">19</string>
+
+    <string name="ad_dining">Places to dine, including traditional \ndining hall, grab-and-go and cafés</string>
+    <string name="ad_dining_num">4</string>
+
+    <string name="ad_innovation_spaces">Wheaton’s Innovation Spaces on campus </string>
+    <string name="ad_innovation_spaces_num">10</string>
+
+    <string name="ad_entrep">Center for Entrepreneurship</string>
+    <string name="ad_entrep_num">1</string>
+
+    <string name="ad_theaters">Theaters</string>
+    <string name="ad_theaters_num">2</string>
+
+    <string name="ad_art_galleries">Art galleries</string>
+    <string name="ad_art_galleries_num">2</string>
+
+    <string name="ad_stu_fac_labs">Student-faculty research labs</string>
+    <string name="ad_stu_fac_labs_num">23+</string>
+
+    <string name="ad_observatory">Observatory</string>
+    <string name="ad_observatory_num">1</string>
+
+    <string name="ad_fields">Athletic fields</string>
+    <string name="ad_fields_num">5</string>
+
+    <string name="ad_courts">Outdoor tennis courts</string>
+    <string name="ad_courts_num">7</string>
+
+    <string name="ad_athl_center">Athletic center</string>
+    <string name="ad_athl_center_num">1</string>
+
+
+    <string name="ad_edu_exp">Educational Experience</string>
+    <string name="ad_ratio">Student-faculty ratio</string>
+    <string name="ad_ratio_num">11:1</string>
+
+    <string name="ad_class_size">Average class size</string>
+    <string name="ad_class_size_num">15-20</string>
+
+    <string name="ad_intern_fund">Students guaranteed access \nto internship funding</string>
+    <string name="ad_intern_fund_num">100%</string>
+
+    <string name="ad_abroad_prog">Study abroad programs</string>
+    <string name="ad_abroad_prog_num">100+</string>
+
+    <string name="ad_dual_deg_prog">Dual-degree programs</string>
+    <string name="ad_dual_deg_prog_num">5</string>
+
+    <string name="ad_pre_prog">Programs with pre-professional prep \nand advising (e.g. law, medicine)</string>
+    <string name="ad_pre_prog_num">12</string>
+
+
+    <string name="ad_student_life">Student Life</string>
+    <string name="ad_org">Student Organizations</string>
+    <string name="ad_org_mum">100+</string>
+
+    <string name="ad_sport_teams">NCAA Division III sport teams</string>
+    <string name="ad_sport_teams_num">21</string>
+
+    <string name="ad_intramural">Clubs and intramural sports</string>
+    <string name="ad_intramural_num">13+</string>
+
+    <string name="ad_houses">Theme Houses</string>
+    <string name="ad_houses_num">16</string>
+
+
+    <string name="admissions_contact_info">For more information please contact us at: </string>
+    <string name="admissions_office_email">admission@wheatoncollege.edu</string>
+
+    <string name="admissions_website_info">Or visit us in our <a href="https://wheatoncollege.edu/admission/">website</a>.\n</string>
+</resources>
