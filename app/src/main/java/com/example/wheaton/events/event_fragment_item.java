@@ -1,4 +1,4 @@
-package com.example.wheaton;
+package com.example.wheaton.events;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.wheaton.R;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -73,7 +75,9 @@ public class event_fragment_item extends AppCompatActivity {
 
 
         if(image.equals("")){
-            previewImageView.setImageResource(R.drawable.wheaton_event_preview);
+//            previewImageView.setImageResource(R.drawable.wheaton_event_preview);
+            LoadImage loadImage = new LoadImage(previewImageView, "https://i.gyazo.com/1abe31772dd0951efe188daefa69c22c.jpg");
+            loadImage.execute("https://i.gyazo.com/1abe31772dd0951efe188daefa69c22c.jpg");
         }
         else {
             LoadImage loadImage = new LoadImage(previewImageView, image);

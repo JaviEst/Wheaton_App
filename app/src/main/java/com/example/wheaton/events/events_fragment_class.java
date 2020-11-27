@@ -1,4 +1,4 @@
-package com.example.wheaton;
+package com.example.wheaton.events;
 
 import android.os.Parcel;
 import android.os.Parcelable;

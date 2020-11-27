@@ -2,21 +2,12 @@ package com.example.wheaton;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import android.content.Context;
-
 
 
 import androidx.annotation.NonNull;
@@ -28,12 +19,13 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
+import com.example.wheaton.events.event_fragment_filter;
+import com.example.wheaton.events.event_fragment_item;
+import com.example.wheaton.events.events_fragment_adapter;
+import com.example.wheaton.events.events_fragment_class;
+import com.example.wheaton.events.events_fragment_loader;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class events_fragment extends Fragment implements LoaderManager.LoaderCallbacks<ArrayList> {
 
@@ -60,9 +52,36 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     public static final String LOG_TAG = events_fragment.class.getName();
 
     ArrayList<events_fragment_class> events;
+    ArrayList<events_fragment_class> temp;
     events_fragment_adapter adapter;
+    events_fragment_adapter tempAdapter;
+    boolean loaded = false;
+
     private static final String theURL = "https://wheatoncollege.edu/wp-json/tribe/events/v1/events/?page=01&per_page=40&start_date=2020-11-01%2000:00:00&end_date=2020-11-29%2023:59:59&status=publish";
 
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        if(!loaded){
+//            loaded = true;
+//        }
+//        else {
+//            ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);
+//            if (!filters.equals("")) {
+//                temp.clear();
+//                for (int i = 0; i < events.size(); i++) {
+//                    temp.add(events.get(i));
+//                    if (!events.get(i).getFilter().contains(filters)) {
+//                        temp.remove(i);
+//                    }
+//                }
+//                tempAdapter = new events_fragment_adapter(getActivity(), temp);
+//                eventListView.setAdapter(tempAdapter);
+//            }
+//            tempAdapter.notifyDataSetChanged();
+//        }
+//    }
 
     @Nullable
     @Override
@@ -89,6 +108,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
         Button filter = root_view.findViewById(R.id.filterButton);
         filter.setOnClickListener(filterListener);
+
+
 
 
         eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -185,7 +206,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
     private void buttonFilter(){
         Intent goToFilter = new Intent(getContext(), event_fragment_filter.class);
-        goToFilter.putExtra("events", events);
+//        goToFilter.putExtra("events", events);
+        goToFilter.putExtra("filters", filters);
         startActivityForResult(goToFilter,1);
 
     }

@@ -1,15 +1,16 @@
-package com.example.wheaton;
+package com.example.wheaton.events;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.example.wheaton.R;
 
 import org.apache.commons.text.StringEscapeUtils;
 
@@ -29,7 +30,7 @@ public class event_fragment_filter extends AppCompatActivity {
             String name = button.getTextOn().toString();
             name = StringEscapeUtils.unescapeHtml4(name);
             buttonClicked(name,button);
-            Toast.makeText(event_fragment_filter.this, filters, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(event_fragment_filter.this, filters, Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -39,7 +40,8 @@ public class event_fragment_filter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_fragment_filter);
 
-        ArrayList<events_fragment_class> events = getIntent().getParcelableExtra("events");
+//        ArrayList<events_fragment_class> events = getIntent().getParcelableExtra("events");
+        filters = getIntent().getStringExtra("filters");
 
 
         ToggleButton Academic = findViewById(R.id.AcademicB);
@@ -86,6 +88,55 @@ public class event_fragment_filter extends AppCompatActivity {
 
         ToggleButton Students = findViewById(R.id.StudentsB);
         Students.setOnClickListener(onListener);
+
+        if(!filters.equals("")){
+            if(filters.contains("Academic")){
+                buttonClickedJustButton(Academic);
+            }
+            if(filters.contains("Admission")){
+                buttonClickedJustButton(Admission);
+            }
+            if(filters.contains("Alumni")){
+                buttonClickedJustButton(Alumni);
+            }
+            if(filters.contains("Arts")){
+                buttonClickedJustButton(Arts);
+            }
+            if(filters.contains("Athletics")){
+                buttonClickedJustButton(Athletics);
+            }
+            if(filters.contains("Career")){
+                buttonClickedJustButton(Career);
+            }
+            if(filters.contains("Diversity")){
+                buttonClickedJustButton(Diversity);
+            }
+            if(filters.contains("Faculty & Staff")){
+                buttonClickedJustButton(FacultyStaff);
+            }
+            if(filters.contains("Global")){
+                buttonClickedJustButton(Global);
+            }
+            if(filters.contains("Health & Wellness")){
+                buttonClickedJustButton(HealthWellness);
+            }
+            if(filters.contains("LGBTQ+")){
+                buttonClickedJustButton(LGBTQ);
+            }
+            if(filters.contains("Library")){
+                buttonClickedJustButton(Library);
+            }
+            if(filters.contains("Music")){
+                buttonClickedJustButton(Music);
+            }
+            if(filters.contains("STEM")){
+                buttonClickedJustButton(STEM);
+            }
+            if(filters.contains("Students")){
+                buttonClickedJustButton(Students);
+            }
+
+        }
 
         Button resetB = findViewById(R.id.resetFilterButton);
         View.OnClickListener resetListener = new View.OnClickListener() {
@@ -145,6 +196,13 @@ public class event_fragment_filter extends AppCompatActivity {
                 filters = filters + "," + name;
             }
         }
+    }
+
+
+    private void buttonClickedJustButton(ToggleButton button){
+            button.setBackgroundColor(Color.parseColor("#1072BA"));
+            button.setTextColor(Color.parseColor("#FFFFFF"));
+            button.setEnabled(false);
     }
 
 
