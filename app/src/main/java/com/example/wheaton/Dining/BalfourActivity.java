@@ -13,6 +13,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.wheaton.R;
@@ -23,6 +24,8 @@ import java.io.InputStream;
 public class BalfourActivity extends AppCompatActivity {
     ImageView BalfourBG;
     String URLlink;
+    WebView BalfourWebView;
+    LinearLayout hiddenStuff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,7 @@ public class BalfourActivity extends AppCompatActivity {
         webview.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf);
 
         BalfourBG = findViewById(R.id.BalfourBG);
-        URLlink = "https://wheatoncollege.campusdish.com/-/media/Local/Higher-Education/GroupA/WheatonCollege/Images/logo.ashx?h=80&mh=350&mw=350&w=270&hash=9AE01A88BF49188F02531112DA7F6799";
+        URLlink = "https://restauracionnews.com/wp-content/uploads/2019/11/1200x628_Dominos-RollExtra.jpg";
 
 
 
@@ -44,10 +47,10 @@ public class BalfourActivity extends AppCompatActivity {
 
     }
     public void BalfourMenuButton(View view) {
-        BalfourBG.setVisibility(View.VISIBLE);
+
     }
     public void BalfourHomeButton(View view) {
-        BalfourBG.setVisibility(View.GONE);
+        hiddenStuff.setVisibility(View.VISIBLE);
     }
 
     private class LoadImage extends AsyncTask<String,Void, Bitmap> {

@@ -38,24 +38,26 @@
         android:id="@+id/BalfourBG"
         android:layout_width="match_parent"
         android:layout_height="155dp"
-        android:layout_marginTop="100dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ActionBarBalfour"
-        app:srcCompat="@color/colorAccent"/>
+        app:srcCompat="@color/colorAccent" />
 
     <TextView
         android:id="@+id/titleBalfour"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:background="#000000"
         android:text="Balfour Hood"
-        android:textColor="@android:color/background_dark"
+        android:gravity="center"
+        android:textColor="#ffffff"
         android:textSize="33dp"
+        app:layout_constraintBottom_toBottomOf="@+id/BalfourBG"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ActionBarBalfour" />
 
@@ -63,6 +65,8 @@
         android:id="@+id/BalfourWebView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="#ffffff"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
