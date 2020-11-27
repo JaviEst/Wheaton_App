@@ -95,19 +95,6 @@ public class MajorsInitList {
         output.add(newItem);
 
 
-//        newItem = new Major();
-//        newItem.setTitle("");
-//        newItem.setCategory("");
-//        newItem.setSheetURL("");
-//        output.add(newItem);
-//
-//
-//        newItem = new Major();
-//        newItem.setTitle("");
-//        newItem.setCategory("");
-//        output.add(newItem);
-
-
         newItem = new Major();
         newItem.setTitle("Business and Management");
         newItem.setCategory("Business and Management");
@@ -500,63 +487,36 @@ public class MajorsInitList {
         output.add(newItem);
 
 
-//
-//        newItem = new Major();
-//        newItem.setTitle("");
-//        newItem.setCategory("");
-//        newItem.setSummary("");
-//        newItem.setSheetURL("");
-//        output.add(newItem);
-//
-//
-//        newItem = new Major();
-//        newItem.setTitle("");
-//        newItem.setCategory("");
-//        newItem.setSummary("");
-//        newItem.setSheetURL("");
-//        output.add(newItem);
-//
-//
-//        newItem = new Major();
-//        newItem.setTitle("");
-//        newItem.setCategory("");
-//        newItem.setSummary("");
-//        newItem.setSheetURL("");
-//        output.add(newItem);
-//
-//
-//        newItem = new Major();
-//        newItem.setTitle("");
-//        newItem.setCategory("");
-//        newItem.setSummary("");
-//        newItem.setSheetURL("");
-//        output.add(newItem);
-//
-//
-//        newItem = new Major();
-//        newItem.setTitle("");
-//        newItem.setCategory("");
-//        newItem.setSummary("");
-//        newItem.setSheetURL("");
-//        output.add(newItem);
-//
-//
-//        newItem = new Major();
-//        newItem.setTitle("");
-//        newItem.setCategory("");
-//        newItem.setSummary("");
-//        newItem.setSheetURL("");
-//        output.add(newItem);
-//
-//
-//        newItem = new Major();
-//        newItem.setTitle("");
-//        newItem.setCategory("");
-//        newItem.setSummary("");
-//        newItem.setSheetURL("");
-//        output.add(newItem);
-//
-//
+        newItem = new Major();
+        newItem.setTitle("Theatre and Dance Studies (Acting/Directing and Design/Tech)");
+        newItem.setCategory("Theatre and Dance Studies");
+        newItem.setSummary("Write a script. Audition for a role. Build a set. Choreograph a scene. Being part of a show—from a short play in a black box theatre to a major musical production on the main stage—is fun, fulfilling, and memorable. The grueling work, collaborative efforts, time management, and technical skill involved is also excellent preparation for any career. Wheaton’s theatre and dance studies majors study acting, directing, theatre design and history, dance, dramatic literature, playwriting, and film theory. With a vibrant arts scene on campus, you’ll find many opportunities for on-stage or behind-the-scenes roles.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1868");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("Theatre and Dance Studies (Dance)");
+        newItem.setCategory("Theatre and Dance Studies");
+        newItem.setSummary("Write a script. Audition for a role. Build a set. Choreograph a scene. Being part of a show—from a short play in a black box theatre to a major musical production on the main stage—is fun, fulfilling, and memorable. The grueling work, collaborative efforts, time management, and technical skill involved is also excellent preparation for any career. Wheaton’s theatre and dance studies majors study acting, directing, theatre design and history, dance, dramatic literature, playwriting, and film theory. With a vibrant arts scene on campus, you’ll find many opportunities for on-stage or behind-the-scenes roles.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1866");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("Visual Art");
+        newItem.setCategory("Visual Art and History of Art");
+        newItem.setSummary("Originality. Problem solving. Deep thinking. Discipline. The habits and skills you develop in the visual arts can be applied to many career paths. Wheaton’s visual art major will provide you expert instruction, sunny studios, state-of-the-art spaces, and the right tools and equipment—and you’ll bring the inspiration and creativity. See what comes to life as you learn techniques in design, drawing, filmmaking, painting, photography, printmaking, and sculpture. Art blends well with many disciplines, making this an excellent minor or second major.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1869");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("Women’s and Gender Studies");
+        newItem.setCategory("Women’s and Gender Studies");
+        newItem.setSummary("Gender shapes who we are, as individuals and as social institutions. Majoring in women’s and gender studies means exploring the intersections of gender, race, class, and sexuality—present day and throughout history. Your classes will span the disciplines: history, biology, sociology, psychology, art, modern languages, and more. Take deep dives into topics like masculinity in modern art, sexuality in film noir, feminist fiction, families in transition, queer theory, or women in the U.S. economy. Our majors and minors are motivated to create positive change; you’ll find them using class projects, research, and internships to advocate, educate, fundraise, and volunteer.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1863");
+        output.add(newItem);
 
         return output;
     }

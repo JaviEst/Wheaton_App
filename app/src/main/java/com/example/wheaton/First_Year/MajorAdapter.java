@@ -39,7 +39,8 @@ public class MajorAdapter extends ArrayAdapter<Major> {
 
         //department name
         TextView departmentText = listItemView.findViewById(R.id.departmentText_1);
-        departmentText.setText(current.getCategory());
+        String curr_department = "Department: " + current.getCategory();
+        departmentText.setText(curr_department);
 
         // description
         TextView descriptionText = listItemView.findViewById(R.id.summary);

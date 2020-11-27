@@ -24,10 +24,9 @@ import com.example.wheaton.R;
 public class education extends AppCompatActivity {
 
     private ArrayList<Major> allMajorsList = new ArrayList<>();
-    private String[] majorTitles;
     AutoCompleteTextView searchbar;
 
-    private ArrayList<Major> searchResults;
+    private ArrayList<Major> searchResults = new ArrayList<>();
     private MajorAdapter itemAdapter;
     public int focus = -1;
 
@@ -45,8 +44,8 @@ public class education extends AppCompatActivity {
 
 
         allMajorsList = MajorsInitList.generateAllMajorsList();
-        majorTitles = MajorsInitList.allMajorTitles(allMajorsList);
-        searchResults = allMajorsList;
+        String[] majorTitles = MajorsInitList.allMajorTitles(allMajorsList);
+        searchResults.addAll(allMajorsList);
 
         ArrayAdapter<String> titleAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, majorTitles);
@@ -55,8 +54,7 @@ public class education extends AppCompatActivity {
         searchbar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View arg1, int pos,
-                                    long id) {
+            public void onItemClick(AdapterView<?> parent, View arg1, int pos, long id) {
                 updateListFromSearchbar();
 
             }
@@ -96,14 +94,22 @@ public class education extends AppCompatActivity {
 
 
     public void updateListFromSearchbar() {
-        //searchResults.clear();
+
+        ArrayList<Major> newResults = new ArrayList<>();
         //Toast.makeText(this,searchbar.getText().toString(),Toast.LENGTH_SHORT).show();
-        for (int i = 0; i < allMajorsList.size(); i++) {
-            if (allMajorsList.get(i).getTitle().contains(searchbar.getText().toString())) {
-                searchResults.add(allMajorsList.get(i));
-                Toast.makeText(this, "adding", Toast.LENGTH_SHORT).show();
+        String searchQuery = searchbar.getText().toString();
+        if (searchQuery.equals(""))
+            newResults = allMajorsList;
+        else {
+            for (int i = 0; i < allMajorsList.size(); i++) {
+                if (allMajorsList.get(i).getTitle().contains(searchQuery)) {
+                    newResults.add(allMajorsList.get(i));
+                }
             }
         }
+
+        searchResults.clear();
+        searchResults.addAll(newResults);
         itemAdapter.notifyDataSetChanged();
     }
 
@@ -141,4 +147,5 @@ public class education extends AppCompatActivity {
 
         return output;
     }
+
 }
