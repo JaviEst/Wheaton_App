@@ -32,6 +32,7 @@ public class phone_num_adapter extends ArrayAdapter<phone_nums> {
             list_phone_view = LayoutInflater.from(getContext()).inflate(R.layout.phone_nums_layout, parent, false);
         }
 
+        // Get the object located at this position in the list
         phone_nums current_phone_num = getItem(position);
 
         // Update content of location text view
