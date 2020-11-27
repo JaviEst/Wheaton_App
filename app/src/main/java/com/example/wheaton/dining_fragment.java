@@ -4,6 +4,8 @@ import android.os.Bundle;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -27,6 +29,7 @@ public class dining_fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         root_view = inflater.inflate(R.layout.dining, container, false);
+
 
         Button Balfour = root_view.findViewById(R.id.BalfourButton);
         Balfour.setOnClickListener(new View.OnClickListener() {

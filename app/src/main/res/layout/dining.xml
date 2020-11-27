@@ -13,7 +13,7 @@
         android:adjustViewBounds="true"
         android:rotationX="0"
         android:scaleType="centerCrop"
-        app:layout_constraintTop_toBottomOf="@+id/ActionBar"
+        app:layout_constraintTop_toBottomOf="@+id/ActionBarBalfour1"
         app:srcCompat="@drawable/wheat3"
         tools:layout_editor_absoluteX="1dp" />
 
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/wheat" />
 
     <LinearLayout
-        android:id="@+id/ActionBar"
+        android:id="@+id/ActionBarBalfour1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#0069aa"
