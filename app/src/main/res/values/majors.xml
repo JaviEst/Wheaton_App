@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="majors_and_minors_title">Majors and Minors</string>
+    <string name="search_majors">Search Majors</string>
+
+    <string name="african_studies">Africa, African American, Diaspora Studies</string>
+    <string name="african_studies_desc">Explore the experiences of Africans and people of African descent—and the creative and intellectual contributions they’ve made around the world throughout the diaspora. This enriching program offers courses from across disciplines: art, music and literature; anthropology, psychology and sociology; economics and political science; and history. As an African studies major, you’ll also have the option to study abroad in Africa, the Caribbean and other destinations. This program is also available as a minor.</string>
+
+    <string name="american_studies">American Studies</string>
+    <string name="american_studies_desc">These United States. Life in America is as complex as ever. In this interdisciplinary major, you’ll examine the ever-evolving American experience through multiple lenses: the arts, history, literature, culture, politics, social movements and more. You’ll build a foundation in U.S. history and also deepen your understanding of today’s most pertinent topics, such as race, ethnicity, gender and sexuality. As an American studies major, you’ll have the freedom to choose electives that fit your historical, cultural and literary interests.</string>
+
+    <string name="ancient_studies">American Studies</string>
+    <string name="ancient_studies_desc">Hebrew. Greek. Latin. Interpret ancient texts and uncover the religious and cultural history of the Mediterranean, including the traditions of Judaism and Christianity. In this interdisciplinary program, you can choose one of three tracks: Greco-Roman, Hebrew or the New Testament. You can further customize your studies by choosing electives that pique your curiosity, such as the faith and practice of Islam or Judaism, the thought of ancient philosophers such as Plato and Socrates, or an anthropology course devoted to the rise and fall of ancient Rome.</string>
+
+    <string name="animal_behavior">American Studies</string>
+    <string name="animal_behavior_desc">Living things come in all sizes, from a single-celled organism to the great blue whale—and the study of animal behavior covers them all. The animal behavior minor brings in theory and concepts from both biology and psychology, giving you a broad look at the building blocks of life and a peek into animal minds. You’ll investigate an organism’s relationship with the world around it: how they find and defend resources, choose a mate and care for their young. Gain experience for careers in wildlife, conservation, animal training or research, or prepare for veterinary or graduate school.</string>
+
+    <string name="anthropology">Anthropology</string>
+    <string name="anthropology_desc">What makes a human, human? Anthropology looks at the entire human experience: our biology, the way we think, how we evolved, what we eat, where we live and what we’re capable of achieving. With a vast selection of electives, you can choose to dig into archaeology of the Southwest, discover more about the peoples and cultures of the Himalayas, or examine the ecology and politics of food. As an anthropology major, you might find yourself immersed in another culture during a semester, summer or year abroad. You can also choose a public health track, which joins the social sciences and biology.</string>
+
+    <string name="asian_studies"></string>
+    <string name="asian_studies_desc">The world’s largest continent beholds a diverse range of people, cultures, histories, languages and discoveries. The Asian studies minor will deepen your understanding of a particular geographical region, such as the Middle East, South Asia or East Asia. By choosing electives from disciplines such as history, world languages, economics, music, theatre, politics and religion, you can broaden your knowledge of the topics that interest you most. Maybe it’s Chinese foreign policy or Buddhist thought. Perhaps it’s the history of Japan or music and dance of South Asia.</string>
+
+
+    <string name="astronomy">Astronomy</string>
+    <string name="astronomy_desc"></string>
+
+
+    <string name="astronomy_and_physics"></string>
+    <string name="astronomy_and_physics_desc"></string>
+
+
+    <string name="biochemistry"></string>
+    <string name="biochemistry_desc"></string>
+
+
+    <string name="bioinformatics"></string>
+    <string name="bioinformatics_desc"></string>
+
+
+    <string name="biology"></string>
+    <string name="biology_desc"></string>
+
+
+    <string name="business_and_management"></string>
+    <string name="business_and_management_desc"></string>
+
+
+    <string name="chemistry"></string>
+    <string name="chemistry_desc"></string>
+
+
+    <string name="classics"></string>
+    <string name="classics_desc"></string>
+
+
+    <string name="computer_science"></string>
+    <string name="computer_science_desc"></string>
+
+    <string name="creative_writing"></string>
+    <string name="creative_writing_desc"></string>
+
+
+    <string name="dance"></string>
+    <string name="dance_desc"></string>
+
+
+    <string name="development_studios"></string>
+    <string name="development_studios_desc"></string>
+
+
+    <string name="digital_humanities"></string>
+    <string name="digital_humanities_desc"></string>
+
+
+    <string name="early_childhood_education"></string>
+    <string name="early_childhood_education_desc"></string>
+
+
+    <string name="economics"></string>
+    <string name="economics_desc"></string>
+
+
+    <string name="education"></string>
+    <string name="education_desc"></string>
+
+
+    <string name="elementary_ed"></string>
+    <string name="elementary_ed_desc"></string>
+
+
+    <string name="english"></string>
+    <string name="english_desc"></string>
+
+
+    <string name="environmental_science"></string>
+    <string name="environmental_science_desc"></string>
+
+
+    <string name="environmental_studies"></string>
+    <string name="environmental_studies_desc"></string>
+
+
+    <string name="film_and_new_media_studies"></string>
+    <string name="film_and_new_media_studies_desc"></string>
+
+
+    <string name="french"></string>
+    <string name="french_desc"></string>
+
+
+    <string name="german_studies"></string>
+    <string name="german_studies_desc"></string>
+
+
+    <string name="greek"></string>
+    <string name="greek_desc"></string>
+
+
+    <string name="hispanic_studies"></string>
+    <string name="hispanic_studies_desc"></string>
+
+
+    <string name="history"></string>
+    <string name="history_desc"></string>
+
+
+    <string name="history_of_art"></string>
+    <string name="history_of_art_desc"></string>
+
+
+    <string name="international_relations"></string>
+    <string name="international_relations_desc"></string>
+
+
+    <string name="italian_studies"></string>
+    <string name="italian_studies_desc"></string>
+
+
+    <string name="jewish_studies"></string>
+    <string name="jewish_studies_desc"></string>
+
+
+    <string name="journalism_studies"></string>
+    <string name="journalism_studies_desc"></string>
+
+
+    <string name="latin"></string>
+    <string name="latin_desc"></string>
+
+
+    <string name="latin_american_studies"></string>
+    <string name="latin_american_studies_desc"></string>
+
+
+    <string name="legal_studies"></string>
+    <string name="legal_studies_desc"></string>
+
+
+    <string name="mathematics"></string>
+    <string name="mathematics_desc"></string>
+
+
+    <string name="mathematics_and_economics"></string>
+    <string name="mathematics_and_economics_desc"></string>
+
+
+    <string name="medieval_and_renaissance_studies"></string>
+    <string name="medieval_and_renaissance_studies_desc"></string>
+
+
+    <string name="music"></string>
+    <string name="music_desc"></string>
+
+
+    <string name="neuroscience"></string>
+    <string name="neuroscience_desc"></string>
+
+
+    <string name="peace_and_social_justice_ideas"></string>
+    <string name="peace_and_social_justice_ideas_desc"></string>
+
+
+    <string name="philosophy"></string>
+    <string name="philosophy_desc"></string>
+
+
+    <string name="physics"></string>
+    <string name="physics_desc"></string>
+
+
+    <string name="political_science"></string>
+    <string name="political_science_desc"></string>
+
+
+    <string name="psychology"></string>
+    <string name="psychology_desc"></string>
+
+
+    <string name="public_health"></string>
+    <string name="public_health_desc"></string>
+
+
+    <string name="public_policy_studies"></string>
+    <string name="public_policy_studies_desc"></string>
+
+
+    <string name="russian_Language_and"></string>
+    <string name="_desc"></string>
+    <string name="search_library_catalog">Search Majors</string>
+    <string name="course_requirements"><a href="">Course Requirnments</a></string>
+
+
+</resources>
