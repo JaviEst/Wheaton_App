@@ -14,19 +14,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+//import com.google.android.gms.maps.CameraUpdateFactory;
+//import com.google.android.gms.maps.GoogleMap;
+//import com.google.android.gms.maps.MapView;
+//import com.google.android.gms.maps.model.LatLng;
+//import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class map_fragment extends Fragment {
 
     // Declare view
     View root_view;
-    MapView mapView;
-    GoogleMap map;
+    //MapView mapView;
+    //GoogleMap map;
 
 
     private AdapterView.OnItemClickListener searchBarListener = new AdapterView.OnItemClickListener() {

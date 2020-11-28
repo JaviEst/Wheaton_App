@@ -19,6 +19,14 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
     // Declare clubs' adapter
     club_adapter adapter;
 
+    // Declare current list view
+    private View current_list_view = null;
+    private int current_pos = 0;
+
+    // Declare previous list view
+    private View previous_list_view = null;
+    private int previous_pos = 0;
+
     // Declare url to json file
     String theURL = "https://engage.wheatoncollege.edu/api/discovery/search/organizations?orderBy[0]=UpperName%20asc&top=1000&filter=&query=&skip=0";
 
@@ -46,12 +54,38 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
         club_list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //
+
+                if(previous_list_view == null){
+                    // Update current list
+                    current_pos = i;
+                    current_list_view = view;
+
+                    // Set element layout to visible
+                    clubs_list.get(current_pos).setLayout_vis(View. VISIBLE);
+                }
+                else{
+                    // Set visibility of previous item in the list clicked to gone
+                    clubs_list.get(previous_pos).setLayout_vis(View.GONE);
+
+                    // Update current list
+                    current_pos = i;
+                    current_list_view = view;
+
+                    // Set element layout to visible
+                    clubs_list.get(current_pos).setLayout_vis(View.VISIBLE);
+                }
+
+                // Update old view
+                previous_pos = i;
+                previous_list_view = view;
+
+                // Notify array adapter that the data has changed
+                adapter.notifyDataSetChanged();
             }
+
         });
 
         getLoaderManager().initLoader(0, null, this);
-        //getLoaderManager().initLoader(0, null, this);
     }
 
     // Update the UI with the given club information.
