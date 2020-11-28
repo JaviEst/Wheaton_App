@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.wheaton.athletics.athletics_calendar;
 import com.example.wheaton.athletics.onlineLinks;
 
 public class athletics_fragment extends Fragment implements View.OnClickListener{
@@ -117,10 +118,8 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
     public void calendarButton() {
 
-        Intent urlIntent3 = new Intent(Intent.ACTION_VIEW);
-        urlIntent3.setData(Uri.parse("https://wheatoncollegelyons.com/composite/"));
-
-        startActivity(urlIntent3);
+        Intent calendarIntent = new Intent(getContext(), athletics_calendar.class);
+        startActivity(calendarIntent);
 
     }
 
@@ -131,7 +130,6 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
         urlIntent3.setData(Uri.parse("https://wheatoncollegelyons.com/information/facilities/hours"));
 
         startActivity(urlIntent3);
-
 
     }
 
