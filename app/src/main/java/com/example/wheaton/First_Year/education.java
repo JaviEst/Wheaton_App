@@ -4,8 +4,11 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -51,15 +54,21 @@ public class education extends AppCompatActivity {
                 android.R.layout.simple_dropdown_item_1line, majorTitles);
         searchbar.setAdapter(titleAdapter);
 
-        searchbar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        searchbar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View arg1, int pos, long id) {
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
                 updateListFromSearchbar();
+            }
 
+            @Override
+            public void afterTextChanged(Editable s) {
             }
         });
-
 
         itemAdapter = new MajorAdapter(this, searchResults);
         final ListView majorsListView = findViewById(R.id.list);
@@ -87,6 +96,7 @@ public class education extends AppCompatActivity {
 
 
                 itemAdapter.notifyDataSetChanged();
+                searchbar.setText("");
             }
         });
 
@@ -102,7 +112,7 @@ public class education extends AppCompatActivity {
             newResults = allMajorsList;
         else {
             for (int i = 0; i < allMajorsList.size(); i++) {
-                if (allMajorsList.get(i).getTitle().contains(searchQuery)) {
+                if (allMajorsList.get(i).getTitle().toLowerCase().contains(searchQuery.toLowerCase())) {
                     newResults.add(allMajorsList.get(i));
                 }
             }
@@ -146,6 +156,18 @@ public class education extends AppCompatActivity {
 
 
         return output;
+    }
+
+    public void gotoReqSheet(View view) {
+        if (focus == -1)
+            return;
+
+        String reqSheetLink = searchResults.get(focus).getSheetURL();
+        Uri pageURL = Uri.parse(reqSheetLink);
+        Intent reqSheetPage = new Intent(Intent.ACTION_VIEW, pageURL);
+        //  if (reqSheetPage.resolveActivity(getPackageManager()) != null) {
+        startActivity(reqSheetPage);
+        //}
     }
 
 }
