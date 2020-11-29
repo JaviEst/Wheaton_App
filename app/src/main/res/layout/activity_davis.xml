@@ -17,6 +17,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
         <Button
             android:id="@+id/DavisHomeButton"
             android:layout_width="wrap_content"
@@ -25,13 +30,10 @@
             android:onClick="DavisHomeButton"
             android:text="Home" />
 
-        <Button
-            android:id="@+id/DavisMenuButton"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="DavisMenuButton"
-            android:text="Menu" />
+            android:layout_weight="1" />
 
     </LinearLayout>
 

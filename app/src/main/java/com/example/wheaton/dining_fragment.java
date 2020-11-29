@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import com.example.wheaton.Dining.BalfourActivity;
 import com.example.wheaton.Dining.ChaseActivity;
 import com.example.wheaton.Dining.DavisActivity;
+import com.example.wheaton.Dining.DavisWebViewActivity;
 import com.example.wheaton.Dining.EmersonActivity;
 
 public class dining_fragment extends Fragment {
@@ -77,7 +78,7 @@ public class dining_fragment extends Fragment {
         Davis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent bal = new Intent(getContext(), DavisActivity.class);
+                Intent bal = new Intent(getContext(), DavisWebViewActivity.class);
                 try{
                     startActivity(bal);
                 }catch (android.content.ActivityNotFoundException ex){
