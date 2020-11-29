@@ -191,15 +191,22 @@ public final class events_fragment_utils {
 
                     // FILTER
                     String filter = "N/A";
+                    String tempFilter = "";
                     try {
                         JSONArray filterArray = firstEvent.getJSONArray("categories");
                         for(int j = 0; j < filterArray.length(); j++){
                             JSONObject filterObject = filterArray.getJSONObject(j);
-                            if(j == 0){
-                                filter = filterObject.getString("name");
+                            if(filterObject.getString("name").matches("Virtual")){
+                                continue;
+                            }
+                            else if(j == 0){
+                                tempFilter = filterObject.getString("name");
+                                filter = StringEscapeUtils.unescapeHtml4(tempFilter);
                             }
                             else{
-                                filter = filter + ", " + filterObject.getString("name");
+                                tempFilter = filterObject.getString("name");
+                                tempFilter = StringEscapeUtils.unescapeHtml4(tempFilter);
+                                filter = filter + ", " + tempFilter;
                             }
                         }
                     }catch (JSONException e){

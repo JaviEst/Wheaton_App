@@ -2,12 +2,18 @@ package com.example.wheaton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -26,6 +32,9 @@ import com.example.wheaton.events.events_fragment_class;
 import com.example.wheaton.events.events_fragment_loader;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
 
 public class events_fragment extends Fragment implements LoaderManager.LoaderCallbacks<ArrayList> {
 
@@ -36,6 +45,14 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     private int lastPosition;
     private ConstraintLayout lastOptions;
     public String filters = "";
+
+
+
+    private events_fragment_adapter adapter;
+
+
+
+
 
 
     public events_fragment(){}
@@ -53,35 +70,55 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
     ArrayList<events_fragment_class> events;
     ArrayList<events_fragment_class> temp;
-    events_fragment_adapter adapter;
     events_fragment_adapter tempAdapter;
+    String lastFilters = " ";
     boolean loaded = false;
+    ArrayList<String> filters2;
+    int tempCheck = 0;
+
+
+
 
     private static final String theURL = "https://wheatoncollege.edu/wp-json/tribe/events/v1/events/?page=01&per_page=40&start_date=2020-11-01%2000:00:00&end_date=2020-11-29%2023:59:59&status=publish";
 
 
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        if(!loaded){
-//            loaded = true;
-//        }
-//        else {
-//            ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);
-//            if (!filters.equals("")) {
-//                temp.clear();
-//                for (int i = 0; i < events.size(); i++) {
-//                    temp.add(events.get(i));
-//                    if (!events.get(i).getFilter().contains(filters)) {
-//                        temp.remove(i);
-//                    }
-//                }
-//                tempAdapter = new events_fragment_adapter(getActivity(), temp);
-//                eventListView.setAdapter(tempAdapter);
-//            }
-//            tempAdapter.notifyDataSetChanged();
-//        }
-//    }
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        loaded = true;
+
+        ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);
+        ListView eventListView2 = (ListView) root_view.findViewById(R.id.eventListView);
+
+        if (filters.matches(lastFilters)) {
+
+        }
+        else if (!filters.equals("")) {
+            ArrayList<events_fragment_class> temp = new ArrayList<events_fragment_class>();
+            for (int i = 0; i < events.size(); i++) {
+                for(int j = 0; j < filters2.size(); j++){
+                    if (events.get(i).getFilter().contains(filters2.get(j))) {
+                        temp.add(events.get(i));
+                    }
+                }
+
+            }
+            tempAdapter = new events_fragment_adapter(getActivity(), temp);
+            eventListView2.setAdapter(tempAdapter);
+            tempAdapter.notifyDataSetChanged();
+            lastFilters = filters;
+            tempCheck = 1;
+        }
+        else {
+            eventListView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+            tempCheck = 0;
+        }
+
+    }
+
+
 
     @Nullable
     @Override
@@ -97,6 +134,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
         // Find a reference to the {@link ListView} in the layout
         ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);
+        ListView eventListView2 = (ListView) root_view.findViewById(R.id.eventListView);
+
 
         // Create a new {@link ArrayAdapter} of earthquakes
         adapter = new events_fragment_adapter(getActivity(), events);
@@ -106,86 +145,62 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
         eventListView.setAdapter(adapter);
 
 
+
         Button filter = root_view.findViewById(R.id.filterButton);
         filter.setOnClickListener(filterListener);
 
+        if(tempCheck == 0) {
+            eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-
-
-        eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                // If another list is clicked, set the last one to GONE (Could of done if size is not 0)
-                if(position != -1){
-                    events.get(lastPosition).setButtonVisibility(View.GONE);
                     adapter.notifyDataSetChanged();
+
+
+                    Intent goToItem = new Intent(view.getContext(), event_fragment_item.class);
+                    goToItem.putExtra("title", events.get(i).getTitle());
+                    goToItem.putExtra("date", events.get(i).getDate());
+                    goToItem.putExtra("largeImage", events.get(i).getLargeimage());
+                    goToItem.putExtra("location", events.get(i).getLocation());
+                    goToItem.putExtra("cost", events.get(i).getCost());
+                    goToItem.putExtra("filter", events.get(i).getFilter());
+                    goToItem.putExtra("organizerName", events.get(i).getOrganName());
+                    goToItem.putExtra("organizerPhone", events.get(i).getOrganPhone());
+                    goToItem.putExtra("organizerEmail", events.get(i).getOrganEmail());
+                    goToItem.putExtra("link", events.get(i).getLink());
+                    startActivity(goToItem);
+
+
                 }
+            });
+        }
+        if(tempCheck == 1) {
+            eventListView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                // Get position of current clicked
-                position = i;
-
-                // Get current options layout ID
-                final ConstraintLayout options = view.findViewById(R.id.buttonLayout);
-                // Set the current to the old for next iteration
-                lastOptions = options;
-                lastPosition = position;
-                // Set visibility for current options
-                events.get(i).setButtonVisibility(View.VISIBLE);
-                adapter.notifyDataSetChanged();
-
-                Button moreInfo = view.findViewById(R.id.moreInfoButton);
-                moreInfo.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent goToItem = new Intent(view.getContext(), event_fragment_item.class);
-                        goToItem.putExtra("title",events.get(position).getTitle());
-                        goToItem.putExtra("date",events.get(position).getDate());
-                        goToItem.putExtra("largeImage",events.get(position).getLargeimage());
-                        goToItem.putExtra("location",events.get(position).getLocation());
-                        goToItem.putExtra("cost",events.get(position).getCost());
-                        goToItem.putExtra("filter",events.get(position).getFilter());
-                        goToItem.putExtra("organizerName",events.get(position).getOrganName());
-                        goToItem.putExtra("organizerPhone",events.get(position).getOrganPhone());
-                        goToItem.putExtra("organizerEmail",events.get(position).getOrganEmail());
-                        goToItem.putExtra("link",events.get(position).getLink());
-                        startActivity(goToItem);
-
-                        if(options.getVisibility() == View.VISIBLE){
-                            events.get(position).setButtonVisibility(View.GONE);
-                            adapter.notifyDataSetChanged();
-                        }
-                    }
-                });
+                    tempAdapter.notifyDataSetChanged();
 
 
+                    Intent goToItem = new Intent(view.getContext(), event_fragment_item.class);
+                    goToItem.putExtra("title", temp.get(i).getTitle());
+                    goToItem.putExtra("date", temp.get(i).getDate());
+                    goToItem.putExtra("largeImage", temp.get(i).getLargeimage());
+                    goToItem.putExtra("location", temp.get(i).getLocation());
+                    goToItem.putExtra("cost", temp.get(i).getCost());
+                    goToItem.putExtra("filter", temp.get(i).getFilter());
+                    goToItem.putExtra("organizerName", temp.get(i).getOrganName());
+                    goToItem.putExtra("organizerPhone", temp.get(i).getOrganPhone());
+                    goToItem.putExtra("organizerEmail", temp.get(i).getOrganEmail());
+                    goToItem.putExtra("link", temp.get(i).getLink());
+                    startActivity(goToItem);
 
 
+                }
+            });
+        }
 
-
-            }
-        });
-
-
-//        EditText search = root_view.findViewById(R.id.mainSearch);
-//
-//        search.addTextChangedListener(new TextWatcher() {
-//
-//
-//            public void afterTextChanged(Editable s) {}
-//
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-//
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                for(int i = 0; i < events.size(); i++){
-//                    if(!events.get(i).getTitle().contains(s)){
-//
-//                    }
-//
-//                }
-//            }
-//        });
-
-
+        AutoCompleteTextView editTxt = root_view.findViewById(R.id.mainSearch);
 
 
 
@@ -195,11 +210,12 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
 
     private void updateUi(ArrayList arrayList) {
+        if (loaded == false) {
 
-        events.addAll(arrayList);
+            events.addAll(arrayList);
 
-        adapter.notifyDataSetChanged();
-
+            adapter.notifyDataSetChanged();
+        }
     }
 
 
@@ -208,6 +224,7 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
         Intent goToFilter = new Intent(getContext(), event_fragment_filter.class);
 //        goToFilter.putExtra("events", events);
         goToFilter.putExtra("filters", filters);
+        goToFilter.putExtra("filters2", filters2);
         startActivityForResult(goToFilter,1);
 
     }
@@ -217,6 +234,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
         if (requestCode == 1) {
             if(resultCode == -1) {
                 filters = data.getStringExtra("filters");
+                filters2 = data.getStringArrayListExtra("filters2");
+                ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);
             }
         }
     }

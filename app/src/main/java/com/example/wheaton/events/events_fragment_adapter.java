@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,15 +27,23 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
-public class events_fragment_adapter extends ArrayAdapter<events_fragment_class> {
+public class events_fragment_adapter extends ArrayAdapter<events_fragment_class> implements Filterable {
 
 
 
     public events_fragment_adapter(Context activity, ArrayList<events_fragment_class> theList){
         super(activity, 0, theList);
+
+
     }
 
+
+
+
+
+    ///////////////////////////////
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -113,6 +123,10 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
             imageView.setImageBitmap(bitmap);
         }
     }
+
+
+
+
 
 
 }

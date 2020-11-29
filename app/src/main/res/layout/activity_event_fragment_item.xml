@@ -20,6 +20,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemTitleText"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
@@ -30,6 +31,7 @@
         app:layout_constraintTop_toTopOf="@+id/itemPreviewPic" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemLinkText"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
@@ -57,6 +59,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemDateInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -76,6 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/itemFilterInput" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemLocationInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,6 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/itemLocationInput" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemOrganizerInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -124,6 +129,7 @@
         app:layout_constraintTop_toBottomOf="@+id/itemPhoneInput" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemEmailInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,6 +139,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemPhoneInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -172,6 +179,7 @@
         app:layout_constraintTop_toBottomOf="@+id/itemCostInput" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemFilterInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -181,6 +189,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemCostInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -190,6 +199,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/itemTimeInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

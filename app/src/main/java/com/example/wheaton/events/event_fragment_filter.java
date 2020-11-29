@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,10 +16,12 @@ import com.example.wheaton.R;
 import org.apache.commons.text.StringEscapeUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class event_fragment_filter extends AppCompatActivity {
 
     private String filters = "";
+    private ArrayList<String> filters2;
 
 
 
@@ -34,6 +37,13 @@ public class event_fragment_filter extends AppCompatActivity {
         }
     };
 
+    private View.OnClickListener backListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            onBackPressed();
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +52,7 @@ public class event_fragment_filter extends AppCompatActivity {
 
 //        ArrayList<events_fragment_class> events = getIntent().getParcelableExtra("events");
         filters = getIntent().getStringExtra("filters");
+        filters2 = getIntent().getStringArrayListExtra("filters2");
 
 
         ToggleButton Academic = findViewById(R.id.AcademicB);
@@ -142,28 +153,33 @@ public class event_fragment_filter extends AppCompatActivity {
         View.OnClickListener resetListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                filters = "";
-                buttonDefault(Academic);
-                buttonDefault(Admission);
-                buttonDefault(Alumni);
-                buttonDefault(Arts);
-                buttonDefault(Athletics);
-                buttonDefault(Career);
-                buttonDefault(Diversity);
-                buttonDefault(FacultyStaff);
-                buttonDefault(Global);
-                buttonDefault(HealthWellness);
-                buttonDefault(LGBTQ);
-                buttonDefault(Library);
-                buttonDefault(Music);
-                buttonDefault(STEM);
-                buttonDefault(Students);
+                if(!filters.equals("")){
+                    filters = "";
+                    filters2.clear();
+                    buttonDefault(Academic);
+                    buttonDefault(Admission);
+                    buttonDefault(Alumni);
+                    buttonDefault(Arts);
+                    buttonDefault(Athletics);
+                    buttonDefault(Career);
+                    buttonDefault(Diversity);
+                    buttonDefault(FacultyStaff);
+                    buttonDefault(Global);
+                    buttonDefault(HealthWellness);
+                    buttonDefault(LGBTQ);
+                    buttonDefault(Library);
+                    buttonDefault(Music);
+                    buttonDefault(STEM);
+                    buttonDefault(Students);
+                }
+
 
             }
         };
         resetB.setOnClickListener(resetListener);
 
-
+        Button backB = findViewById(R.id.backButton);
+        backB.setOnClickListener(backListener);
 
     }
 
@@ -172,6 +188,7 @@ public class event_fragment_filter extends AppCompatActivity {
         //super.onBackPressed();
         Intent i = new Intent();
         i.putExtra("filters",filters);
+        i.putExtra("filters2", filters2);
         setResult(RESULT_OK, i);
         finish();
     }
@@ -191,9 +208,12 @@ public class event_fragment_filter extends AppCompatActivity {
             button.setEnabled(false);
             if(filters.equals("")){
                 filters = name;
+                filters2 = new ArrayList<String>();
+                filters2.add(name);
             }
             else{
-                filters = filters + "," + name;
+                filters = filters + ", " + name;
+                filters2.add(name);
             }
         }
     }
