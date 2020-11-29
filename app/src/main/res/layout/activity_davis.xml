@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dining.DavisActivity">
+    tools:context=".Dining.DavisActivity"
+    android:background="#BCBCBC">
 
     <LinearLayout
         android:id="@+id/ActionBarDavis"

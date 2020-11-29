@@ -134,6 +134,9 @@ public class dining_fragment extends Fragment {
                 ScrollView LyonBucksScroll = root_view.findViewById(R.id.LyonBuckScrollView);
                 LyonBucksScroll.setVisibility(View.GONE);
 
+                ScrollView MealPlanScrollView = root_view.findViewById(R.id.MealPlanScrollView);
+                MealPlanScrollView.setVisibility(View.GONE);
+
 
             }
         });
