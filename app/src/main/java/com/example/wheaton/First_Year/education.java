@@ -189,5 +189,8 @@ public class education extends AppCompatActivity {
 
     public void clearText(View view) {
         searchbar.setText("");
+        searchbar.dismissDropDown();
+        findViewById(R.id.list).requestFocus();
+        hideKeyboardFrom(view.getContext(), searchbar);
     }
 }
