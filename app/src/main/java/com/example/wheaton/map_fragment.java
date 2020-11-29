@@ -34,11 +34,6 @@ public class map_fragment extends Fragment {
     View root_view;
     private ArrayList<Building> buildingList;
     private buildingAdapter myAdapter;
-    private View listView;
-    private int currentPos;
-    private View previousListView = null;
-    private int previousPos = 0;
-    private String mapUrla = "https://www.google.com/maps/dir/?api=1&origin=41.964726429529684, -71.18334581669703&destination=41.96726249863192, -71.18417549267292&mode=walking";
 
 
     private AdapterView.OnItemClickListener searchBarListener = new AdapterView.OnItemClickListener() {
