@@ -3,6 +3,8 @@ package com.example.wheaton.First_Year;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -10,6 +12,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -70,6 +73,15 @@ public class education extends AppCompatActivity {
             }
         });
 
+        searchbar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                searchbar.dismissDropDown();
+                findViewById(R.id.list).requestFocus();
+                hideKeyboardFrom(view.getContext(), searchbar);
+            }
+        });
+
         itemAdapter = new MajorAdapter(this, searchResults);
         final ListView majorsListView = findViewById(R.id.list);
         majorsListView.setAdapter(itemAdapter);
@@ -96,7 +108,6 @@ public class education extends AppCompatActivity {
 
 
                 itemAdapter.notifyDataSetChanged();
-                searchbar.setText("");
             }
         });
 
@@ -117,7 +128,9 @@ public class education extends AppCompatActivity {
                 }
             }
         }
-
+        if (focus != -1 && focus < searchResults.size()) {
+            searchResults.get(focus).setExpandedVisibility(View.GONE);
+        }
         searchResults.clear();
         searchResults.addAll(newResults);
         itemAdapter.notifyDataSetChanged();
@@ -170,4 +183,12 @@ public class education extends AppCompatActivity {
         //}
     }
 
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public void clearText(View view) {
+        searchbar.setText("");
+    }
 }

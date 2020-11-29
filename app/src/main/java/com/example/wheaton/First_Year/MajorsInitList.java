@@ -17,7 +17,6 @@ public class MajorsInitList {
         ArrayList<Major> output = new ArrayList<Major>();
         Major newItem;
 
-
         newItem = new Major();
         newItem.setTitle("Africa, African American, Diaspora Studies");
         newItem.setCategory("History");
@@ -73,7 +72,7 @@ public class MajorsInitList {
         newItem.setTitle("Astronomy and Physics");
         newItem.setCategory("Physics and Astronomy");
         newItem.setSummary("Part life science, part chemical science, biochemistry looks at living things from the molecular level. Biochemistry is critical to health care, agriculture, the environment, energy and any industry or process that affects life. Today’s scientists need to communicate clearly with colleagues outside the lab; in this hands-on program you’ll develop the skills and know-how to present research for the scientific and lay communities. With its rigorous curriculum, the biochemistry major will prepare you well for a career in research, for medical or professional school, or for graduate study in the natural sciences");
-        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1754");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1753");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/08/satellite-2594582_640-300x162.jpg");
         output.add(newItem);
 
@@ -100,16 +99,70 @@ public class MajorsInitList {
         newItem.setTitle("Biology");
         newItem.setCategory("Biology");
         newItem.setSummary("Biology encompasses the study of all living things, from cells and molecules to organisms and ecosystems. Wheaton biology majors conduct and present research, guided by expert faculty members, in well-equipped facilities. A rooftop greenhouse filled with diverse plants and on-campus woodlands are living labs for students, especially those interested in ecology and botany. A biology major provides a solid foundation for medical, dental, optometry, or veterinary school, as well a range of master’s and Ph.D. programs. If you’re interested in the health professions, Wheaton’s pre-med advising program will keep you on the right track.");
-        newItem.setSheetURL("https://wheatoncollege.edu/wp-content/uploads/2010/06/dyer_microscope-220x146.jpg");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1756");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2010/06/dyer_microscope-220x146.jpg");
         output.add(newItem);
 
 
         newItem = new Major();
-        newItem.setTitle("Business and Management");
+        newItem.setTitle("Business and Management (Creative Arts Management)");
         newItem.setCategory("Business and Management");
         newItem.setSummary("A business major that’s anything but business as usual. That’s what you’ll find in Wheaton’s multifaceted business and management program. With real-world consulting projects, immersive learning experiences, and a curriculum that covers more than the business side of business, you’ll leave Wheaton ready for the challenges of today’s marketplace. With five concentration options, you can focus on analytics, social responsibility, the environment, globalization, or nonprofits and the arts. This flexibility opens you up to a host of career opportunities from Wall Street to main street to applying business practices to community or creative organizations.");
-        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1754");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1977");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/blackboard-saved-300x231.jpg");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("Business and Management (Finance and Business Analytics)");
+        newItem.setCategory("Business and Management");
+        newItem.setSummary("A business major that’s anything but business as usual. That’s what you’ll find in Wheaton’s multifaceted business and management program. With real-world consulting projects, immersive learning experiences, and a curriculum that covers more than the business side of business, you’ll leave Wheaton ready for the challenges of today’s marketplace. With five concentration options, you can focus on analytics, social responsibility, the environment, globalization, or nonprofits and the arts. This flexibility opens you up to a host of career opportunities from Wall Street to main street to applying business practices to community or creative organizations.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1973");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/blackboard-saved-300x231.jpg");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("Business and Management (Creative Healthcare Management)");
+        newItem.setCategory("Business and Management");
+        newItem.setSummary("A business major that’s anything but business as usual. That’s what you’ll find in Wheaton’s multifaceted business and management program. With real-world consulting projects, immersive learning experiences, and a curriculum that covers more than the business side of business, you’ll leave Wheaton ready for the challenges of today’s marketplace. With five concentration options, you can focus on analytics, social responsibility, the environment, globalization, or nonprofits and the arts. This flexibility opens you up to a host of career opportunities from Wall Street to main street to applying business practices to community or creative organizations.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1978");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/blackboard-saved-300x231.jpg");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("Business and Management (Human Resource Management and Diversity and Inclusion in Organizations)");
+        newItem.setCategory("Business and Management");
+        newItem.setSummary("A business major that’s anything but business as usual. That’s what you’ll find in Wheaton’s multifaceted business and management program. With real-world consulting projects, immersive learning experiences, and a curriculum that covers more than the business side of business, you’ll leave Wheaton ready for the challenges of today’s marketplace. With five concentration options, you can focus on analytics, social responsibility, the environment, globalization, or nonprofits and the arts. This flexibility opens you up to a host of career opportunities from Wall Street to main street to applying business practices to community or creative organizations.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1976");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/blackboard-saved-300x231.jpg");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("Business and Management (International Business and Cross Cultural Management)");
+        newItem.setCategory("Business and Management");
+        newItem.setSummary("A business major that’s anything but business as usual. That’s what you’ll find in Wheaton’s multifaceted business and management program. With real-world consulting projects, immersive learning experiences, and a curriculum that covers more than the business side of business, you’ll leave Wheaton ready for the challenges of today’s marketplace. With five concentration options, you can focus on analytics, social responsibility, the environment, globalization, or nonprofits and the arts. This flexibility opens you up to a host of career opportunities from Wall Street to main street to applying business practices to community or creative organizations.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1975");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/blackboard-saved-300x231.jpg");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("Business and Management (Marketing, New Media, and Media Analytics)");
+        newItem.setCategory("Business and Management");
+        newItem.setSummary("A business major that’s anything but business as usual. That’s what you’ll find in Wheaton’s multifaceted business and management program. With real-world consulting projects, immersive learning experiences, and a curriculum that covers more than the business side of business, you’ll leave Wheaton ready for the challenges of today’s marketplace. With five concentration options, you can focus on analytics, social responsibility, the environment, globalization, or nonprofits and the arts. This flexibility opens you up to a host of career opportunities from Wall Street to main street to applying business practices to community or creative organizations.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1972");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/blackboard-saved-300x231.jpg");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("Business and Management (Social Entrepreneurship, Non-Profit Management and Philanthropy)");
+        newItem.setCategory("Business and Management");
+        newItem.setSummary("A business major that’s anything but business as usual. That’s what you’ll find in Wheaton’s multifaceted business and management program. With real-world consulting projects, immersive learning experiences, and a curriculum that covers more than the business side of business, you’ll leave Wheaton ready for the challenges of today’s marketplace. With five concentration options, you can focus on analytics, social responsibility, the environment, globalization, or nonprofits and the arts. This flexibility opens you up to a host of career opportunities from Wall Street to main street to applying business practices to community or creative organizations.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1927");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/blackboard-saved-300x231.jpg");
         output.add(newItem);
 
@@ -118,16 +171,32 @@ public class MajorsInitList {
         newItem.setTitle("Chemistry");
         newItem.setCategory("Chemistry");
         newItem.setSummary("Chemistry matters. It’s involved in nearly everything we do in every aspect of our lives: cooking, cleaning, clothing, cures, you name it. Majoring in chemistry opens you up to exciting careers in research and development, regulation and quality control, public health, environmental protection, education, forensics, manufacturing and business. Chemistry also is a major of choice for many students interested in pursuing a career in medicine. As a chemistry major at Wheaton, you’ll explore and experiment in small, close-knit classes and labs and have chances to collaborate with your professors on research projects.");
-        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1755");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1758");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2011/01/Ali-Hussain-220x220.jpg");
         output.add(newItem);
 
 
         newItem = new Major();
-        newItem.setTitle("Classics");
+        newItem.setTitle("Classics (Classical Civilization)");
         newItem.setCategory("Classics");
         newItem.setSummary("Our curiosity about ancient civilizations has endured through the centuries, and their contributions to the world are evident even in modern society. Wheaton offers several classics majors: classical civilization, Greek, Latin, or Greek/Latin combined, all of which will cultivate your research, writing, and critical thinking skills. As a minor or second major, studying the classics can bring a whole new level to your main area of study. It complements English, history, art, anthropology, philosophy, and religion especially well, and it’s also an excellent foundation for law school or graduate programs.");
-        newItem.setSheetURL("https://wheatoncollege.edu/academics/majors-minors/biology/#");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1968");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2010/07/18058103_10155227833998328_2643588779026881277_n-220x149.jpg");
+        output.add(newItem);
+
+        newItem = new Major();
+        newItem.setTitle("Classics (Greek and Latin Combined)");
+        newItem.setCategory("Classics");
+        newItem.setSummary("Our curiosity about ancient civilizations has endured through the centuries, and their contributions to the world are evident even in modern society. Wheaton offers several classics majors: classical civilization, Greek, Latin, or Greek/Latin combined, all of which will cultivate your research, writing, and critical thinking skills. As a minor or second major, studying the classics can bring a whole new level to your main area of study. It complements English, history, art, anthropology, philosophy, and religion especially well, and it’s also an excellent foundation for law school or graduate programs.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1967");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2010/07/18058103_10155227833998328_2643588779026881277_n-220x149.jpg");
+        output.add(newItem);
+
+        newItem = new Major();
+        newItem.setTitle("Classics (Greek or Latin)");
+        newItem.setCategory("Classics");
+        newItem.setSummary("Our curiosity about ancient civilizations has endured through the centuries, and their contributions to the world are evident even in modern society. Wheaton offers several classics majors: classical civilization, Greek, Latin, or Greek/Latin combined, all of which will cultivate your research, writing, and critical thinking skills. As a minor or second major, studying the classics can bring a whole new level to your main area of study. It complements English, history, art, anthropology, philosophy, and religion especially well, and it’s also an excellent foundation for law school or graduate programs.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1931");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2010/07/18058103_10155227833998328_2643588779026881277_n-220x149.jpg");
         output.add(newItem);
 
@@ -136,7 +205,7 @@ public class MajorsInitList {
         newItem.setTitle("Computer Science");
         newItem.setCategory("Computer Science");
         newItem.setSummary("Computer science-related positions are a mainstay on annual “top careers” lists—and for good reason. Technology is part of everything we do. Devices and networks. Apps and algorithms. Ecommerce and online learning. At Wheaton, you’ll learn computing theory and then see it in action in classes like cryptography, data structures, and robots, games and problem solving. You can take your analytical and programming skills to nearly any industry, and into information security, database management, software development, IT, and related areas. Adding a minor or second major can make you even more marketable in emerging fields like genomics and data science.");
-        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1754");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1934");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/RS179866_computer-science-featured-300x259.jpg");
         output.add(newItem);
 
@@ -145,7 +214,7 @@ public class MajorsInitList {
         newItem.setTitle("Creative Writing");
         newItem.setCategory("English");
         newItem.setSummary("We all have stories to tell and we can share them in many ways: poems, plays, short stories, novels, and essays to name a few—and we can share them on the page, online, or from the stage. A degree in creative writing could be the first chapter in your publishing career or the foreword to earning your MFA. Wheaton offers a vibrant, collaborative setting for aspiring writers. The literary arts are alive here, with two annual play festivals and the student-run lit mag, Rushlight. Our Visiting Artist Program brings accomplished authors to campus for readings, workshops, and master classes.");
-        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1755");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1882");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2014/12/10433113_309275075931228_5635481172698600491_n-220x164.jpg");
         output.add(newItem);
 
@@ -154,7 +223,7 @@ public class MajorsInitList {
         newItem.setTitle("Dance");
         newItem.setCategory("Theatre and Dance Studies");
         newItem.setSummary("Dance is more than choreographed movements: It’s a challenging, freeing discipline that builds strength, focus, and confidence. And it’s an art that explores identity and enhances global and social awareness. A minor in dance combines technique with tradition: You’ll practice creative movement in jazz, ballet, and world music classes, while also discovering a historical and cultural perspective of dance. You’ll have opportunities to perform on the main stage with the Wheaton Dance Company or other theater and dance productions.");
-        newItem.setSheetURL("https://wheatoncollege.edu/academics/majors-minors/biology/#");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1884");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2015/11/artsandculturallearning296247-220x181.jpg");
         output.add(newItem);
 
@@ -163,7 +232,7 @@ public class MajorsInitList {
         newItem.setTitle("Development Studies");
         newItem.setCategory("Development Studies");
         newItem.setSummary("Broaden your cultural understanding and enrich your Wheaton education with a minor in developmental studies. This broad field looks at the evolution of societies through multiple lenses: economical, sociological, and political. Your core course explores the political economy in developing countries in Asia, Africa, and Latin America. Then, you’ll choose from a variety of anthropology, economics, history, political science, and women and gender studies electives: sweatshops in the world economy, transnational feminism, urban anthropology, and the ecology and politics of food, just to name a few.");
-        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1754");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1885");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/08/Khadim-300x225.jpg");
         output.add(newItem);
 
@@ -173,7 +242,7 @@ public class MajorsInitList {
         newItem.setTitle("Digital Humanities");
         newItem.setCategory("Digital Humanities");
         newItem.setSummary("Documentaries about history’s biggest mysteries. Multimedia museum exhibits. Interactive educational materials. Just think what you could create when you merge fascinating topics with technology. Digital humanities is a vast and versatile field—and an academic minor with major possibility. This interdisciplinary program can be combined with many areas of study, from art and anthropology to creative writing and computer science. The digital humanities minor gives you the flexibility to match courses with your skills and interests. Choose from options like Computing for Poets, Exhibition Design, and Digital Controversies.");
-        newItem.setSheetURL("https://wheatoncollege.edu/academics/majors-minors/biology/#");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1964");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/09/Digital-Humanities-300x292.png");
         output.add(newItem);
 
@@ -182,7 +251,7 @@ public class MajorsInitList {
         newItem.setTitle("Early Childhood Education");
         newItem.setCategory("Education");
         newItem.setSummary("Pre-school, pre-K, and kindergarten teachers have an incredibly rewarding opportunity: to instill a love of learning and prepare children for a lifetime of discovery. As an early childhood education major, you’ll learn about child development and literacy, explore play and teaching strategies, and gain real-world experience observing, assisting, and teaching in diverse classrooms. With this degree and required certifications, you can provide care or teach in settings such as preschools, public and private elementary schools, community childcare programs, and social service organizations. Wheaton early childhood education students also choose a second major, broadening your career possibilities in education and beyond.");
-        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1754");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1899");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2014/04/12-W-570_Preschool-IMG_7211-300x200.jpg");
         output.add(newItem);
 
@@ -191,65 +260,16 @@ public class MajorsInitList {
         newItem.setTitle("Economics");
         newItem.setCategory("Economics");
         newItem.setSummary("You’ll find economics at the intersection of business and social science. It’s about understanding how current events and conditions shape individuals and impact society—and how to use data to find and tell those stories. Choose electives or add a minor for a deeper dive into national and global issues that matter to you, such as health, gender, race, banking, politics, and international trade. A background in economics—and the analytical, research, and writing skills you’ll develop while studying it—can lead to many career paths including data science, journalism, finance, marketing, product development, and public policy.");
-        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1755");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1893");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/stock-1863880-econ-featured-300x225.jpg");
         output.add(newItem);
 
 
         newItem = new Major();
-        newItem.setTitle("Economics");
-        newItem.setCategory("Economics");
-        newItem.setSummary("You’ll find economics at the intersection of business and social science. It’s about understanding how current events and conditions shape individuals and impact society—and how to use data to find and tell those stories. Choose electives or add a minor for a deeper dive into national and global issues that matter to you, such as health, gender, race, banking, politics, and international trade. A background in economics—and the analytical, research, and writing skills you’ll develop while studying it—can lead to many career paths including data science, journalism, finance, marketing, product development, and public policy.");
-        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1755");
-        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/07/stock-1863880-econ-featured-300x225.jpg");
-        output.add(newItem);
-
-
-        newItem = new Major();
-        newItem.setTitle("Elementary Education (Grade 1)");
+        newItem.setTitle("Elementary Education (Grades 1-6)");
         newItem.setCategory("Elementary Education");
         newItem.setSummary("Seeds are planted in elementary school. Students develop interests, discover talents, or have the first inkling of what they can be when they grow up. Along with intellectual growth, the early grades are pivotal for social and emotional development—and you will explore each of these angles at Wheaton through coursework and field work. Your lesson plan? Learn to teach math, science, reading, and language arts, while gaining knowledge of child development, education standards, and social issues relevant to today’s diverse classrooms. This program leads to elementary teacher licensure in Massachusetts, and a required second major broadens your career possibilities.");
-        newItem.setSheetURL("https://wheatoncollege.edu/academics/majors-minors/biology/#");
-        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2014/04/child-865116_1280-elem-edu-featured-300x200.jpg");
-        output.add(newItem);
-
-        newItem = new Major();
-        newItem.setTitle("Elementary Education (Grade 2)");
-        newItem.setCategory("Elementary Education");
-        newItem.setSummary("Seeds are planted in elementary school. Students develop interests, discover talents, or have the first inkling of what they can be when they grow up. Along with intellectual growth, the early grades are pivotal for social and emotional development—and you will explore each of these angles at Wheaton through coursework and field work. Your lesson plan? Learn to teach math, science, reading, and language arts, while gaining knowledge of child development, education standards, and social issues relevant to today’s diverse classrooms. This program leads to elementary teacher licensure in Massachusetts, and a required second major broadens your career possibilities.");
-        newItem.setSheetURL("https://wheatoncollege.edu/academics/majors-minors/biology/#");
-        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2014/04/child-865116_1280-elem-edu-featured-300x200.jpg");
-        output.add(newItem);
-
-        newItem = new Major();
-        newItem.setTitle("Elementary Education (Grade 3)");
-        newItem.setCategory("Elementary Education");
-        newItem.setSummary("Seeds are planted in elementary school. Students develop interests, discover talents, or have the first inkling of what they can be when they grow up. Along with intellectual growth, the early grades are pivotal for social and emotional development—and you will explore each of these angles at Wheaton through coursework and field work. Your lesson plan? Learn to teach math, science, reading, and language arts, while gaining knowledge of child development, education standards, and social issues relevant to today’s diverse classrooms. This program leads to elementary teacher licensure in Massachusetts, and a required second major broadens your career possibilities.");
-        newItem.setSheetURL("https://wheatoncollege.edu/academics/majors-minors/biology/#");
-        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2014/04/child-865116_1280-elem-edu-featured-300x200.jpg");
-        output.add(newItem);
-
-        newItem = new Major();
-        newItem.setTitle("Elementary Education (Grade 4)");
-        newItem.setCategory("Elementary Education");
-        newItem.setSummary("Seeds are planted in elementary school. Students develop interests, discover talents, or have the first inkling of what they can be when they grow up. Along with intellectual growth, the early grades are pivotal for social and emotional development—and you will explore each of these angles at Wheaton through coursework and field work. Your lesson plan? Learn to teach math, science, reading, and language arts, while gaining knowledge of child development, education standards, and social issues relevant to today’s diverse classrooms. This program leads to elementary teacher licensure in Massachusetts, and a required second major broadens your career possibilities.");
-        newItem.setSheetURL("https://wheatoncollege.edu/academics/majors-minors/biology/#");
-        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2014/04/child-865116_1280-elem-edu-featured-300x200.jpg");
-        output.add(newItem);
-
-        newItem = new Major();
-        newItem.setTitle("Elementary Education (Grade 5)");
-        newItem.setCategory("Elementary Education");
-        newItem.setSummary("Seeds are planted in elementary school. Students develop interests, discover talents, or have the first inkling of what they can be when they grow up. Along with intellectual growth, the early grades are pivotal for social and emotional development—and you will explore each of these angles at Wheaton through coursework and field work. Your lesson plan? Learn to teach math, science, reading, and language arts, while gaining knowledge of child development, education standards, and social issues relevant to today’s diverse classrooms. This program leads to elementary teacher licensure in Massachusetts, and a required second major broadens your career possibilities.");
-        newItem.setSheetURL("https://wheatoncollege.edu/academics/majors-minors/biology/#");
-        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2014/04/child-865116_1280-elem-edu-featured-300x200.jpg");
-        output.add(newItem);
-
-        newItem = new Major();
-        newItem.setTitle("Elementary Education (Grade 6)");
-        newItem.setCategory("Elementary Education");
-        newItem.setSummary("Seeds are planted in elementary school. Students develop interests, discover talents, or have the first inkling of what they can be when they grow up. Along with intellectual growth, the early grades are pivotal for social and emotional development—and you will explore each of these angles at Wheaton through coursework and field work. Your lesson plan? Learn to teach math, science, reading, and language arts, while gaining knowledge of child development, education standards, and social issues relevant to today’s diverse classrooms. This program leads to elementary teacher licensure in Massachusetts, and a required second major broadens your career possibilities.");
-        newItem.setSheetURL("https://wheatoncollege.edu/academics/majors-minors/biology/#");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1901");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2014/04/child-865116_1280-elem-edu-featured-300x200.jpg");
         output.add(newItem);
 
@@ -259,6 +279,39 @@ public class MajorsInitList {
         newItem.setCategory("English");
         newItem.setSummary("Studying literature—the classics to this week’s bestseller list— expands your understanding of humanity. As you turn each page, you’ll explore the elements of craft behind compelling poetry, fiction, nonfiction, drama, and film. Wheaton’s literature concentrations span geography, time, and topics: diversity, pop culture/media, medieval/renaissance, and colonialism/postcolonialism/global. With a keen eye for detail and equipped with myriad marketable skills, English majors fill writer, editor, content creator, project manager, analyst, research, and related roles in nearly every industry from publishing and marketing to law and healthcare. They’re also well-prepared for law school or graduate study.");
         newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1958");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/08/Bev-and-Student-300x294.jpg");
+        output.add(newItem);
+
+
+        newItem = new Major();
+        newItem.setTitle("English (Colonialism, Postcolonialism and Global Literature)");
+        newItem.setCategory("English");
+        newItem.setSummary("Studying literature—the classics to this week’s bestseller list— expands your understanding of humanity. As you turn each page, you’ll explore the elements of craft behind compelling poetry, fiction, nonfiction, drama, and film. Wheaton’s literature concentrations span geography, time, and topics: diversity, pop culture/media, medieval/renaissance, and colonialism/postcolonialism/global. With a keen eye for detail and equipped with myriad marketable skills, English majors fill writer, editor, content creator, project manager, analyst, research, and related roles in nearly every industry from publishing and marketing to law and healthcare. They’re also well-prepared for law school or graduate study.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1914");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/08/Bev-and-Student-300x294.jpg");
+        output.add(newItem);
+
+        newItem = new Major();
+        newItem.setTitle("English (Literature and Diversity)");
+        newItem.setCategory("English");
+        newItem.setSummary("Studying literature—the classics to this week’s bestseller list— expands your understanding of humanity. As you turn each page, you’ll explore the elements of craft behind compelling poetry, fiction, nonfiction, drama, and film. Wheaton’s literature concentrations span geography, time, and topics: diversity, pop culture/media, medieval/renaissance, and colonialism/postcolonialism/global. With a keen eye for detail and equipped with myriad marketable skills, English majors fill writer, editor, content creator, project manager, analyst, research, and related roles in nearly every industry from publishing and marketing to law and healthcare. They’re also well-prepared for law school or graduate study.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1918");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/08/Bev-and-Student-300x294.jpg");
+        output.add(newItem);
+
+        newItem = new Major();
+        newItem.setTitle("English (Medieval/Renaissance Literature)");
+        newItem.setCategory("English");
+        newItem.setSummary("Studying literature—the classics to this week’s bestseller list— expands your understanding of humanity. As you turn each page, you’ll explore the elements of craft behind compelling poetry, fiction, nonfiction, drama, and film. Wheaton’s literature concentrations span geography, time, and topics: diversity, pop culture/media, medieval/renaissance, and colonialism/postcolonialism/global. With a keen eye for detail and equipped with myriad marketable skills, English majors fill writer, editor, content creator, project manager, analyst, research, and related roles in nearly every industry from publishing and marketing to law and healthcare. They’re also well-prepared for law school or graduate study.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1920");
+        newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/08/Bev-and-Student-300x294.jpg");
+        output.add(newItem);
+
+        newItem = new Major();
+        newItem.setTitle("English (Popular Culture, Media and Literature)");
+        newItem.setCategory("English");
+        newItem.setSummary("Studying literature—the classics to this week’s bestseller list— expands your understanding of humanity. As you turn each page, you’ll explore the elements of craft behind compelling poetry, fiction, nonfiction, drama, and film. Wheaton’s literature concentrations span geography, time, and topics: diversity, pop culture/media, medieval/renaissance, and colonialism/postcolonialism/global. With a keen eye for detail and equipped with myriad marketable skills, English majors fill writer, editor, content creator, project manager, analyst, research, and related roles in nearly every industry from publishing and marketing to law and healthcare. They’re also well-prepared for law school or graduate study.");
+        newItem.setSheetURL("https://catalog.wheatoncollege.edu/preview_program.php?catoid=8&poid=1921");
         newItem.setPreviewImageURL("https://wheatoncollege.edu/wp-content/uploads/2017/08/Bev-and-Student-300x294.jpg");
         output.add(newItem);
 
