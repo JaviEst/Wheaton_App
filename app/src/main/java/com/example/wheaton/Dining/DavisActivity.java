@@ -39,9 +39,6 @@ public class DavisActivity extends AppCompatActivity {
 
     }
 
-    public void DavisMenuButton(View view) {
-        DavisBG.setVisibility(View.VISIBLE);
-    }
 
     public void DavisHomeButton(View view){
         Intent i = new Intent(this,DavisWebViewActivity.class);

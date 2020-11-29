@@ -5,6 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/MealPlansBigTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/MealPlanName"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheat" />
+
+    <TextView
+        android:id="@+id/DiningLocationsBigTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/DiningLocationsButtonName"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheat" />
+
+    <TextView
+        android:id="@+id/LyonBucksBigTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/LyonBucksTitle"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheat" />
+
     <ImageView
         android:id="@+id/wheat"
         android:layout_width="match_parent"
@@ -18,16 +66,17 @@
         tools:layout_editor_absoluteX="1dp" />
 
     <TextView
-        android:id="@+id/welcome"
+        android:id="@+id/WelcomeDining"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_weight="1"
         android:background="#ffffff"
+        android:gravity="center"
         android:padding="10dp"
         android:text="@string/Welcome"
         android:textColor="#000000"
         android:textSize="25sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wheat" />
@@ -81,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeDining"
         app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
@@ -99,7 +148,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome">
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeDining">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -221,6 +270,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
+        android:background="@color/wheaton"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
         android:text="Back"
@@ -284,18 +336,59 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/LB1Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Lyons Bucks"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LB1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/LB1"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/LSTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Lyons Swipes (Meal Exchange)"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/LS1"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/Space"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:visibility="gone" />
+        </LinearLayout>
     </ScrollView>
 
     <ScrollView
         android:id="@+id/MealPlanScrollView"
         android:layout_width="0dp"
-        android:layout_height="432dp"
+        android:layout_height="331dp"
         android:background="#ffffff"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/BlueBG"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/BlueBG"
         app:layout_constraintVertical_bias="0.0">
@@ -303,7 +396,45 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/WhatIsAMealPlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="What is a Meal Plan?"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/MealPlans1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/Meal_Plans1"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/MealSwipes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Meal Swipes"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/MealpPlans2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/Meal_swipes1"
+                android:textColor="#000000" />
+
+
+
+        </LinearLayout>
     </ScrollView>
 
 

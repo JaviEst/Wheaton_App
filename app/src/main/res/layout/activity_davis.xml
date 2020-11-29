@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:background="#000000"
         android:gravity="center"
-        android:text="Davis Spencer Cafe"
+        android:text="@string/MenuName"
         android:textColor="#ffffff"
         android:textSize="33dp"
         app:layout_constraintBottom_toBottomOf="@+id/veggies"

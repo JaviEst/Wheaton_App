@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
         import androidx.fragment.app.Fragment;
 
 import com.example.wheaton.Dining.BalfourActivity;
+import com.example.wheaton.Dining.BalfourWebViewActivity;
 import com.example.wheaton.Dining.ChaseActivity;
 import com.example.wheaton.Dining.DavisActivity;
 import com.example.wheaton.Dining.DavisWebViewActivity;
@@ -37,7 +38,7 @@ public class dining_fragment extends Fragment {
         Balfour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent bal = new Intent(getContext(), BalfourActivity.class);
+                Intent bal = new Intent(getContext(), BalfourWebViewActivity.class);
                 try{
                     startActivity(bal);
                 }catch (android.content.ActivityNotFoundException ex){
@@ -92,6 +93,12 @@ public class dining_fragment extends Fragment {
         LocationsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                TextView DLTitle = root_view.findViewById(R.id.DiningLocationsBigTitle);
+                DLTitle.setVisibility(View.VISIBLE);
+
+                TextView welcome = root_view.findViewById(R.id.WelcomeDining);
+                welcome.setVisibility(View.INVISIBLE);
+
                 Button LyonBucks = root_view.findViewById(R.id.LyonBucksButton);
                 LyonBucks.setVisibility(View.GONE);
 
@@ -117,6 +124,19 @@ public class dining_fragment extends Fragment {
         BackButtonDining.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                TextView DLTitle = root_view.findViewById(R.id.DiningLocationsBigTitle);
+                DLTitle.setVisibility(View.GONE);
+
+                TextView LBTitle = root_view.findViewById(R.id.LyonBucksBigTitle);
+                LBTitle.setVisibility(View.GONE);
+
+                TextView welcome = root_view.findViewById(R.id.WelcomeDining);
+                welcome.setVisibility(View.VISIBLE);
+
+                TextView MPTitle = root_view.findViewById(R.id.MealPlansBigTitle);
+                MPTitle.setVisibility(View.GONE);
+
                 ScrollView DiningFacilities = root_view.findViewById(R.id.DiningFacilities);
                 DiningFacilities.setVisibility(View.GONE);
 
@@ -146,6 +166,12 @@ public class dining_fragment extends Fragment {
         LyonBucksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                TextView LBTitle = root_view.findViewById(R.id.LyonBucksBigTitle);
+                LBTitle.setVisibility(View.VISIBLE);
+
+                TextView welcome = root_view.findViewById(R.id.WelcomeDining);
+                welcome.setVisibility(View.INVISIBLE);
+
                 ScrollView LyonBucksScroll = root_view.findViewById(R.id.LyonBuckScrollView);
                 LyonBucksScroll.setVisibility(View.VISIBLE);
 
@@ -173,6 +199,13 @@ public class dining_fragment extends Fragment {
         MealPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                TextView MPTitle = root_view.findViewById(R.id.MealPlansBigTitle);
+                MPTitle.setVisibility(View.VISIBLE);
+
+                TextView welcome = root_view.findViewById(R.id.WelcomeDining);
+                welcome.setVisibility(View.INVISIBLE);
+
                 ScrollView MealPlanScrollView = root_view.findViewById(R.id.MealPlanScrollView);
                 MealPlanScrollView.setVisibility(View.VISIBLE);
 

@@ -16,6 +16,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
         <Button
             android:id="@+id/BalfourHomeButton"
             android:layout_width="wrap_content"
@@ -24,13 +29,10 @@
             android:onClick="BalfourHomeButton"
             android:text="Home" />
 
-        <Button
-            android:id="@+id/BalfourMenuButton"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="BalfourMenuButton"
-            android:text="Menu" />
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -52,7 +54,7 @@
         android:layout_height="wrap_content"
         android:background="#000000"
         android:gravity="center"
-        android:text="Balfour Hood"
+        android:text="@string/MenuName"
         android:textColor="#ffffff"
         android:textSize="33dp"
         app:layout_constraintBottom_toBottomOf="@+id/BalfourBG"
