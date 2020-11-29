@@ -69,7 +69,7 @@ public class map_fragment extends Fragment {
 
                 String mapUrl = "https://www.google.com/maps/dir/?api=1&origin=41.964726429529684, -71.18334581669703&destination= " + currentLat +","+ currentLong +"&mode=walking";
 
-                AutoCompleteTextView auto = root_view.findViewById(R.id.searchBar);
+
                 Uri gmmIntentUri =
                         Uri.parse(mapUrl);
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
