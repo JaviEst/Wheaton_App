@@ -32,7 +32,7 @@ public class education extends AppCompatActivity {
     private ArrayList<Major> allMajorsList = new ArrayList<>();
     AutoCompleteTextView searchbar;
 
-    private ArrayList<Major> searchResults = new ArrayList<>();
+    private final ArrayList<Major> searchResults = new ArrayList<>();
     private MajorAdapter itemAdapter;
     public int focus = -1;
 
@@ -117,7 +117,6 @@ public class education extends AppCompatActivity {
     public void updateListFromSearchbar() {
 
         ArrayList<Major> newResults = new ArrayList<>();
-        //Toast.makeText(this,searchbar.getText().toString(),Toast.LENGTH_SHORT).show();
         String searchQuery = searchbar.getText().toString();
         if (searchQuery.equals(""))
             newResults = allMajorsList;
@@ -190,5 +189,8 @@ public class education extends AppCompatActivity {
 
     public void clearText(View view) {
         searchbar.setText("");
+        searchbar.dismissDropDown();
+        findViewById(R.id.list).requestFocus();
+        hideKeyboardFrom(view.getContext(), searchbar);
     }
 }

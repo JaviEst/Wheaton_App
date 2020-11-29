@@ -59,6 +59,9 @@
                 android:gravity="center"
                 android:onClick="clearText"
                 android:text="X"
+                android:textSize="30dp"
+                android:background="#1072BA"
+                android:textColor="#ffffff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
