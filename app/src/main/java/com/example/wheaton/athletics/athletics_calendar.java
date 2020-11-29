@@ -1,11 +1,15 @@
 package com.example.wheaton.athletics;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,8 +33,10 @@ import com.example.wheaton.athletics.ICS_sample_str;
 
 public class athletics_calendar extends AppCompatActivity {
 
+    ArrayList<calendarEvent> allEventsList = new ArrayList<>();
     ArrayList<calendarEvent> listviewArray = new ArrayList<>();
     calendarEventAdapter adapter;
+    DatePicker dp;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -44,23 +50,27 @@ public class athletics_calendar extends AppCompatActivity {
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
+        listviewArray.addAll(allEventsList);
 
         adapter = new calendarEventAdapter(this, listviewArray);
         eventsListview.setAdapter(adapter);
 
+        dp = findViewById(R.id.datePicker2);
 
+        dp.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker datePicker, int i, int i1, int i2) {
+                dp.setVisibility(View.GONE);
+                updateListFromStartDate();
+            }
+        });
+
+        updateListFromStartDate();
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void generateCalendar() throws IOException, ParseException {
-//        calendarEvent newItem = new calendarEvent("testing","123",11,10,2020,15,30,19,0);
-//        listviewArray.add(newItem);
-//
-//        newItem = new calendarEvent("two","123",11,10,2020,12,0,19,30,"Haas");
-//        listviewArray.add(newItem);
-//
-//        newItem = new calendarEvent("testfing","waf3",11,10,2020,15,30,19,0,"place");
-//        listviewArray.add(newItem);
 
         String filename = "sample.ics";
         FileOutputStream fOut = openFileOutput(filename, Context.MODE_PRIVATE);
@@ -136,7 +146,7 @@ public class athletics_calendar extends AppCompatActivity {
             currentAttribute = getLineAttribute(currentLine);
             lineData = removeLineAttribute(currentLine);
         }
-        listviewArray.add(newEvent);
+        allEventsList.add(newEvent);
     }
 
     private String getLineAttribute(String currentLine) {
@@ -159,4 +169,38 @@ public class athletics_calendar extends AppCompatActivity {
         return output.toString();
     }
 
+    public void toggleDatePicker(View view) {
+        if (dp.getVisibility() == View.VISIBLE)
+            dp.setVisibility(View.GONE);
+        else
+            dp.setVisibility(View.VISIBLE);
+    }
+
+    private void updateListFromStartDate() {
+        ArrayList<calendarEvent> newList = new ArrayList<>();
+
+        int startYear = dp.getYear();
+        int startMonth = dp.getMonth();
+        int startDay = dp.getDayOfMonth();
+
+        int currentDay, currentMonth, currentYear;
+        for (calendarEvent thisEvent : allEventsList) {
+            currentDay = thisEvent.getDay();
+            currentMonth = thisEvent.getMonth();
+            currentYear = thisEvent.getYear();
+
+            if (currentYear >= startYear) {
+                if (currentMonth >= startMonth || currentYear > startYear) {
+                    if (currentDay >= startDay || (currentMonth > startMonth + 1) || currentYear > startYear) {
+                        newList.add(thisEvent);
+                    }
+                }
+            }
+        }
+        listviewArray.clear();
+        listviewArray.addAll(newList);
+        adapter.notifyDataSetChanged();
+    }
+
 }
+
