@@ -10,11 +10,11 @@
         android:id="@+id/ActionBarBalfour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0069aa"
+        android:background="@color/wheaton"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/BalfourHomeButton"
@@ -37,13 +37,13 @@
     <ImageView
         android:id="@+id/BalfourBG"
         android:layout_width="match_parent"
-        android:layout_height="155dp"
+        android:layout_height="99dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ActionBarBalfour"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@color/colorAccent" />
 
     <TextView
@@ -51,15 +51,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#000000"
-        android:text="Balfour Hood"
         android:gravity="center"
+        android:text="Balfour Hood"
         android:textColor="#ffffff"
         android:textSize="33dp"
         app:layout_constraintBottom_toBottomOf="@+id/BalfourBG"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ActionBarBalfour" />
+        app:layout_constraintTop_toTopOf="@+id/BalfourBG" />
 
     <WebView
         android:id="@+id/BalfourWebView"
@@ -67,7 +67,7 @@
         android:layout_height="0dp"
         android:background="#ffffff"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ActionBarBalfour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BalfourBG" />

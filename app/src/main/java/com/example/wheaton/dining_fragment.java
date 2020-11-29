@@ -9,6 +9,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -90,17 +91,24 @@ public class dining_fragment extends Fragment {
         LocationsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LinearLayout MPAndLB = root_view.findViewById(R.id.MPAndLB);
-                MPAndLB.setVisibility(View.INVISIBLE);
+                Button LyonBucks = root_view.findViewById(R.id.LyonBucksButton);
+                LyonBucks.setVisibility(View.GONE);
 
-                LinearLayout LAndM = root_view.findViewById(R.id.LAndM);
-                LAndM.setVisibility(View.INVISIBLE);
+                Button MealPlans = root_view.findViewById(R.id.MealPlansButton);
+                MealPlans.setVisibility(View.GONE);
+
+                Button Locations = root_view.findViewById(R.id.LocationsButton);
+                Locations.setVisibility(View.GONE);
 
                 ScrollView DiningFacilities = root_view.findViewById(R.id.DiningFacilities);
                 DiningFacilities.setVisibility(View.VISIBLE);
 
                 Button BackButtonDining = root_view.findViewById(R.id.BackButtonDining);
                 BackButtonDining.setVisibility(View.VISIBLE);
+
+                ScrollView LyonBucksScroll = root_view.findViewById(R.id.LyonBuckScrollView);
+                LyonBucksScroll.setVisibility(View.GONE);
+
             }
         });
 
@@ -109,16 +117,80 @@ public class dining_fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ScrollView DiningFacilities = root_view.findViewById(R.id.DiningFacilities);
-                DiningFacilities.setVisibility(View.INVISIBLE);
+                DiningFacilities.setVisibility(View.GONE);
 
-                LinearLayout MPAndLB = root_view.findViewById(R.id.MPAndLB);
-                MPAndLB.setVisibility(View.VISIBLE);
+                Button LyonBucks = root_view.findViewById(R.id.LyonBucksButton);
+                LyonBucks.setVisibility(View.VISIBLE);
 
-                LinearLayout LAndM = root_view.findViewById(R.id.LAndM);
-                LAndM.setVisibility(View.VISIBLE);
+                Button MealPlans = root_view.findViewById(R.id.MealPlansButton);
+                MealPlans.setVisibility(View.VISIBLE);
+
+                Button Locations = root_view.findViewById(R.id.LocationsButton);
+                Locations.setVisibility(View.VISIBLE);
 
                 Button BackButtonDining = root_view.findViewById(R.id.BackButtonDining);
-                BackButtonDining.setVisibility(View.INVISIBLE);
+                BackButtonDining.setVisibility(View.GONE);
+
+                ScrollView LyonBucksScroll = root_view.findViewById(R.id.LyonBuckScrollView);
+                LyonBucksScroll.setVisibility(View.GONE);
+
+
+            }
+        });
+
+        Button LyonBucksButton = root_view.findViewById(R.id.LyonBucksButton);
+        LyonBucksButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ScrollView LyonBucksScroll = root_view.findViewById(R.id.LyonBuckScrollView);
+                LyonBucksScroll.setVisibility(View.VISIBLE);
+
+                ScrollView DiningFacilities = root_view.findViewById(R.id.DiningFacilities);
+                DiningFacilities.setVisibility(View.GONE);
+
+                LyonBucksButton.setVisibility(View.GONE);
+
+                Button MealPlans = root_view.findViewById(R.id.MealPlansButton);
+                MealPlans.setVisibility(View.GONE);
+
+                Button Locations = root_view.findViewById(R.id.LocationsButton);
+                Locations.setVisibility(View.GONE);
+
+
+                Button BackButtonDining = root_view.findViewById(R.id.BackButtonDining);
+                BackButtonDining.setVisibility(View.VISIBLE);
+
+
+
+            }
+        });
+
+        Button MealPlanButton = root_view.findViewById(R.id.MealPlansButton);
+        MealPlanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ScrollView MealPlanScrollView = root_view.findViewById(R.id.MealPlanScrollView);
+                MealPlanScrollView.setVisibility(View.VISIBLE);
+
+                ScrollView LyonBucksScroll = root_view.findViewById(R.id.LyonBuckScrollView);
+                LyonBucksScroll.setVisibility(View.GONE);
+
+                ScrollView DiningFacilities = root_view.findViewById(R.id.DiningFacilities);
+                DiningFacilities.setVisibility(View.GONE);
+
+                LyonBucksButton.setVisibility(View.GONE);
+
+                Button MealPlans = root_view.findViewById(R.id.MealPlansButton);
+                MealPlans.setVisibility(View.GONE);
+
+                Button Locations = root_view.findViewById(R.id.LocationsButton);
+                Locations.setVisibility(View.GONE);
+
+
+                Button BackButtonDining = root_view.findViewById(R.id.BackButtonDining);
+                BackButtonDining.setVisibility(View.VISIBLE);
+
+
 
             }
         });

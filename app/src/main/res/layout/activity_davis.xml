@@ -10,11 +10,11 @@
         android:id="@+id/ActionBarDavis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0069aa"
+        android:background="@color/wheaton"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/DavisHomeButton"
@@ -36,16 +36,31 @@
 
     <ImageView
         android:id="@+id/DavisBG"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:layout_marginTop="222dp"
+        android:layout_marginBottom="683dp"
+        android:adjustViewBounds="true"
+
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/veggies"
+        app:layout_constraintVertical_bias="0.208"
+        app:srcCompat="@color/colorAccent" />
+
+    <ImageView
+        android:id="@+id/veggies"
+        android:layout_width="0dp"
+        android:layout_height="99dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ActionBarDavis"
-        app:srcCompat="@color/colorAccent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/veggies" />
 
     <TextView
         android:id="@+id/titleDavis"
@@ -56,13 +71,11 @@
         android:text="Davis Spencer Cafe"
         android:textColor="#ffffff"
         android:textSize="33dp"
-        app:layout_constraintBottom_toBottomOf="@+id/DavisBG"
+        app:layout_constraintBottom_toBottomOf="@+id/veggies"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ActionBarDavis"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintTop_toTopOf="@+id/veggies" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

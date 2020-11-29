@@ -1,6 +1,7 @@
 package com.example.wheaton.Dining;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -42,7 +43,7 @@ public class DavisActivity extends AppCompatActivity {
         DavisBG.setVisibility(View.VISIBLE);
     }
     public void DavisHomeButton(View view) {
-        DavisBG.setVisibility(View.GONE);
+
     }
 
 

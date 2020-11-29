@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Meal_Plans1">Dining on campus isn’t one size fits all.
+        Our meal plans were designed to meet your unique needs.
+        If you are looking to enjoy a meal with friends or just a snack on the go –
+        we’ve got a plan to fit every appetite.  </string>
+
+    <string name="Welcome">Welcome To Wheaton Dining! </string>
+
+    //Action Bar Button Names
+    <string name="ChaseButtonName">Chase </string>
+
+    <string name="EmersonButtonName">Emerson</string>
+
+    <string name="DavisButtonName">Davis</string>
+
+    <string name="BalfourButtonName">Balfour</string>
+
+    //Dining Fragment Main Buttons
+
+    <string name="LyonBucksButtonName">Lyon Bucks</string>
+
+    <string name="DiningLocationsButtonName">Dining Locations</string>
+
+    <string name="MealPlanButtonName">Meal Plans</string>
+
+
+
+
+
+
+
+</resources>
