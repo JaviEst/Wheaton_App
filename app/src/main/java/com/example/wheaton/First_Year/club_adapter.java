@@ -52,7 +52,7 @@ public class club_adapter extends ArrayAdapter<clubs_class> {
         // Check if image is available for Club
         ImageView previewImageView = list_clubs_view.findViewById(R.id.club_picture);
         if(current_club.getClub_pic().equals("")){
-            previewImageView.setImageResource(R.drawable.wheaton_club_preview);
+            previewImageView.setImageResource(R.drawable.wheatonlogo);
         }
         else {
             LoadImage loadImage = new LoadImage(previewImageView, current_club.getClub_pic());

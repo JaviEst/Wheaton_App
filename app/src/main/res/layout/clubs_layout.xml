@@ -11,8 +11,8 @@
 
         <ImageView
             android:id="@+id/club_picture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="90dp"
             android:longClickable="true"
             android:src="@drawable/eventsblack" />
 
@@ -29,7 +29,8 @@
                 android:text="Name"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:layout_marginLeft="20dp"/>
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
@@ -50,7 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Description"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 

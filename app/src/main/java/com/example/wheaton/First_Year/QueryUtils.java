@@ -132,11 +132,11 @@ public final class QueryUtils {
 
                     // Extract out the name and decription of the club
                     String club_name = firstClub.getString("Name");
-                    String club_description = firstClub.getString("Description");
+                    String club_description = firstClub.getString("Summary");
 
                     // If the description is empty extract the summary of the club
                     if(club_description.equals("")){
-                        club_description = firstClub.getString("Summary");
+                        club_description = firstClub.getString("Description");
                     }
 
                     // Extract picture of the club
