@@ -14,7 +14,7 @@
             android:layout_width="80dp"
             android:layout_height="90dp"
             android:longClickable="true"
-            android:src="@drawable/eventsblack" />
+            android:src="@drawable/wheatonlogo" />
 
         <LinearLayout
             android:orientation="horizontal"

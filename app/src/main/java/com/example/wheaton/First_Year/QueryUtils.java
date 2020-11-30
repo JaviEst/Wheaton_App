@@ -140,7 +140,7 @@ public final class QueryUtils {
                     }
 
                     // Extract picture of the club
-                    String club_picture = "";       //firstClub.getString("ProfilePicture");
+                    String club_picture = "https://seinfrafiles.blob.core.windows.net/images/" + firstClub.getString("ProfilePicture");
 
                     // Add each club in the json file to the array list
                     clubs.add(new clubs_class(club_picture, club_name, club_description));
