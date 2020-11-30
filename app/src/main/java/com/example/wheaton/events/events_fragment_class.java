@@ -15,7 +15,6 @@ public class events_fragment_class {
         for (int i = 0; i < list.size(); i++) {
             output[i] = list.get(i).getTitle();
         }
-
         return output;
     }
 

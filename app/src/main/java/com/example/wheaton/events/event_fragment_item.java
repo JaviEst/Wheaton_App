@@ -7,7 +7,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.TypedValue;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,7 +28,7 @@ public class event_fragment_item extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_fragment_item);
+        setContentView(R.layout.activity_event_fragment_item_v2);
 
 
 
@@ -70,26 +72,19 @@ public class event_fragment_item extends AppCompatActivity {
         organName.setText(organizerName);
         organPhone.setText(organizerPhone);
         organEmail.setText(organizerEmail);
-        linkText.setText(link);
-
+        linkText.setText(Html.fromHtml("<a href="+link+"> LINK TO EVENT"));
+        linkText.setMovementMethod(LinkMovementMethod.getInstance());
 
 
         if(image.equals("")){
-//            previewImageView.setImageResource(R.drawable.wheaton_event_preview);
-            LoadImage loadImage = new LoadImage(previewImageView, "https://i.gyazo.com/1abe31772dd0951efe188daefa69c22c.jpg");
-            loadImage.execute("https://i.gyazo.com/1abe31772dd0951efe188daefa69c22c.jpg");
+//            previewImageView.setImageResource(R.drawable.wheaton_event_preview_600x387);
+            LoadImage loadImage = new LoadImage(previewImageView, "https://i.gyazo.com/69969053e5e2a96ba297d3a916b834af.jpg");
+            loadImage.execute("https://i.gyazo.com/69969053e5e2a96ba297d3a916b834af.jpg");
         }
         else {
             LoadImage loadImage = new LoadImage(previewImageView, image);
             loadImage.execute(image);
         }
-
-
-
-
-
-
-
 
     }
 

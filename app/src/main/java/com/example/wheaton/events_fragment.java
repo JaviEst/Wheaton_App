@@ -41,33 +41,46 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     // Declare View
     View root_view;
 
+    // ********************** Variables ***************************
+
+    // URL to be accessed by HTTP Request
     private static final String theURL = "https://wheatoncollege.edu/wp-json/tribe/events/v1/events/?page=01&per_page=40&start_date=2020-11-01%2000:00:00&end_date=2020-11-29%2023:59:59&status=publish";
     public static final String LOG_TAG = events_fragment.class.getName();
 
-    private int position = -1;
-    private int lastPosition;
-    private ConstraintLayout lastOptions;
+    // Two variables that hold the current filter objects
     public String filters = "";
-    private ArrayList<events_fragment_class> temp = new ArrayList<>();
-    private events_fragment_adapter adapter;
-    ArrayList<events_fragment_class> events;
-    String lastFilters = " ";
-    boolean loaded = false;
     ArrayList<String> filters2;
-    int tempCheck = 0;
-    AutoCompleteTextView searchbar;
+    // Adds the last accessed filter objects to this String
+    String lastFilters = " ";
+
+    // The main adapter
+    private events_fragment_adapter adapter;
+    // The main ArrayList that holds all event data
+    ArrayList<events_fragment_class> events;
+    // This keeps track of the original positions of the new (Temp) ArrayList
     private ArrayList<Integer> positionsOfEvents;
+
+    // This boolean is set to true once the event fragment is loaded so that the
+    // ArrayList events is not populated again
+    boolean loaded = false;
+
+    // Checks to see which ArrayList should be accessed 0 - events 1 - temp
+    int tempCheck = 0;
+
+    // --- Unused values for right now
+    AutoCompleteTextView searchbar;
     ArrayAdapter<events_fragment_class> titleAdapter;
     ArrayList<events_fragment_class> backup = new ArrayList<events_fragment_class>();
     ArrayAdapter<events_fragment_class> searchAdapter = null;
-    private ListView eventListView;
-    boolean textChanged = false;
     private final ArrayList<events_fragment_class> searchResults = new ArrayList<>();
 
-
+    // Initialize Fragment
     public events_fragment(){}
 
 
+    // ********************** Processes ***************************
+
+    // The listener for the Categories button (filter)
     private View.OnClickListener filterListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -77,16 +90,20 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
 
     
-
+    // The onResume function acts once a user returns from the Categories activity
     @Override
     public void onResume() {
         super.onResume();
+        // Gets the ID from the main ListView
         ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);
+        // Allows the event ArrayList to stop populating
         loaded = true;
 
+        // If the filter matches the
         if (filters.matches(lastFilters)) {
-
         }
+//        else if(filters.matches("") && lastFilters.matches(" ")){
+//        }
         else if (!filters.equals("")) {
             ArrayList<events_fragment_class> temp = new ArrayList<events_fragment_class>();
             positionsOfEvents = new ArrayList<>();
@@ -127,7 +144,6 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
         // Create a list of earthquakes.
         events = new ArrayList<events_fragment_class>();
-        temp = new ArrayList<events_fragment_class>();
 
         // Find a reference to the {@link ListView} in the layout
         ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);

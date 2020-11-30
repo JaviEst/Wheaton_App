@@ -73,7 +73,7 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         locationTV.setText(currentEvent.getLocation());
         ImageView previewImageView = listItemView.findViewById(R.id.previewPic);
         if(currentEvent.getImage().equals("")){
-            previewImageView.setImageResource(R.drawable.wheaton_event_preview);
+            previewImageView.setImageResource(R.drawable.wheaton_event_preview_150x150);
         }
         else {
             LoadImage loadImage = new LoadImage(previewImageView, currentEvent.getImage());

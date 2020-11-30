@@ -171,7 +171,7 @@ public final class events_fragment_utils {
                         JSONObject sizesArray = imageArray.getJSONObject("sizes");
                         JSONObject thumbnailArray = sizesArray.getJSONObject("thumbnail");
                         image = thumbnailArray.getString("url");
-                        JSONObject mediumImgArray = sizesArray.getJSONObject("medium");
+                        JSONObject mediumImgArray = sizesArray.getJSONObject("gallery");
                         largeimage = mediumImgArray.getString("url");
 
                     }
