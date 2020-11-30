@@ -101,20 +101,20 @@
         app:layout_constraintTop_toBottomOf="@+id/HaasBanner">
 
         <Button
-            android:id="@+id/dButton"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@color/wheaton"
-            android:text="Directory"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
-
-        <Button
             android:id="@+id/hoursButton"
             android:layout_width="130dp"
             android:layout_height="60dp"
             android:background="@color/wheaton"
             android:text="Facility Hours and Locations "
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/dButton"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:background="@color/wheaton"
+            android:text="Directory"
             android:textColor="@color/white"
             android:textSize="15dp" />
 
