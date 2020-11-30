@@ -7,6 +7,38 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HaasBanner">
+
+        <Button
+            android:id="@+id/dButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Directory" />
+
+        <Button
+            android:id="@+id/hoursButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hour And Location" />
+
+        <Button
+            android:id="@+id/linksButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Important Links" />
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/HaasBanner"
         android:layout_width="0dp"
@@ -36,43 +68,7 @@
 
     </ImageView>
 
-    <LinearLayout
-        android:id="@+id/LinearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayout2">
 
-        <Button
-            android:id="@+id/clubButton"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@color/wheaton"
-            android:text="Club Sports"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
-
-        <Button
-            android:id="@+id/intButton"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@color/wheaton"
-            android:text="Intramurals"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
-
-        <Button
-            android:id="@+id/exerciseButton"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@color/wheaton"
-            android:text="Group Exercise"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
-    </LinearLayout>
 
     <Button
         android:id="@+id/calendarButton"
@@ -90,43 +86,37 @@
 
 
     <LinearLayout
-        android:id="@+id/LinearLayout2"
-        android:layout_width="match_parent"
+        android:id="@+id/LinearLayout1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="32dp"
+        android:layout_weight="1"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HaasBanner">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <Button
-            android:id="@+id/hoursButton"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@color/wheaton"
-            android:text="Facility Hours and Locations "
-            android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:id="@+id/clubButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Club Sports" />
 
         <Button
-            android:id="@+id/dButton"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@color/wheaton"
-            android:text="Directory"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:id="@+id/intButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Intramurals" />
 
         <Button
-            android:id="@+id/linksButton"
-            android:layout_width="130dp"
-            android:layout_height="60dp"
-            android:background="@color/wheaton"
-            android:text="Important Links"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
-
+            android:id="@+id/exerciseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Group Exercise" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
