@@ -12,61 +12,52 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/itemTitleText"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="Title"
-        app:layout_constraintStart_toEndOf="@+id/itemPreviewPic"
-        app:layout_constraintTop_toTopOf="@+id/itemPreviewPic" />
-
-    <TextView
-        android:textColor="@color/black"
-        android:id="@+id/itemLinkText"
-        android:layout_width="230dp"
+        android:layout_width="343dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:autoLink="web"
+        android:text="Title"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/itemPreviewPic"
+        app:layout_constraintTop_toBottomOf="@+id/itemPreviewPic" />
+
+    <TextView
+        android:id="@+id/itemLinkText"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Link"
-        app:layout_constraintBottom_toBottomOf="@+id/itemPreviewPic"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/itemTitleText"
         app:layout_constraintTop_toBottomOf="@+id/itemTitleText" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="147dp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Date:"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/itemPreviewPic"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/itemDateInput"
-        android:layout_width="wrap_content"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
         android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView13"
@@ -75,18 +66,17 @@
         android:layout_marginTop="8dp"
         android:text="Location:"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/itemFilterInput"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/itemFilterInput" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/itemLocationInput"
-        android:layout_width="wrap_content"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/itemFilterInput" />
 
     <TextView
         android:id="@+id/textView17"
@@ -95,18 +85,17 @@
         android:layout_marginTop="8dp"
         android:text="Organizer:"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/itemLocationInput"
-        app:layout_constraintTop_toBottomOf="@+id/itemLocationInput" />
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/itemOrganizerInput"
-        android:layout_width="wrap_content"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintStart_toStartOf="@+id/itemLocationInput" />
 
     <TextView
         android:id="@+id/textView18"
@@ -115,7 +104,7 @@
         android:layout_marginTop="8dp"
         android:text="Phone:"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/itemOrganizerInput"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/itemOrganizerInput" />
 
     <TextView
@@ -125,28 +114,26 @@
         android:layout_marginTop="8dp"
         android:text="Email:"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/itemPhoneInput"
+        app:layout_constraintStart_toStartOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/itemPhoneInput" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/itemEmailInput"
-        android:layout_width="wrap_content"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView20"
+        app:layout_constraintStart_toStartOf="@+id/itemPhoneInput" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/itemPhoneInput"
-        android:layout_width="wrap_content"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView18"
+        app:layout_constraintStart_toStartOf="@+id/itemOrganizerInput" />
 
     <TextView
         android:id="@+id/textView8"
@@ -165,7 +152,7 @@
         android:layout_marginTop="8dp"
         android:text="Cost:"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/itemTimeInput"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/itemTimeInput" />
 
     <TextView
@@ -175,37 +162,54 @@
         android:layout_marginTop="8dp"
         android:text="Categories:"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/itemCostInput"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/itemCostInput" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/itemFilterInput"
-        android:layout_width="wrap_content"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/itemCostInput" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/itemCostInput"
-        android:layout_width="wrap_content"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/itemTimeInput" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/itemTimeInput"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/itemDateInput" />
+
+    <TextView
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        android:layout_marginTop="16dp"
+        android:text="Organizer Information:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/itemLocationInput" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="General Information:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/itemLinkText"
+        app:layout_constraintTop_toBottomOf="@+id/itemLinkText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
