@@ -1,5 +1,7 @@
 package com.example.wheaton;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -8,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -46,6 +49,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     private ConstraintLayout lastOptions;
     public String filters = "";
 
+    private final ArrayList<events_fragment_class> searchResults = new ArrayList<>();
+    private events_fragment_adapter itemAdapter;
 
 
     private events_fragment_adapter adapter;
@@ -75,6 +80,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     boolean loaded = false;
     ArrayList<String> filters2;
     int tempCheck = 0;
+    AutoCompleteTextView searchbar;
+    public int focus = -1;
 
 
 
@@ -145,6 +152,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
         eventListView.setAdapter(adapter);
 
 
+        searchbar = root_view.findViewById(R.id.mainSearch);
+        searchbar.setAdapter(adapter);
 
         Button filter = root_view.findViewById(R.id.filterButton);
         filter.setOnClickListener(filterListener);
@@ -200,14 +209,54 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
             });
         }
 
-        AutoCompleteTextView editTxt = root_view.findViewById(R.id.mainSearch);
+        searchbar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                updateListFromSearchbar();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        searchbar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                searchbar.dismissDropDown();
+                root_view.findViewById(R.id.list).requestFocus();
+                hideKeyboardFrom(view.getContext(), searchbar);
+            }
+        });
 
 
         return root_view;
     }
 
 
+
+    public void updateListFromSearchbar() {
+
+        ArrayList<events_fragment_class> newResults = new ArrayList<>();
+        String searchQuery = searchbar.getText().toString();
+        if (searchQuery.equals(""))
+            newResults = events;
+        else {
+            for (int i = 0; i < events.size(); i++) {
+                if (events.get(i).getTitle().toLowerCase().contains(searchQuery.toLowerCase())) {
+                    newResults.add(events.get(i));
+                }
+            }
+        }
+
+        searchResults.clear();
+        searchResults.addAll(newResults);
+        itemAdapter.notifyDataSetChanged();
+    }
 
     private void updateUi(ArrayList arrayList) {
         if (loaded == false) {
@@ -258,4 +307,14 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     public void onLoaderReset(@NonNull Loader<ArrayList> loader) {
 
     }
+
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public void clearText(View view) {
+        searchbar.setText("");
+    }
+
 }
