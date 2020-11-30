@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wheaton">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".events.event_fragment_filter" />
+        <activity android:name=".Dining.MealPlanSelectionActivity"></activity>
+        <activity android:name=".Dining.BalfourWebViewActivity" />
+        <activity android:name=".Dining.DavisWebViewActivity" />
         <activity android:name=".events.event_fragment_item" />
         <activity android:name=".athletics.onlineLinks" />
         <activity android:name=".First_Year.academic_calendar" />
@@ -30,7 +34,10 @@
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
-                <data android:scheme="http" android:host="www.example.com" />
+                <data
+                    android:host="www.example.com"
+                    android:scheme="http" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.LAUNCHER" />

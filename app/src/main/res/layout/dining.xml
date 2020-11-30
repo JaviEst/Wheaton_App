@@ -5,6 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/MealPlansBigTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/MealPlanName"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheat" />
+
+    <TextView
+        android:id="@+id/DiningLocationsBigTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/DiningLocationsButtonName"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheat" />
+
+    <TextView
+        android:id="@+id/LyonBucksBigTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/LyonBucksTitle"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheat" />
+
     <ImageView
         android:id="@+id/wheat"
         android:layout_width="match_parent"
@@ -13,31 +61,31 @@
         android:adjustViewBounds="true"
         android:rotationX="0"
         android:scaleType="centerCrop"
-        app:layout_constraintTop_toBottomOf="@+id/ActionBarBalfour1"
+        app:layout_constraintTop_toBottomOf="@+id/DiningActionBar"
         app:srcCompat="@drawable/wheat3"
         tools:layout_editor_absoluteX="1dp" />
 
     <TextView
-        android:id="@+id/welcome"
-        android:layout_width="wrap_content"
+        android:id="@+id/WelcomeDining"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginLeft="79dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginRight="79dp"
         android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="center"
         android:padding="10dp"
-        android:text="Welcome To Wheaton College Dining!"
+        android:text="@string/Welcome"
         android:textColor="#000000"
+        android:textSize="25sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wheat" />
 
     <LinearLayout
-        android:id="@+id/ActionBarBalfour1"
+        android:id="@+id/DiningActionBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0069aa"
+        android:background="@color/wheaton"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,74 +96,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Chase" />
+            android:text="@string/ChaseButtonName"
+            />
 
         <Button
             android:id="@+id/EmersonButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Emerson" />
+            android:text="@string/EmersonButtonName" />
 
         <Button
             android:id="@+id/DavisButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Davis" />
+            android:text="@string/DavisButtonName" />
 
         <Button
             android:id="@+id/BalfourButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Balfour" />
+            android:text="@string/BalfourButtonName" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/MPAndLB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="#0069aa"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/welcome"
-        app:layout_constraintStart_toStartOf="@+id/welcome"
-        app:layout_constraintTop_toBottomOf="@+id/welcome">
-
-        <Button
-            android:id="@+id/MealPlansButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Meal Plans" />
-
-        <Button
-            android:id="@+id/LyonBucksButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Lyon Bucks" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/LAndM"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="#0069aa"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/MPAndLB"
-        app:layout_constraintStart_toStartOf="@+id/MPAndLB"
-        app:layout_constraintTop_toBottomOf="@+id/MPAndLB">
-
-        <Button
-            android:id="@+id/LocationsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Locations And Menus" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/BlueBG"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/wheaton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeDining"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
         android:id="@+id/DiningFacilities"
@@ -126,12 +143,13 @@
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp"
+        android:background="#ffffff"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome">
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeDining">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -252,13 +270,184 @@
         android:id="@+id/BackButtonDining"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/wheaton"
         android:text="Back"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/MealPlansBigTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/wheat" />
+
+    <Button
+        android:id="@+id/LyonBucksButton"
+        android:layout_width="258dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:text="@string/LyonBucksButtonName"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/BlueBG"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/MealPlansButton"
+        android:layout_width="258dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_weight="1"
+        android:text="@string/MealPlanButtonName"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/LyonBucksButton"
+        app:layout_constraintStart_toStartOf="@+id/LyonBucksButton"
+        app:layout_constraintTop_toBottomOf="@+id/LyonBucksButton"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/LocationsButton"
+        android:layout_width="258dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:text="@string/DiningLocationsButtonName"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/MealPlansButton"
+        app:layout_constraintStart_toStartOf="@+id/MealPlansButton"
+        app:layout_constraintTop_toBottomOf="@+id/MealPlansButton"
+        android:textSize="20sp"/>
+
+    <ScrollView
+        android:id="@+id/LyonBuckScrollView"
+        android:layout_width="0dp"
+        android:layout_height="432dp"
+        android:background="#ffffff"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/BlueBG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/BlueBG"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/LB1Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Lyons Bucks"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LB1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/LB1"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/LSTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Lyons Swipes (Meal Exchange)"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/LS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/LS1"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/Space"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/MealPlanScrollView"
+        android:layout_width="0dp"
+        android:layout_height="331dp"
+        android:background="#ffffff"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/BlueBG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/BlueBG"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/WhatIsAMealPlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="What is a Meal Plan?"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/MealPlans1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/Meal_Plans1"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/MealSwipes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Meal Swipes"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/MealpPlans2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/Meal_swipes1"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/MealPlanSelectionButton"
+                android:background="@color/wheaton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meal Plan Selection"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
