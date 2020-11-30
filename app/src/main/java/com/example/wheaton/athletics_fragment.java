@@ -28,6 +28,8 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         root_view = inflater.inflate(R.layout.athletics, container, false);
+
+        //creating onClickListeners for the buttons
         Button dButton = root_view.findViewById(R.id.dButton);
         dButton.setOnClickListener((View.OnClickListener) this);
         Button intButton = root_view.findViewById(R.id.intButton);
@@ -46,6 +48,8 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
     }
     @Override
     public void onClick(View view) {
+
+        //if certain button is clicked on
         if (view.getId() == R.id.dButton) {
             directoryButton();
         }
@@ -72,6 +76,7 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
         }
     }
 
+    //launches intent to website
     public void directoryButton() {
         Intent urlIntent = new Intent(Intent.ACTION_VIEW);
         urlIntent.setData(Uri.parse("https://wheatoncollegelyons.com/information/directory/index"));
@@ -80,7 +85,7 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
     }
 
-
+    //launches intent to website
     public void intraButton() {
         Intent intraIntent = new Intent(Intent.ACTION_VIEW);
         intraIntent.setData(Uri.parse("https://engage.wheatoncollege.edu/organization/recfit"));
@@ -90,6 +95,7 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
     }
 
+    //launches intent to website
     public void clubButton() {
         Intent clubIntent = new Intent(Intent.ACTION_VIEW);
         clubIntent.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/club_sports"));
@@ -99,6 +105,7 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
     }
 
+    //launches intent to new activity
     public void linkButton() {
         Intent linkIntent = new Intent(getContext(), onlineLinks.class);
         startActivity(linkIntent);
@@ -106,6 +113,7 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
     }
 
+    //launches intent to website
     public void exerciseButton() {
         Intent exerciseIntent = new Intent(Intent.ACTION_VIEW);
         exerciseIntent.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/rec_clubs/Group_Exercise"));
@@ -115,7 +123,7 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
     }
 
-
+    //launches intent to new activity
     public void calendarButton() {
 
         Intent calendarIntent = new Intent(getContext(), athletics_calendar.class);
@@ -124,7 +132,7 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
     }
 
 
-
+    //launches intent to website
     public void hoursButton() {
         Intent hoursIntent = new Intent(Intent.ACTION_VIEW);
         hoursIntent.setData(Uri.parse("https://wheatoncollegelyons.com/information/facilities/hours"));

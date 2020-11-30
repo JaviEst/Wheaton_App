@@ -7,36 +7,57 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="280dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Wheaton College Athletics"
+        android:textColor="@color/wheaton"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HaasBanner" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="7dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HaasBanner">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <Button
             android:id="@+id/dButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Directory" />
+            android:backgroundTint="@color/wheaton"
+            android:text="Directory"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/hoursButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Hour And Location" />
+            android:backgroundTint="@color/wheaton"
+            android:text="Hour And Location"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/linksButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Important Links" />
+            android:backgroundTint="@color/wheaton"
+            android:text="Important Links"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <ImageView
@@ -59,7 +80,7 @@
         android:id="@+id/LyonLogo"
         android:layout_width="154dp"
         android:layout_height="94dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/w"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -67,8 +88,6 @@
         app:layout_constraintTop_toBottomOf="@+id/calendarButton">
 
     </ImageView>
-
-
 
     <Button
         android:id="@+id/calendarButton"
@@ -102,6 +121,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/wheaton"
+            android:textColor="@color/white"
             android:text="Club Sports" />
 
         <Button
@@ -109,6 +130,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/wheaton"
+            android:textColor="@color/white"
             android:text="Intramurals" />
 
         <Button
@@ -116,6 +139,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/wheaton"
+            android:textColor="@color/white"
             android:text="Group Exercise" />
     </LinearLayout>
 
