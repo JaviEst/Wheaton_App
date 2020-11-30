@@ -5,9 +5,19 @@ import android.os.Parcelable;
 import android.view.View;
 
 
+import java.util.ArrayList;
+
+
 public class events_fragment_class {
 
-    
+    public static String[] allTitles(ArrayList<events_fragment_class> list) {
+        String[] output = new String[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            output[i] = list.get(i).getTitle();
+        }
+
+        return output;
+    }
 
     public final String title,date,image,location,largeimage,cost,filter,organName,organPhone,organEmail,link;
 

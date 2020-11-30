@@ -48,7 +48,6 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     private int lastPosition;
     private ConstraintLayout lastOptions;
     public String filters = "";
-    private final ArrayList<events_fragment_class> searchResults = new ArrayList<>();
     private ArrayList<events_fragment_class> temp = new ArrayList<>();
     private events_fragment_adapter adapter;
     ArrayList<events_fragment_class> events;
@@ -63,6 +62,7 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     ArrayAdapter<events_fragment_class> searchAdapter = null;
     private ListView eventListView;
     boolean textChanged = false;
+    private final ArrayList<events_fragment_class> searchResults = new ArrayList<>();
 
 
     public events_fragment(){}
@@ -112,8 +112,6 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
             tempCheck = 0;
         }
 
-
-
     }
 
 
@@ -142,9 +140,14 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
         // so the list can be populated in the user interface
         eventListView.setAdapter(adapter);
 
-        searchbar = root_view.findViewById(R.id.mainSearch);
-        searchAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line ,events);
-        searchbar.setAdapter(searchAdapter);
+
+//        String[] titles = events_fragment_class.allTitles(events);
+//        searchResults.addAll(events);
+//
+//        ArrayAdapter<String> titleAdapter = new ArrayAdapter<>(getContext(),android.R.layout.simple_dropdown_item_1line,titles);
+//
+//        searchbar = root_view.findViewById(R.id.mainSearch);
+//        searchbar.setAdapter(titleAdapter);
 
 
         Button filter = root_view.findViewById(R.id.filterButton);
@@ -172,8 +175,6 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
                 }
                 if(tempCheck == 1){
                     int originalP = 0;
-                    Toast.makeText(getContext(), Integer.toString(i), Toast.LENGTH_SHORT).show();
-
                     originalP = positionsOfEvents.get(i);
 
                     Intent goToItem = new Intent(view.getContext(), event_fragment_item.class);
@@ -192,56 +193,56 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
                 adapter.notifyDataSetChanged();
             }
         });
-        searchbar.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                updateListFromSearchBar();
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });
-
-        searchbar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                searchbar.dismissDropDown();
-                root_view.findViewById(R.id.eventListView).requestFocus();
-                hideKeyboardFrom(view.getContext(), searchbar);
-            }
-        });
+//        searchbar.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                updateListFromSearchBar();
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//            }
+//        });
+//
+//        searchbar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                searchbar.dismissDropDown();
+//                root_view.findViewById(R.id.eventListView).requestFocus();
+//                hideKeyboardFrom(view.getContext(), searchbar);
+//            }
+//        });
 
 
         return root_view;
     }
 
 
-    public void updateListFromSearchBar(){
-
+//    public void updateListFromSearchBar(){
+//
 //        ArrayList<events_fragment_class> newResults = new ArrayList<>();
 //        String searchQuery = searchbar.getText().toString();
 //        if (searchQuery.equals(""))
-//            newResults = allMajorsList;
+//            newResults = events;
 //        else {
-//            for (int i = 0; i < allMajorsList.size(); i++) {
-//                if (allMajorsList.get(i).getTitle().toLowerCase().contains(searchQuery.toLowerCase())) {
-//                    newResults.add(allMajorsList.get(i));
+//            for (int i = 0; i < events.size(); i++) {
+//                if (events.get(i).getTitle().toLowerCase().contains(searchQuery.toLowerCase())) {
+//                    newResults.add(events.get(i));
 //                }
 //            }
 //        }
 //
 //        searchResults.clear();
 //        searchResults.addAll(newResults);
-//        itemAdapter.notifyDataSetChanged();
-
-
-    }
+//        adapter.notifyDataSetChanged();
+//
+//
+//    }
 
 
 
