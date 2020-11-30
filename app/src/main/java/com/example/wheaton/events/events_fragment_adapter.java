@@ -84,6 +84,10 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         ConstraintLayout showingInfoMenu = listItemView.findViewById(R.id.buttonLayout);
         showingInfoMenu.setVisibility(currentEvent.getButtonVisibility());
 
+
+
+
+
         return listItemView;
     }
 

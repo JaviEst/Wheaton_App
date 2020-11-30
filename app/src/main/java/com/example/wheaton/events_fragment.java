@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -15,7 +14,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -37,28 +35,34 @@ import com.example.wheaton.events.events_fragment_loader;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
 
 public class events_fragment extends Fragment implements LoaderManager.LoaderCallbacks<ArrayList> {
 
     // Declare View
     View root_view;
 
+    private static final String theURL = "https://wheatoncollege.edu/wp-json/tribe/events/v1/events/?page=01&per_page=40&start_date=2020-11-01%2000:00:00&end_date=2020-11-29%2023:59:59&status=publish";
+    public static final String LOG_TAG = events_fragment.class.getName();
+
     private int position = -1;
     private int lastPosition;
     private ConstraintLayout lastOptions;
     public String filters = "";
-
     private final ArrayList<events_fragment_class> searchResults = new ArrayList<>();
-    private events_fragment_adapter itemAdapter;
-
-
+    private ArrayList<events_fragment_class> temp = new ArrayList<>();
     private events_fragment_adapter adapter;
-
-
-
-
+    ArrayList<events_fragment_class> events;
+    String lastFilters = " ";
+    boolean loaded = false;
+    ArrayList<String> filters2;
+    int tempCheck = 0;
+    AutoCompleteTextView searchbar;
+    private ArrayList<Integer> positionsOfEvents;
+    ArrayAdapter<events_fragment_class> titleAdapter;
+    ArrayList<events_fragment_class> backup = new ArrayList<events_fragment_class>();
+    ArrayAdapter<events_fragment_class> searchAdapter = null;
+    private ListView eventListView;
+    boolean textChanged = false;
 
 
     public events_fragment(){}
@@ -72,59 +76,43 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     };
 
 
-    public static final String LOG_TAG = events_fragment.class.getName();
-
-    ArrayList<events_fragment_class> events;
-    ArrayList<events_fragment_class> temp;
-    events_fragment_adapter tempAdapter;
-    String lastFilters = " ";
-    boolean loaded = false;
-    ArrayList<String> filters2;
-    int tempCheck = 0;
-    AutoCompleteTextView searchbar;
-    public int focus = -1;
-
-    ArrayAdapter<events_fragment_class> titleAdapter;
-
-
-
-
-    private static final String theURL = "https://wheatoncollege.edu/wp-json/tribe/events/v1/events/?page=01&per_page=40&start_date=2020-11-01%2000:00:00&end_date=2020-11-29%2023:59:59&status=publish";
-
+    
 
     @Override
     public void onResume() {
         super.onResume();
-
-        loaded = true;
-
         ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);
-        ListView eventListView2 = (ListView) root_view.findViewById(R.id.eventListView);
+        loaded = true;
 
         if (filters.matches(lastFilters)) {
 
         }
         else if (!filters.equals("")) {
             ArrayList<events_fragment_class> temp = new ArrayList<events_fragment_class>();
+            positionsOfEvents = new ArrayList<>();
             for (int i = 0; i < events.size(); i++) {
                 for(int j = 0; j < filters2.size(); j++){
                     if (events.get(i).getFilter().contains(filters2.get(j))) {
                         temp.add(events.get(i));
+                        positionsOfEvents.add(i);
                     }
                 }
 
             }
-            tempAdapter = new events_fragment_adapter(getActivity(), temp);
-            eventListView2.setAdapter(tempAdapter);
-            tempAdapter.notifyDataSetChanged();
+            adapter = new events_fragment_adapter(getContext(),temp);
+            eventListView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
             lastFilters = filters;
             tempCheck = 1;
         }
         else {
+            adapter = new events_fragment_adapter(getContext(),events);
             eventListView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
             tempCheck = 0;
         }
+
+
 
     }
 
@@ -141,10 +129,10 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
 
         // Create a list of earthquakes.
         events = new ArrayList<events_fragment_class>();
+        temp = new ArrayList<events_fragment_class>();
 
         // Find a reference to the {@link ListView} in the layout
         ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);
-        ListView eventListView2 = (ListView) root_view.findViewById(R.id.eventListView);
 
 
         // Create a new {@link ArrayAdapter} of earthquakes
@@ -154,25 +142,20 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
         // so the list can be populated in the user interface
         eventListView.setAdapter(adapter);
 
-
-        titleAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, events);
-
         searchbar = root_view.findViewById(R.id.mainSearch);
-        searchbar.setAdapter(titleAdapter);
+        searchAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line ,events);
+        searchbar.setAdapter(searchAdapter);
 
-        itemAdapter = new events_fragment_adapter(getContext(), events);
 
         Button filter = root_view.findViewById(R.id.filterButton);
         filter.setOnClickListener(filterListener);
 
-        if(tempCheck == 0) {
-            eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                    adapter.notifyDataSetChanged();
-
-
+        eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                loaded = true;
+                if(tempCheck == 0) {
                     Intent goToItem = new Intent(view.getContext(), event_fragment_item.class);
                     goToItem.putExtra("title", events.get(i).getTitle());
                     goToItem.putExtra("date", events.get(i).getDate());
@@ -186,48 +169,42 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
                     goToItem.putExtra("link", events.get(i).getLink());
                     startActivity(goToItem);
 
-
                 }
-            });
-        }
-        if(tempCheck == 1) {
-            eventListView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(tempCheck == 1){
+                    int originalP = 0;
+                    Toast.makeText(getContext(), Integer.toString(i), Toast.LENGTH_SHORT).show();
 
-                    tempAdapter.notifyDataSetChanged();
-
+                    originalP = positionsOfEvents.get(i);
 
                     Intent goToItem = new Intent(view.getContext(), event_fragment_item.class);
-                    goToItem.putExtra("title", temp.get(i).getTitle());
-                    goToItem.putExtra("date", temp.get(i).getDate());
-                    goToItem.putExtra("largeImage", temp.get(i).getLargeimage());
-                    goToItem.putExtra("location", temp.get(i).getLocation());
-                    goToItem.putExtra("cost", temp.get(i).getCost());
-                    goToItem.putExtra("filter", temp.get(i).getFilter());
-                    goToItem.putExtra("organizerName", temp.get(i).getOrganName());
-                    goToItem.putExtra("organizerPhone", temp.get(i).getOrganPhone());
-                    goToItem.putExtra("organizerEmail", temp.get(i).getOrganEmail());
-                    goToItem.putExtra("link", temp.get(i).getLink());
+                    goToItem.putExtra("title", events.get(originalP).getTitle());
+                    goToItem.putExtra("date", events.get(originalP).getDate());
+                    goToItem.putExtra("largeImage", events.get(originalP).getLargeimage());
+                    goToItem.putExtra("location", events.get(originalP).getLocation());
+                    goToItem.putExtra("cost", events.get(originalP).getCost());
+                    goToItem.putExtra("filter", events.get(originalP).getFilter());
+                    goToItem.putExtra("organizerName", events.get(originalP).getOrganName());
+                    goToItem.putExtra("organizerPhone", events.get(originalP).getOrganPhone());
+                    goToItem.putExtra("organizerEmail", events.get(originalP).getOrganEmail());
+                    goToItem.putExtra("link", events.get(originalP).getLink());
                     startActivity(goToItem);
-
-
                 }
-            });
-        }
-
+                adapter.notifyDataSetChanged();
+            }
+        });
         searchbar.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                updateListFromSearchbar();
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                updateListFromSearchBar();
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
+            public void afterTextChanged(Editable editable) {
             }
         });
 
@@ -245,25 +222,29 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     }
 
 
+    public void updateListFromSearchBar(){
 
-    public void updateListFromSearchbar() {
+//        ArrayList<events_fragment_class> newResults = new ArrayList<>();
+//        String searchQuery = searchbar.getText().toString();
+//        if (searchQuery.equals(""))
+//            newResults = allMajorsList;
+//        else {
+//            for (int i = 0; i < allMajorsList.size(); i++) {
+//                if (allMajorsList.get(i).getTitle().toLowerCase().contains(searchQuery.toLowerCase())) {
+//                    newResults.add(allMajorsList.get(i));
+//                }
+//            }
+//        }
+//
+//        searchResults.clear();
+//        searchResults.addAll(newResults);
+//        itemAdapter.notifyDataSetChanged();
 
-        ArrayList<events_fragment_class> newResults = new ArrayList<>();
-        String searchQuery = searchbar.getText().toString();
-        if (searchQuery.equals(""))
-            newResults = events;
-        else {
-            for (int i = 0; i < events.size(); i++) {
-                if (events.get(i).getTitle().toLowerCase().contains(searchQuery.toLowerCase())) {
-                    newResults.add(events.get(i));
-                }
-            }
-        }
 
-        searchResults.clear();
-        searchResults.addAll(newResults);
-        itemAdapter.notifyDataSetChanged();
     }
+
+
+
 
     private void updateUi(ArrayList arrayList) {
         if (loaded == false) {
@@ -291,7 +272,7 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
             if(resultCode == -1) {
                 filters = data.getStringExtra("filters");
                 filters2 = data.getStringArrayListExtra("filters2");
-                ListView eventListView = (ListView) root_view.findViewById(R.id.eventListView);
+
             }
         }
     }

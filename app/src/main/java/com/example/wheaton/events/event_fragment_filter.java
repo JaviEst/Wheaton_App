@@ -33,7 +33,7 @@ public class event_fragment_filter extends AppCompatActivity {
             String name = button.getTextOn().toString();
             name = StringEscapeUtils.unescapeHtml4(name);
             buttonClicked(name,button);
-//            Toast.makeText(event_fragment_filter.this, filters, Toast.LENGTH_SHORT).show();
+            Toast.makeText(event_fragment_filter.this, filters, Toast.LENGTH_SHORT).show();
         }
     };
 
