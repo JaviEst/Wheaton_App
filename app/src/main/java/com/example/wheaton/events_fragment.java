@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -83,6 +84,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
     AutoCompleteTextView searchbar;
     public int focus = -1;
 
+    ArrayAdapter<events_fragment_class> titleAdapter;
+
 
 
 
@@ -152,8 +155,12 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
         eventListView.setAdapter(adapter);
 
 
+        titleAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, events);
+
         searchbar = root_view.findViewById(R.id.mainSearch);
-        searchbar.setAdapter(adapter);
+        searchbar.setAdapter(titleAdapter);
+
+        itemAdapter = new events_fragment_adapter(getContext(), events);
 
         Button filter = root_view.findViewById(R.id.filterButton);
         filter.setOnClickListener(filterListener);
@@ -228,7 +235,7 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 searchbar.dismissDropDown();
-                root_view.findViewById(R.id.list).requestFocus();
+                root_view.findViewById(R.id.eventListView).requestFocus();
                 hideKeyboardFrom(view.getContext(), searchbar);
             }
         });

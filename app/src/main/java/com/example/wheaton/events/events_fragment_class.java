@@ -27,6 +27,12 @@ public class events_fragment_class implements Parcelable {
         buttonVisibility = in.readInt();
     }
 
+    @Override
+    public String toString() {
+        return title;
+    }
+
+
     public static final Creator<events_fragment_class> CREATOR = new Creator<events_fragment_class>() {
         @Override
         public events_fragment_class createFromParcel(Parcel in) {
