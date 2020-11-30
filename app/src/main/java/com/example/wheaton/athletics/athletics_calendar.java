@@ -3,6 +3,7 @@ package com.example.wheaton.athletics;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.os.Build;
@@ -37,6 +38,7 @@ public class athletics_calendar extends AppCompatActivity {
     ArrayList<calendarEvent> listviewArray = new ArrayList<>();
     calendarEventAdapter adapter;
     DatePicker dp;
+    ConstraintLayout dpWindow;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -56,11 +58,12 @@ public class athletics_calendar extends AppCompatActivity {
         eventsListview.setAdapter(adapter);
 
         dp = findViewById(R.id.datePicker2);
+        dpWindow = findViewById(R.id.datePickerWindow);
 
         dp.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker datePicker, int i, int i1, int i2) {
-                dp.setVisibility(View.GONE);
+                dpWindow.setVisibility(View.GONE);
                 updateListFromStartDate();
             }
         });
@@ -103,7 +106,6 @@ public class athletics_calendar extends AppCompatActivity {
                 readEvent(bf);
                 currentLine = bf.readLine();
                 currentAttribute = getLineAttribute(currentLine);
-                //Toast.makeText(this, currentAttribute, Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -170,10 +172,10 @@ public class athletics_calendar extends AppCompatActivity {
     }
 
     public void toggleDatePicker(View view) {
-        if (dp.getVisibility() == View.VISIBLE)
-            dp.setVisibility(View.GONE);
+        if (dpWindow.getVisibility() == View.VISIBLE)
+            dpWindow.setVisibility(View.GONE);
         else
-            dp.setVisibility(View.VISIBLE);
+            dpWindow.setVisibility(View.VISIBLE);
     }
 
     private void updateListFromStartDate() {

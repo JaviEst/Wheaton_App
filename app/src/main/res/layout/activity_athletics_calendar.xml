@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="130dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,8 +32,8 @@
 
     </ListView>
 
-    <DatePicker
-        android:id="@+id/datePicker2"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/datePickerWindow"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/white"
@@ -42,15 +42,32 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="1.0"
-        android:visibility="gone" />
+        app:layout_constraintVertical_bias="1.0">
+
+        <DatePicker
+            android:id="@+id/datePicker2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:headerBackground="@color/wheaton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="start date"
-        android:inputType="datetime"
+        android:text="change start date"
+        android:textSize="20sp"
+        android:background="@color/wheaton"
+        android:textColor="@color/white"
         android:onClick="toggleDatePicker"
         app:layout_constraintBottom_toBottomOf="@+id/calendarListview"
         app:layout_constraintEnd_toEndOf="parent"

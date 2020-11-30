@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/eventTitle"
@@ -11,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Event Title"
         android:textSize="25dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.064"
@@ -23,7 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="mm/dd/yyyy"
-        android:textSize="15dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/eventTitle"
         app:layout_constraintTop_toBottomOf="@+id/eventTitle" />
 
@@ -32,7 +35,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0pm - 0pm"
-        android:textSize="15dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/date"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
@@ -41,7 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Location"
-        android:textSize="15dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@+id/times"
         app:layout_constraintTop_toBottomOf="@+id/times" />
 </androidx.constraintlayout.widget.ConstraintLayout>
