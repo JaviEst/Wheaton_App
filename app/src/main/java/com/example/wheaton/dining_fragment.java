@@ -22,6 +22,7 @@ import com.example.wheaton.Dining.ChaseActivity;
 import com.example.wheaton.Dining.DavisActivity;
 import com.example.wheaton.Dining.DavisWebViewActivity;
 import com.example.wheaton.Dining.EmersonActivity;
+import com.example.wheaton.Dining.MealPlanSelectionActivity;
 
 public class dining_fragment extends Fragment {
 
@@ -80,6 +81,20 @@ public class dining_fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent bal = new Intent(getContext(), DavisWebViewActivity.class);
+                try{
+                    startActivity(bal);
+                }catch (android.content.ActivityNotFoundException ex){
+                    Toast toast = Toast.makeText(getContext(),"Error",Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            }
+        });
+
+        Button MealPlanSelectionButton = root_view.findViewById(R.id.MealPlanSelectionButton);
+        MealPlanSelectionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent bal = new Intent(getContext(), MealPlanSelectionActivity.class);
                 try{
                     startActivity(bal);
                 }catch (android.content.ActivityNotFoundException ex){
@@ -231,7 +246,6 @@ public class dining_fragment extends Fragment {
 
             }
         });
-
 
 
         return root_view;

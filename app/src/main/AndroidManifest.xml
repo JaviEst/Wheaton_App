@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/wheatonlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Dining.BalfourWebViewActivity"></activity>
+        <activity android:name=".Dining.MealPlanSelectionActivity"></activity>
+        <activity android:name=".Dining.BalfourWebViewActivity" />
         <activity android:name=".Dining.DavisWebViewActivity" />
         <activity android:name=".events.event_fragment_filter" />
         <activity android:name=".events.event_fragment_item" />

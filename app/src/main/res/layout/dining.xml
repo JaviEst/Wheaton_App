@@ -96,7 +96,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/ChaseButtonName" />
+            android:text="@string/ChaseButtonName"
+            />
 
         <Button
             android:id="@+id/EmersonButton"
@@ -269,16 +270,16 @@
         android:id="@+id/BackButtonDining"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="@color/wheaton"
+        android:text="Back"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="24dp"
-        android:text="Back"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/MealPlansBigTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/wheat" />
 
     <Button
         android:id="@+id/LyonBucksButton"
@@ -290,7 +291,8 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/BlueBG" />
+        app:layout_constraintTop_toTopOf="@+id/BlueBG"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/MealPlansButton"
@@ -306,7 +308,8 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/LyonBucksButton"
         app:layout_constraintStart_toStartOf="@+id/LyonBucksButton"
-        app:layout_constraintTop_toBottomOf="@+id/LyonBucksButton" />
+        app:layout_constraintTop_toBottomOf="@+id/LyonBucksButton"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/LocationsButton"
@@ -318,7 +321,8 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/MealPlansButton"
         app:layout_constraintStart_toStartOf="@+id/MealPlansButton"
-        app:layout_constraintTop_toBottomOf="@+id/MealPlansButton" />
+        app:layout_constraintTop_toBottomOf="@+id/MealPlansButton"
+        android:textSize="20sp"/>
 
     <ScrollView
         android:id="@+id/LyonBuckScrollView"
@@ -432,6 +436,14 @@
                 android:text="@string/Meal_swipes1"
                 android:textColor="#000000" />
 
+            <Button
+                android:id="@+id/MealPlanSelectionButton"
+                android:background="@color/wheaton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Meal Plan Selection"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
 
         </LinearLayout>
