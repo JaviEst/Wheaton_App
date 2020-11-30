@@ -132,15 +132,15 @@ public final class QueryUtils {
 
                     // Extract out the name and decription of the club
                     String club_name = firstClub.getString("Name");
-                    String club_description = firstClub.getString("Description");
+                    String club_description = firstClub.getString("Summary");
 
                     // If the description is empty extract the summary of the club
                     if(club_description.equals("")){
-                        club_description = firstClub.getString("Summary");
+                        club_description = firstClub.getString("Description");
                     }
 
                     // Extract picture of the club
-                    String club_picture = "";       //firstClub.getString("ProfilePicture");
+                    String club_picture = "https://seinfrafiles.blob.core.windows.net/images/" + firstClub.getString("ProfilePicture");
 
                     // Add each club in the json file to the array list
                     clubs.add(new clubs_class(club_picture, club_name, club_description));
