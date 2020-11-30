@@ -82,19 +82,19 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
 
     public void intraButton() {
-        Intent urlIntent2 = new Intent(Intent.ACTION_VIEW);
-        urlIntent2.setData(Uri.parse("https://engage.wheatoncollege.edu/organization/recfit"));
+        Intent intraIntent = new Intent(Intent.ACTION_VIEW);
+        intraIntent.setData(Uri.parse("https://engage.wheatoncollege.edu/organization/recfit"));
 
-        startActivity(urlIntent2);
+        startActivity(intraIntent);
 
 
     }
 
     public void clubButton() {
-        Intent urlIntent3 = new Intent(Intent.ACTION_VIEW);
-        urlIntent3.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/club_sports"));
+        Intent clubIntent = new Intent(Intent.ACTION_VIEW);
+        clubIntent.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/club_sports"));
 
-        startActivity(urlIntent3);
+        startActivity(clubIntent);
 
 
     }
@@ -107,10 +107,10 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
     }
 
     public void exerciseButton() {
-        Intent urlIntent3 = new Intent(Intent.ACTION_VIEW);
-        urlIntent3.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/rec_clubs/Group_Exercise"));
+        Intent exerciseIntent = new Intent(Intent.ACTION_VIEW);
+        exerciseIntent.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/rec_clubs/Group_Exercise"));
 
-        startActivity(urlIntent3);
+        startActivity(exerciseIntent);
 
 
     }
@@ -126,10 +126,10 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
 
     public void hoursButton() {
-        Intent urlIntent3 = new Intent(Intent.ACTION_VIEW);
-        urlIntent3.setData(Uri.parse("https://wheatoncollegelyons.com/information/facilities/hours"));
+        Intent hoursIntent = new Intent(Intent.ACTION_VIEW);
+        hoursIntent.setData(Uri.parse("https://wheatoncollegelyons.com/information/facilities/hours"));
 
-        startActivity(urlIntent3);
+        startActivity(hoursIntent);
 
     }
 
