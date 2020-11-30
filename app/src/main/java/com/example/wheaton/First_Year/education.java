@@ -1,13 +1,11 @@
 package com.example.wheaton.First_Year;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,12 +15,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 import com.example.wheaton.R;
@@ -48,16 +42,15 @@ public class education extends AppCompatActivity {
 
         searchbar = findViewById(R.id.searchBar);
 
-
         allMajorsList = MajorsInitList.generateAllMajorsList();
-        String[] majorTitles = MajorsInitList.allMajorTitles(allMajorsList);
+        String[] majorTitles = MajorsInitList.getAllMajorTitles(allMajorsList);
         searchResults.addAll(allMajorsList);
 
         ArrayAdapter<String> titleAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, majorTitles);
         searchbar.setAdapter(titleAdapter);
 
-
+        //*
         searchbar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -73,6 +66,8 @@ public class education extends AppCompatActivity {
             }
         });
 
+        // *
+        //on click, hides dropdown, clears focus and hides keyboard
         searchbar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -93,29 +88,22 @@ public class education extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Object current = majorsListView.getItemAtPosition(position);
 
-                // hides previously selected element and selects clicked element
+                // hides previously expanded element and expands clicked element
                 // shifts focus to the newly clicked element
                 if (focus != -1 && focus < searchResults.size()) {
                     searchResults.get(focus).setExpandedVisibility(View.GONE);
                 }
-//                if(position == focus) {
-//                    searchResults.get(position).setExpandedVisibility(View.GONE);
-//                    focus = -1;
-//                }else {
                 searchResults.get(position).setExpandedVisibility(View.VISIBLE);
                 focus = position;
-                //}
 
 
                 itemAdapter.notifyDataSetChanged();
             }
         });
-
     }
 
-
+    // *
     public void updateListFromSearchbar() {
-
         ArrayList<Major> newResults = new ArrayList<>();
         String searchQuery = searchbar.getText().toString();
         if (searchQuery.equals(""))
