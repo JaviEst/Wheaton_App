@@ -16,7 +16,6 @@
         android:orientation="horizontal" />
 
     <com.google.android.material.tabs.TabLayout
-        app:tabBackground="@color/wheaton"
         android:id="@+id/tab_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
