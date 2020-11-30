@@ -20,11 +20,15 @@ import java.util.List;
 
 public class event_fragment_filter extends AppCompatActivity {
 
+    // ********************** Variables ***************************
+
+    // Global values for the filter elements
     private String filters = "";
     private ArrayList<String> filters2;
 
+    // ********************** Processes ***************************
 
-
+    // Listener that is accessed once a filter button is clicked
     private View.OnClickListener onListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -33,10 +37,10 @@ public class event_fragment_filter extends AppCompatActivity {
             String name = button.getTextOn().toString();
             name = StringEscapeUtils.unescapeHtml4(name);
             buttonClicked(name,button);
-//            Toast.makeText(event_fragment_filter.this, filters, Toast.LENGTH_SHORT).show();
         }
     };
 
+    // Listener for the back Button
     private View.OnClickListener backListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -44,17 +48,17 @@ public class event_fragment_filter extends AppCompatActivity {
         }
     };
 
-
+    // main onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_fragment_filter);
 
-//        ArrayList<events_fragment_class> events = getIntent().getParcelableExtra("events");
+        // Get the values from the main fragment
         filters = getIntent().getStringExtra("filters");
         filters2 = getIntent().getStringArrayListExtra("filters2");
 
-
+        // Set each filter button to the onListener
         ToggleButton Academic = findViewById(R.id.AcademicB);
         Academic.setOnClickListener(onListener);
 
@@ -100,7 +104,9 @@ public class event_fragment_filter extends AppCompatActivity {
         ToggleButton Students = findViewById(R.id.StudentsB);
         Students.setOnClickListener(onListener);
 
+        // If the filter is not empty check if it contains each filter word
         if(!filters.equals("")){
+            // If it matches, then call the buttonClickedJustButton function
             if(filters.contains("Academic")){
                 buttonClickedJustButton(Academic);
             }
@@ -149,6 +155,7 @@ public class event_fragment_filter extends AppCompatActivity {
 
         }
 
+        // If the resetButton is clicked clear both variables and set each filter button to normal.
         Button resetB = findViewById(R.id.resetFilterButton);
         View.OnClickListener resetListener = new View.OnClickListener() {
             @Override
@@ -178,11 +185,13 @@ public class event_fragment_filter extends AppCompatActivity {
         };
         resetB.setOnClickListener(resetListener);
 
+        // Back button set to the backListener
         Button backB = findViewById(R.id.backButton);
         backB.setOnClickListener(backListener);
 
     }
 
+    // onBackPressed gives back the values to the main fragment
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
@@ -193,6 +202,7 @@ public class event_fragment_filter extends AppCompatActivity {
         finish();
     }
 
+    // Reset the button to its default state
     private void buttonDefault(ToggleButton button){
         button.setBackgroundColor(Color.parseColor("#FFFFFF"));
         button.setTextColor(Color.parseColor("#1072BA"));
@@ -200,17 +210,23 @@ public class event_fragment_filter extends AppCompatActivity {
         button.setEnabled(true);
     }
 
-
+    // when a button is clicked this function is called
     private void buttonClicked(String name, ToggleButton button){
+        // if the button is checked
         if(button.isChecked()){
+            // set the background color to blue
             button.setBackgroundColor(Color.parseColor("#1072BA"));
+            // set the text color to white
             button.setTextColor(Color.parseColor("#FFFFFF"));
+            // make the button unable to be pressed
             button.setEnabled(false);
+            // if the filter is empty when pressed just add the name given
             if(filters.equals("")){
                 filters = name;
                 filters2 = new ArrayList<String>();
                 filters2.add(name);
             }
+            // if it is not the first value, add the name normally
             else{
                 filters = filters + ", " + name;
                 filters2.add(name);
@@ -218,7 +234,7 @@ public class event_fragment_filter extends AppCompatActivity {
         }
     }
 
-
+    // If the filter is already listed in the filter variables then make sure the button is changed
     private void buttonClickedJustButton(ToggleButton button){
             button.setBackgroundColor(Color.parseColor("#1072BA"));
             button.setTextColor(Color.parseColor("#FFFFFF"));

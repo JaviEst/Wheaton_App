@@ -10,29 +10,28 @@ import java.util.ArrayList;
 
 public class events_fragment_class {
 
-    public static String[] allTitles(ArrayList<events_fragment_class> list) {
-        String[] output = new String[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            output[i] = list.get(i).getTitle();
-        }
-        return output;
-    }
+    // (** TESTING CODE **)
+//    public static String[] allTitles(ArrayList<events_fragment_class> list) {
+//        String[] output = new String[list.size()];
+//        for (int i = 0; i < list.size(); i++) {
+//            output[i] = list.get(i).getTitle();
+//        }
+//        return output;
+//    }
+    // ***************
 
+    // Initialize all variables
     public final String title,date,image,location,largeimage,cost,filter,organName,organPhone,organEmail,link;
-
     private int buttonVisibility;
-
     private int originalPosition;
 
-
+    // Override to string to return the title
     @Override
     public String toString() {
         return title;
     }
 
-
-
-
+    // Set functions
     public void setButtonVisibility(int buttonVisibility) {
         this.buttonVisibility = buttonVisibility;
     }
@@ -40,7 +39,7 @@ public class events_fragment_class {
         this.originalPosition = originalPosition;
     }
 
-
+    // Main constructor
     public events_fragment_class(String eventTitle, String eventDate, String eventThumbnailPic,
                                  String eventLocation, String eventLargerPic, String eventCost, String eventFilter,
                                  String eventOrganizerName, String eventOrganizerPhone, String eventOrganizerEmail,
@@ -49,7 +48,6 @@ public class events_fragment_class {
         date = eventDate;
         image = eventThumbnailPic;
         location = eventLocation;
-
         largeimage = eventLargerPic;
         cost = eventCost;
         filter = eventFilter;
@@ -58,13 +56,12 @@ public class events_fragment_class {
         organEmail = eventOrganizerEmail;
         link = eventLink;
 
-
         this.buttonVisibility = View.GONE;
     }
 
 
 
-
+    // Get functions
     public int getButtonVisibility() {
         return buttonVisibility;
     }
@@ -116,8 +113,5 @@ public class events_fragment_class {
     public int getOriginalPosition(){
         return originalPosition;
     }
-
-
-
 
 }

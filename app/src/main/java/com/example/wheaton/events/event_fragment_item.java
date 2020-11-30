@@ -25,14 +25,16 @@ import java.util.Date;
 
 public class event_fragment_item extends AppCompatActivity {
 
+    // main onCreate function
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_fragment_item_v2);
 
-
-
+        // Access the callerIntent
         Intent callerIntent = getIntent();
+
+        // Get all values given from fragment
         String title = callerIntent.getStringExtra("title");
         String date = callerIntent.getStringExtra("date");
         try {
@@ -50,7 +52,7 @@ public class event_fragment_item extends AppCompatActivity {
         String organizerEmail = callerIntent.getStringExtra("organizerEmail");
         String link = callerIntent.getStringExtra("link");
 
-
+        // Access each TextView in the activity_event_fragment_item
         TextView titleText = findViewById(R.id.itemTitleText);
         TextView dateText = findViewById(R.id.itemDateInput);
         TextView timeText = findViewById(R.id.itemTimeInput);
@@ -63,6 +65,7 @@ public class event_fragment_item extends AppCompatActivity {
         TextView organEmail = findViewById(R.id.itemEmailInput);
         TextView linkText = findViewById(R.id.itemLinkText);
 
+        // Set each of the values given from the callingIntent to the textViews
         titleText.setText(title);
         dateText.setText(dateParts[0]);
         timeText.setText(dateParts[1] + " " + dateParts[2]);
@@ -75,9 +78,8 @@ public class event_fragment_item extends AppCompatActivity {
         linkText.setText(Html.fromHtml("<a href="+link+"> LINK TO EVENT"));
         linkText.setMovementMethod(LinkMovementMethod.getInstance());
 
-
+        // Image insertion calls to the LoadImage class
         if(image.equals("")){
-//            previewImageView.setImageResource(R.drawable.wheaton_event_preview_600x387);
             LoadImage loadImage = new LoadImage(previewImageView, "https://i.gyazo.com/69969053e5e2a96ba297d3a916b834af.jpg");
             loadImage.execute("https://i.gyazo.com/69969053e5e2a96ba297d3a916b834af.jpg");
         }
@@ -88,6 +90,7 @@ public class event_fragment_item extends AppCompatActivity {
 
     }
 
+    // Format the date given to an accepted/readable form
     public String formatDate(String input) throws ParseException {
         SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = parser.parse(input);
@@ -97,7 +100,8 @@ public class event_fragment_item extends AppCompatActivity {
         return formattedDate;
     }
 
-
+    // LoadImage class allows the link from an image to be converted to a Bitmap stream and then
+    // converted to the imageView
     private class LoadImage extends AsyncTask<String,Void, Bitmap> {
         ImageView imageView;
         String url;

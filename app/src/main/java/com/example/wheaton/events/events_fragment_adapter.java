@@ -32,18 +32,12 @@ import java.util.Locale;
 public class events_fragment_adapter extends ArrayAdapter<events_fragment_class> implements Filterable {
 
 
-
+    // Constructor
     public events_fragment_adapter(Context activity, ArrayList<events_fragment_class> theList){
         super(activity, 0, theList);
-
-
     }
 
-
-
-
-
-    ///////////////////////////////
+    // main getView function
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -57,6 +51,8 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         // Get the {@link Word} object located at this position in the list
         events_fragment_class currentEvent = getItem(position);
 
+
+        // Set each value to their associated Views
         TextView titleTV = listItemView.findViewById(R.id.title);
         titleTV.setText(currentEvent.getTitle());
 
@@ -85,12 +81,10 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         showingInfoMenu.setVisibility(currentEvent.getButtonVisibility());
 
 
-
-
-
         return listItemView;
     }
 
+    // Format the date given to an accepted/readable form
     public String formatDate(String input) throws ParseException {
         SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = parser.parse(input);
@@ -100,6 +94,8 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         return formattedDate;
     }
 
+    // LoadImage class allows the link from an image to be converted to a Bitmap stream and then
+    // converted to the imageView
     private class LoadImage extends AsyncTask<String,Void, Bitmap> {
         ImageView imageView;
         String url;
@@ -127,10 +123,6 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
             imageView.setImageBitmap(bitmap);
         }
     }
-
-
-
-
 
 
 }
