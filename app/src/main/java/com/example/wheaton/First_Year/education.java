@@ -135,41 +135,6 @@ public class education extends AppCompatActivity {
         itemAdapter.notifyDataSetChanged();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public ArrayList<Major> generateAllMajorsFromFile() throws IOException {
-        ArrayList<Major> output = new ArrayList<>();
-        Major newItem;
-
-        String filename = "majors.txt";
-        InputStreamReader inputStreamReader = new InputStreamReader(getAssets().open("majors.txt"), StandardCharsets.UTF_8);
-        BufferedReader bf = new BufferedReader(inputStreamReader);
-
-        // read lines and put them in arrayList
-        String currentName, currentCategory, currentSheetLink, currentDescription;
-        String line = bf.readLine();
-
-        while (line != null) {
-            currentName = bf.readLine();
-            currentCategory = bf.readLine();
-            currentSheetLink = bf.readLine();
-            currentDescription = bf.readLine();
-
-
-            newItem = new Major();
-            newItem.setTitle(currentName);
-            newItem.setCategory(currentCategory);
-            newItem.setSheetURL(currentSheetLink);
-            newItem.setSummary(currentDescription);
-
-            output.add(newItem);
-
-            line = bf.readLine();
-        }
-
-
-        return output;
-    }
-
     public void gotoReqSheet(View view) {
         if (focus == -1)
             return;

@@ -7,6 +7,8 @@ import android.content.Loader;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
 import com.example.wheaton.R;
 import java.util.ArrayList;
@@ -14,10 +16,10 @@ import java.util.ArrayList;
 public class clubs extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<clubs_class>> {
 
     // Declare clubs' array list
-    ArrayList<clubs_class> clubs_list;
+    private ArrayList<clubs_class> clubs_list;
 
     // Declare clubs' adapter
-    club_adapter adapter;
+    private club_adapter adapter;
 
     // Declare current list view
     private View current_list_view = null;
@@ -40,7 +42,6 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
 
         // Initialize list
         clubs_list = new ArrayList<>();
-
 
         // Initialize adapter
         adapter = new club_adapter(this, clubs_list);
@@ -86,7 +87,9 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
         });
 
         getLoaderManager().initLoader(0, null, this);
+
     }
+
 
     // Update the UI with the given club information.
     private void updateUi(ArrayList<clubs_class> club) {
