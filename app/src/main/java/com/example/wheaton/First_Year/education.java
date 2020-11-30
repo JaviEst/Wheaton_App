@@ -88,21 +88,18 @@ public class education extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Object current = majorsListView.getItemAtPosition(position);
 
-                // hides previously selected element and selects clicked element
+                // hides previously expanded element and expands clicked element
                 // shifts focus to the newly clicked element
                 if (focus != -1 && focus < searchResults.size()) {
                     searchResults.get(focus).setExpandedVisibility(View.GONE);
                 }
-
                 searchResults.get(position).setExpandedVisibility(View.VISIBLE);
                 focus = position;
-                //}
 
 
                 itemAdapter.notifyDataSetChanged();
             }
         });
-
     }
 
     // *
