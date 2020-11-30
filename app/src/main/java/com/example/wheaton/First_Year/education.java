@@ -96,7 +96,6 @@ public class education extends AppCompatActivity {
                 searchResults.get(position).setExpandedVisibility(View.VISIBLE);
                 focus = position;
 
-
                 itemAdapter.notifyDataSetChanged();
             }
         });
