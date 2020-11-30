@@ -3,15 +3,16 @@ package com.example.wheaton.First_Year;
 import java.util.ArrayList;
 
 public class MajorsInitList {
-
-    public static String[] allMajorTitles(ArrayList<Major> majorList) {
+    // *
+    // takes arrayList of majors and makes a list
+    public static String[] getAllMajorTitles(ArrayList<Major> majorList) {
         String[] output = new String[majorList.size()];
         for (int i = 0; i < majorList.size(); i++) {
             output[i] = majorList.get(i).getTitle();
         }
-
         return output;
     }
+
 
     public static ArrayList<Major> generateAllMajorsList() {
         ArrayList<Major> output = new ArrayList<Major>();
