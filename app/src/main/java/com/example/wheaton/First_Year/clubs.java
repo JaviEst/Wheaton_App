@@ -1,12 +1,16 @@
 package com.example.wheaton.First_Year;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -17,7 +21,7 @@ import java.util.ArrayList;
 public class clubs extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<clubs_class>> {
 
     // Declare clubs' array list
-    private ArrayList<clubs_class> clubs_list = new ArrayList<>();
+    private final ArrayList<clubs_class> clubs_list = new ArrayList<>();
 
     // Declare autocomplete text view
     private AutoCompleteTextView club_search_bar;
@@ -52,15 +56,9 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
         // Initialize autocomplete
         club_search_bar = findViewById(R.id.clubs_searchBar);
 
-
         getLoaderManager().initLoader(0, null, this);
-
-        String [] club_names = allClubNames(club_search_results);
         club_search_results.addAll(clubs_list);
 
-        ArrayAdapter<String> clubs_name_adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, club_names);
-
-        club_search_bar.setAdapter(clubs_name_adapter);
 
         club_search_bar.addTextChangedListener(new TextWatcher() {
             @Override
@@ -70,6 +68,11 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Set visibility of previous item in the list clicked to gone
+                if (previous_pos < club_search_results.size())
+                    club_search_results.get(previous_pos).setLayout_vis(View.GONE);
+
+                //updates search results array
                 updateListFromSearchBar();
             }
 
@@ -78,6 +81,24 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
                 // Nothing
             }
         });
+
+        // *
+        //on click, hides dropdown, clears focus and hides keyboard
+        club_search_bar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                club_search_bar.dismissDropDown();
+                findViewById(R.id.clubsListView).requestFocus();
+                hideKeyboardFrom(view.getContext(), club_search_bar);
+
+                //if there is only one search result
+                //auto select that result
+                if (club_search_results.size() == 1)
+                    // Set element layout to visible
+                    club_search_results.get(0).setLayout_vis(View.VISIBLE);
+            }
+        });
+
 
         // Initialize adapter
         adapter = new club_adapter(this, club_search_results);
@@ -165,6 +186,12 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
         // Notify the adapter
         adapter.notifyDataSetChanged();
 
+        //initialize club names array, names of every club object
+        String[] club_names = allClubNames(club_search_results);
+        ArrayAdapter<String> clubs_name_adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, club_names);
+        club_search_bar.setAdapter(clubs_name_adapter);
+
+
     }
 
     @Override
@@ -174,7 +201,7 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
 
     @Override
     public void onLoadFinished(android.content.Loader<ArrayList<clubs_class>> loader, ArrayList<clubs_class> clubs) {
-        if(clubs != null) {
+        if (clubs != null) {
             updateUi(clubs);
         }
     }
@@ -182,6 +209,11 @@ public class clubs extends AppCompatActivity implements LoaderManager.LoaderCall
     @Override
     public void onLoaderReset(android.content.Loader<ArrayList<clubs_class>> loader) {
         // Nothing
+    }
+
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
 }
