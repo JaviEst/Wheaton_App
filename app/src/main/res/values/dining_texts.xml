@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="Welcome">Welcome To Wheaton Dining! </string>
+
+    //Action Bar Button Names
+    <string name="ChaseButtonName">Chase </string>
+
+    <string name="EmersonButtonName">Emerson</string>
+
+    <string name="DavisButtonName">Davis</string>
+
+    <string name="BalfourButtonName">Balfour</string>
+
+    //Dining Fragment Main Buttons
+
+    <string name="LyonBucksButtonName">Lyon Bucks</string>
+
+    <string name="DiningLocationsButtonName">Dining Locations</string>
+
+    <string name="MealPlanButtonName">Meal Plans</string>
+
+
+    //Misc
+
+    <string name="MenuName">Menu</string>
+
+    // meal plans
+
+    <string name="Meal_Plans1">
+        A Meal Plan unlocks delicious meals, coffee, snacks, and more,
+        at 4 locations across campus. Your Meal Plan includes Meal Swipes and Lyons Bucks,
+        conveniently loaded onto your Wheaton Student ID. No need to carry additional cards or cash!
+    </string>
+
+    <string name="MealPlanName">Meal Plans</string>
+
+    <string name="LyonBucksTitle">Lyon Bucks</string>
+
+
+
+    <string name="Meal_swipes1">As a residential college, Wheaton requires all students living on campus to enroll
+        in one of the meal plan options available through the Colleges Dining Services.
+        Each fall, all students are enrolled in the Carte Blanche Plan.
+        Returning students only, have the option to change plans during the months of May and June when online enrollment
+        is open or during the first two weeks of the fall semester.   </string>
+
+    <string name="LB1">Lyons Bucks may be used at any Wheaton College Dining location.
+        Visit the location page for location information,
+        including dining hall menus and hours of operation.
+        Unused Lyons Bucks roll over from fall to spring and expire at the end of the spring semester.  </string>
+
+    <string name="LS1">You may also use a Lyons Swipe (Meal Exchange) for breakfast,
+        lunch and dinner at Emerson, Hood, or Davis.
+        The Lyons Swipe can be used for a specified meal at each location.  </string>
+
+
+
+
+
+
+</resources>

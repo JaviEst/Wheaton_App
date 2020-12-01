@@ -27,21 +27,12 @@ public class home_fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         root_view = inflater.inflate(R.layout.home, container, false);
 
-        // Move to library fragment when on click of library button
-        ImageButton library = root_view.findViewById(R.id.library_button);
-        library.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).setCurrentItem(0);
-            }
-        });
-
         // Move to dining fragment when on click of dining button
         ImageButton dining = root_view.findViewById(R.id.dining_button);
         dining.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).setCurrentItem(1);
+                ((MainActivity)getActivity()).setCurrentItem(0);
             }
         });
 
@@ -50,7 +41,7 @@ public class home_fragment extends Fragment {
         events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).setCurrentItem(2);
+                ((MainActivity)getActivity()).setCurrentItem(1);
             }
         });
 
@@ -59,7 +50,7 @@ public class home_fragment extends Fragment {
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).setCurrentItem(4);
+                ((MainActivity)getActivity()).setCurrentItem(3);
             }
         });
 
@@ -68,7 +59,7 @@ public class home_fragment extends Fragment {
         athletics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).setCurrentItem(5);
+                ((MainActivity)getActivity()).setCurrentItem(4);
             }
         });
 
@@ -77,7 +68,7 @@ public class home_fragment extends Fragment {
         first_years.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).setCurrentItem(6);
+                ((MainActivity)getActivity()).setCurrentItem(5);
             }
         });
 

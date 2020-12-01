@@ -5,44 +5,41 @@ import android.os.Parcelable;
 import android.view.View;
 
 
-public class events_fragment_class implements Parcelable {
+import java.util.ArrayList;
 
+
+public class events_fragment_class {
+
+    // (** TESTING CODE **)
+//    public static String[] allTitles(ArrayList<events_fragment_class> list) {
+//        String[] output = new String[list.size()];
+//        for (int i = 0; i < list.size(); i++) {
+//            output[i] = list.get(i).getTitle();
+//        }
+//        return output;
+//    }
+    // ***************
+
+    // Initialize all variables
     public final String title,date,image,location,largeimage,cost,filter,organName,organPhone,organEmail,link;
-
     private int buttonVisibility;
+    private int originalPosition;
 
-
-    protected events_fragment_class(Parcel in) {
-        title = in.readString();
-        date = in.readString();
-        image = in.readString();
-        location = in.readString();
-        largeimage = in.readString();
-        cost = in.readString();
-        filter = in.readString();
-        organName = in.readString();
-        organPhone = in.readString();
-        organEmail = in.readString();
-        link = in.readString();
-        buttonVisibility = in.readInt();
+    // Override to string to return the title
+    @Override
+    public String toString() {
+        return title;
     }
 
-    public static final Creator<events_fragment_class> CREATOR = new Creator<events_fragment_class>() {
-        @Override
-        public events_fragment_class createFromParcel(Parcel in) {
-            return new events_fragment_class(in);
-        }
-
-        @Override
-        public events_fragment_class[] newArray(int size) {
-            return new events_fragment_class[size];
-        }
-    };
-
+    // Set functions
     public void setButtonVisibility(int buttonVisibility) {
         this.buttonVisibility = buttonVisibility;
     }
+    public void setOriginalPosition(int originalPosition){
+        this.originalPosition = originalPosition;
+    }
 
+    // Main constructor
     public events_fragment_class(String eventTitle, String eventDate, String eventThumbnailPic,
                                  String eventLocation, String eventLargerPic, String eventCost, String eventFilter,
                                  String eventOrganizerName, String eventOrganizerPhone, String eventOrganizerEmail,
@@ -51,7 +48,6 @@ public class events_fragment_class implements Parcelable {
         date = eventDate;
         image = eventThumbnailPic;
         location = eventLocation;
-
         largeimage = eventLargerPic;
         cost = eventCost;
         filter = eventFilter;
@@ -60,13 +56,12 @@ public class events_fragment_class implements Parcelable {
         organEmail = eventOrganizerEmail;
         link = eventLink;
 
-
         this.buttonVisibility = View.GONE;
     }
 
 
 
-
+    // Get functions
     public int getButtonVisibility() {
         return buttonVisibility;
     }
@@ -115,25 +110,8 @@ public class events_fragment_class implements Parcelable {
         return link;
     }
 
-
-    @Override
-    public int describeContents() {
-        return 0;
+    public int getOriginalPosition(){
+        return originalPosition;
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(title);
-        parcel.writeString(date);
-        parcel.writeString(image);
-        parcel.writeString(location);
-        parcel.writeString(largeimage);
-        parcel.writeString(cost);
-        parcel.writeString(filter);
-        parcel.writeString(organName);
-        parcel.writeString(organPhone);
-        parcel.writeString(organEmail);
-        parcel.writeString(link);
-        parcel.writeInt(buttonVisibility);
-    }
 }

@@ -19,29 +19,32 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:text="1 "
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/previewPic"
         app:layout_constraintTop_toTopOf="@+id/previewPic" />
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="wrap_content"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:text="2"
+        android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
         android:id="@+id/location"
-        android:layout_width="wrap_content"
+        android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:text="3"
+        android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="@+id/date"
         app:layout_constraintTop_toBottomOf="@+id/date" />

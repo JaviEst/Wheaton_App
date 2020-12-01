@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,15 +27,17 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
-public class events_fragment_adapter extends ArrayAdapter<events_fragment_class> {
+public class events_fragment_adapter extends ArrayAdapter<events_fragment_class> implements Filterable {
 
 
-
+    // Constructor
     public events_fragment_adapter(Context activity, ArrayList<events_fragment_class> theList){
         super(activity, 0, theList);
     }
 
+    // main getView function
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -47,6 +51,8 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         // Get the {@link Word} object located at this position in the list
         events_fragment_class currentEvent = getItem(position);
 
+
+        // Set each value to their associated Views
         TextView titleTV = listItemView.findViewById(R.id.title);
         titleTV.setText(currentEvent.getTitle());
 
@@ -63,7 +69,7 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         locationTV.setText(currentEvent.getLocation());
         ImageView previewImageView = listItemView.findViewById(R.id.previewPic);
         if(currentEvent.getImage().equals("")){
-            previewImageView.setImageResource(R.drawable.wheaton_event_preview);
+            previewImageView.setImageResource(R.drawable.wheaton_event_preview_150x150);
         }
         else {
             LoadImage loadImage = new LoadImage(previewImageView, currentEvent.getImage());
@@ -74,9 +80,11 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         ConstraintLayout showingInfoMenu = listItemView.findViewById(R.id.buttonLayout);
         showingInfoMenu.setVisibility(currentEvent.getButtonVisibility());
 
+
         return listItemView;
     }
 
+    // Format the date given to an accepted/readable form
     public String formatDate(String input) throws ParseException {
         SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = parser.parse(input);
@@ -86,6 +94,8 @@ public class events_fragment_adapter extends ArrayAdapter<events_fragment_class>
         return formattedDate;
     }
 
+    // LoadImage class allows the link from an image to be converted to a Bitmap stream and then
+    // converted to the imageView
     private class LoadImage extends AsyncTask<String,Void, Bitmap> {
         ImageView imageView;
         String url;

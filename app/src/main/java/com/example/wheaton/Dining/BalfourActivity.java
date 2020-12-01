@@ -46,11 +46,9 @@ public class BalfourActivity extends AppCompatActivity {
         loadImage.execute(URLlink);
 
     }
-    public void BalfourMenuButton(View view) {
-
-    }
-    public void BalfourHomeButton(View view) {
-        hiddenStuff.setVisibility(View.VISIBLE);
+    public void BalfourHomeButton(View view){
+        Intent i = new Intent(this,BalfourWebViewActivity.class);
+        startActivity(i);
     }
 
     private class LoadImage extends AsyncTask<String,Void, Bitmap> {
