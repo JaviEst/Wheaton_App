@@ -77,6 +77,7 @@ public class education extends AppCompatActivity {
             }
         });
 
+        // the listView and adapter are set to the search results array that is constantly changing when updating
         itemAdapter = new MajorAdapter(this, searchResults);
         final ListView majorsListView = findViewById(R.id.list);
         majorsListView.setAdapter(itemAdapter);
@@ -96,7 +97,6 @@ public class education extends AppCompatActivity {
                 searchResults.get(position).setExpandedVisibility(View.VISIBLE);
                 focus = position;
 
-
                 itemAdapter.notifyDataSetChanged();
             }
         });
@@ -104,20 +104,28 @@ public class education extends AppCompatActivity {
 
     // *
     public void updateListFromSearchbar() {
+        // newResults is the ArrayList that searchResults will have its contents replaced with
         ArrayList<Major> newResults = new ArrayList<>();
+
+        //gets AutoComplete text string
         String searchQuery = searchbar.getText().toString();
+
+        // if empty, set search
         if (searchQuery.equals(""))
             newResults = allMajorsList;
         else {
             for (int i = 0; i < allMajorsList.size(); i++) {
+                // if the title matches the searchQuery (toLowercase makes condition not case sensitive)
                 if (allMajorsList.get(i).getTitle().toLowerCase().contains(searchQuery.toLowerCase())) {
                     newResults.add(allMajorsList.get(i));
                 }
             }
         }
+        // hides the expanded view if there was one
         if (focus != -1 && focus < searchResults.size()) {
             searchResults.get(focus).setExpandedVisibility(View.GONE);
         }
+        //empties searchResults and replaces contents with newResults
         searchResults.clear();
         searchResults.addAll(newResults);
         itemAdapter.notifyDataSetChanged();
