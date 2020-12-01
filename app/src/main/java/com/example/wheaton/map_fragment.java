@@ -40,8 +40,6 @@ public class map_fragment extends Fragment {
     private  AutoCompleteTextView searchBuilding;
 
 
-
-
     public map_fragment(){}
 
     @Nullable
@@ -51,8 +49,6 @@ public class map_fragment extends Fragment {
 
         populateList();
         searchResults.addAll(buildingList);
-
-
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, BUILDINGS);
