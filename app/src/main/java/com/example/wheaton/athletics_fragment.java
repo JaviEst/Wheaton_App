@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.wheaton.athletics.athletics_calendar;
 import com.example.wheaton.athletics.onlineLinks;
 
 public class athletics_fragment extends Fragment implements View.OnClickListener{
@@ -27,6 +28,8 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         root_view = inflater.inflate(R.layout.athletics, container, false);
+
+        //creating onClickListeners for the buttons
         Button dButton = root_view.findViewById(R.id.dButton);
         dButton.setOnClickListener((View.OnClickListener) this);
         Button intButton = root_view.findViewById(R.id.intButton);
@@ -45,6 +48,8 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
     }
     @Override
     public void onClick(View view) {
+
+        //if certain button is clicked on
         if (view.getId() == R.id.dButton) {
             directoryButton();
         }
@@ -71,6 +76,7 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
         }
     }
 
+    //launches intent to website
     public void directoryButton() {
         Intent urlIntent = new Intent(Intent.ACTION_VIEW);
         urlIntent.setData(Uri.parse("https://wheatoncollegelyons.com/information/directory/index"));
@@ -79,25 +85,27 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
     }
 
-
+    //launches intent to website
     public void intraButton() {
-        Intent urlIntent2 = new Intent(Intent.ACTION_VIEW);
-        urlIntent2.setData(Uri.parse("https://engage.wheatoncollege.edu/organization/recfit"));
+        Intent intraIntent = new Intent(Intent.ACTION_VIEW);
+        intraIntent.setData(Uri.parse("https://engage.wheatoncollege.edu/organization/recfit"));
 
-        startActivity(urlIntent2);
+        startActivity(intraIntent);
 
 
     }
 
+    //launches intent to website
     public void clubButton() {
-        Intent urlIntent3 = new Intent(Intent.ACTION_VIEW);
-        urlIntent3.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/club_sports"));
+        Intent clubIntent = new Intent(Intent.ACTION_VIEW);
+        clubIntent.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/club_sports"));
 
-        startActivity(urlIntent3);
+        startActivity(clubIntent);
 
 
     }
 
+    //launches intent to new activity
     public void linkButton() {
         Intent linkIntent = new Intent(getContext(), onlineLinks.class);
         startActivity(linkIntent);
@@ -105,33 +113,31 @@ public class athletics_fragment extends Fragment implements View.OnClickListener
 
     }
 
+    //launches intent to website
     public void exerciseButton() {
-        Intent urlIntent3 = new Intent(Intent.ACTION_VIEW);
-        urlIntent3.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/rec_clubs/Group_Exercise"));
+        Intent exerciseIntent = new Intent(Intent.ACTION_VIEW);
+        exerciseIntent.setData(Uri.parse("https://wheatoncollegelyons.com/clubs/rec_clubs/Group_Exercise"));
 
-        startActivity(urlIntent3);
+        startActivity(exerciseIntent);
 
 
     }
 
-
+    //launches intent to new activity
     public void calendarButton() {
 
-        Intent urlIntent3 = new Intent(Intent.ACTION_VIEW);
-        urlIntent3.setData(Uri.parse("https://wheatoncollegelyons.com/composite/"));
-
-        startActivity(urlIntent3);
+        Intent calendarIntent = new Intent(getContext(), athletics_calendar.class);
+        startActivity(calendarIntent);
 
     }
 
 
-
+    //launches intent to website
     public void hoursButton() {
-        Intent urlIntent3 = new Intent(Intent.ACTION_VIEW);
-        urlIntent3.setData(Uri.parse("https://wheatoncollegelyons.com/information/facilities/hours"));
+        Intent hoursIntent = new Intent(Intent.ACTION_VIEW);
+        hoursIntent.setData(Uri.parse("https://wheatoncollegelyons.com/information/facilities/hours"));
 
-        startActivity(urlIntent3);
-
+        startActivity(hoursIntent);
 
     }
 

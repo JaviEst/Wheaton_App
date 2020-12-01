@@ -10,6 +10,15 @@ public class Major {
     protected String category;
     protected String summary;
     protected int expandedVisibility;
+    protected String previewImageURL;
+
+    public String getPreviewImageURL() {
+        return previewImageURL;
+    }
+
+    public void setPreviewImageURL(String previewImageURL) {
+        this.previewImageURL = previewImageURL;
+    }
 
     public String getSheetURL() {
         return sheetURL;

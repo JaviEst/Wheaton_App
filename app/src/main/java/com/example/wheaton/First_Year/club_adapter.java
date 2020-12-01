@@ -51,8 +51,8 @@ public class club_adapter extends ArrayAdapter<clubs_class> {
 
         // Check if image is available for Club
         ImageView previewImageView = list_clubs_view.findViewById(R.id.club_picture);
-        if(current_club.getClub_pic().equals("")){
-            previewImageView.setImageResource(R.drawable.wheaton_club_preview);
+        if(current_club.getClub_pic().equals("https://seinfrafiles.blob.core.windows.net/images/null")){
+            previewImageView.setImageResource(R.drawable.wheatonlogo);
         }
         else {
             LoadImage loadImage = new LoadImage(previewImageView, current_club.getClub_pic());
@@ -79,10 +79,14 @@ public class club_adapter extends ArrayAdapter<clubs_class> {
         protected Bitmap doInBackground(String... strings) {
             String urlLink = url;
             Bitmap bitmap = null;
+            Bitmap temp = null;
             InputStream inputStream = null;
             try {
                 inputStream = new URL(urlLink).openStream();
-                bitmap = BitmapFactory.decodeStream(inputStream);
+                temp = BitmapFactory.decodeStream(inputStream);
+
+                bitmap = Bitmap.createScaledBitmap(temp, 80, 90, false);  //scale the bitmap
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -3,6 +3,8 @@ package com.example.wheaton;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,20 +35,10 @@ public class map_fragment extends Fragment {
     // Declare view
     View root_view;
     private ArrayList<Building> buildingList;
+    private ArrayList<Building> searchResults = new ArrayList<>();
     private buildingAdapter myAdapter;
-    private View listView;
-    private int currentPos;
-    private View previousListView = null;
-    private int previousPos = 0;
-    private String mapUrla = "https://www.google.com/maps/dir/?api=1&origin=41.964726429529684, -71.18334581669703&destination=41.96726249863192, -71.18417549267292&mode=walking";
+    private  AutoCompleteTextView searchBuilding;
 
-
-    private AdapterView.OnItemClickListener searchBarListener = new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            searchBarFunc();
-        }
-    };
 
     public map_fragment(){}
 
@@ -56,20 +48,42 @@ public class map_fragment extends Fragment {
         root_view = inflater.inflate(R.layout.map, container, false);
 
         populateList();
+        searchResults.addAll(buildingList);
 
-        myAdapter = new buildingAdapter(getActivity(), buildingList);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, BUILDINGS);
+        searchBuilding = (AutoCompleteTextView) root_view.findViewById(R.id.searchBar);
+        searchBuilding.setAdapter(adapter);
+
+
+        searchBuilding.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                updateListFromSearchbar();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        myAdapter = new buildingAdapter(getActivity(), searchResults);
         final ListView todoList = root_view.findViewById(R.id.buildingList);
         todoList.setAdapter(myAdapter);
 
         todoList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                double currentLat = buildingList.get(i).getLat();
-                double currentLong = buildingList.get(i).getLong();
+                double currentLat = searchResults.get(i).getLat();
+                double currentLong = searchResults.get(i).getLong();
 
                 String mapUrl = "https://www.google.com/maps/dir/?api=1&origin=41.964726429529684, -71.18334581669703&destination= " + currentLat +","+ currentLong +"&mode=walking";
 
-                AutoCompleteTextView auto = root_view.findViewById(R.id.searchBar);
+
                 Uri gmmIntentUri =
                         Uri.parse(mapUrl);
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
@@ -78,24 +92,10 @@ public class map_fragment extends Fragment {
 
             }
         });
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, BUILDINGS);
-        AutoCompleteTextView searchBuilding = (AutoCompleteTextView)
-                root_view.findViewById(R.id.searchBar);
-        searchBuilding.setAdapter(adapter);
-        searchBuilding.setOnItemClickListener(searchBarListener);
-
-
-
         return root_view;
     }
 
-    public void searchBarFunc(){
 
-        AutoCompleteTextView auto = root_view.findViewById(R.id.searchBar);
-
-
-    }
 
     public void populateList(){
         buildingList = new ArrayList<>();
@@ -156,9 +156,24 @@ public class map_fragment extends Fragment {
         buildingList.add(new Building(getString(R.string.Meneely), 41.96776102467822, -71.18405007513933));
         buildingList.add(new Building(getString(R.string.Science_Center), 41.964726429529684, -71.18334581669703));
 
+    }
 
+    public void updateListFromSearchbar() {
 
-
+        ArrayList<Building> newResults = new ArrayList<>();
+        String searchQuery = searchBuilding.getText().toString();
+        if (searchQuery.equals(""))
+            newResults = buildingList;
+        else {
+            for (int i = 0; i <buildingList.size(); i++) {
+                if (buildingList.get(i).getName().toLowerCase().contains(searchQuery.toLowerCase())) {
+                    newResults.add(buildingList.get(i));
+                }
+            }
+        }
+        searchResults.clear();
+        searchResults.addAll(newResults);
+        myAdapter.notifyDataSetChanged();
     }
 
 

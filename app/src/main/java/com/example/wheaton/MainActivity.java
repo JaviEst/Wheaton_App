@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> {
-            Drawable [] icons = new Drawable[]{ResourcesCompat.getDrawable(getResources(), R.drawable.librarywhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.diningwhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.eventswhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.homewhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.mapwhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.athleticswhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.firstyearwhite, null)};
+            Drawable [] icons = new Drawable[]{ResourcesCompat.getDrawable(getResources(), R.drawable.diningwhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.eventswhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.homewhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.mapwhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.athleticswhite, null), ResourcesCompat.getDrawable(getResources(), R.drawable.firstyearwhite, null)};
             tab.setIcon(icons[position]);
-            viewPager2.setCurrentItem(3);
+            viewPager2.setCurrentItem(2);
         }).attach();
     }
 
