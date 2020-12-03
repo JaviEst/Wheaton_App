@@ -102,10 +102,6 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
         // If the filter matches the lastFilters then change nothing
         if (filters.matches(lastFilters)) {
         }
-        // (** TESTING CODE **)
-//        else if(filters.matches("") && lastFilters.matches(" ")){
-//        }
-        // *******************
         // If filters does not equal blank then a filter is in place
         else if (!filters.equals("")) {
             // Create the temp ArrayList which holds the new List
@@ -145,6 +141,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
             eventListView.setAdapter(adapter);
             // Notify the adapter
             adapter.notifyDataSetChanged();
+            // Set the current filters to the lastFilter
+            lastFilters = filters;
             // Set tempCheck to 0
             tempCheck = 0;
         }
