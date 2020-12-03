@@ -21,36 +21,39 @@ public class onlineLinks extends AppCompatActivity {
     }
 
 
-
+    //launches intent to website
     public void athleticsButton(View view) {
-        Intent urlIntent = new Intent(Intent.ACTION_VIEW);
-        urlIntent.setData(Uri.parse("https://wheatoncollegelyons.com/landing/index"));
+        Intent athleticslIntent = new Intent(Intent.ACTION_VIEW);
+        athleticslIntent.setData(Uri.parse("https://wheatoncollegelyons.com/landing/index"));
 
-        startActivity(urlIntent);
+        startActivity(athleticslIntent);
 
 
     }
 
+    //launches intent to website
     public void newmacButton(View view) {
-        Intent urlIntent = new Intent(Intent.ACTION_VIEW);
-        urlIntent.setData(Uri.parse("https://www.newmacsports.com/landing/index"));
-        startActivity(urlIntent);
+        Intent newmacIntent = new Intent(Intent.ACTION_VIEW);
+        newmacIntent.setData(Uri.parse("https://www.newmacsports.com/landing/index"));
+        startActivity(newmacIntent);
 
 
     }
 
+    //launches intent to website
     public void covidButton(View view) {
-        Intent urlIntent = new Intent(Intent.ACTION_VIEW);
-        urlIntent.setData(Uri.parse("https://pappasfitnesscenter.youcanbook.me/"));
-        startActivity(urlIntent);
+        Intent covidIntent = new Intent(Intent.ACTION_VIEW);
+        covidIntent.setData(Uri.parse("https://pappasfitnesscenter.youcanbook.me/"));
+        startActivity(covidIntent);
 
 
     }
 
+    //launches intent to website
     public void ptButton(View view) {
-        Intent urlIntent = new Intent(Intent.ACTION_VIEW);
-        urlIntent.setData(Uri.parse("https://www.marathonphysicaltherapy.com/"));
-        startActivity(urlIntent);
+        Intent ptIntent = new Intent(Intent.ACTION_VIEW);
+        ptIntent.setData(Uri.parse("https://www.marathonphysicaltherapy.com/"));
+        startActivity(ptIntent);
 
 
     }

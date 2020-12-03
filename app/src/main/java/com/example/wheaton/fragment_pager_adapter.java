@@ -16,7 +16,7 @@ public class fragment_pager_adapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 7;
+        return 6;
     }
 
     @NonNull
@@ -24,18 +24,16 @@ public class fragment_pager_adapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new library_fragment();
-            case 1:
                 return new dining_fragment();
-            case 2:
+            case 1:
                 return new events_fragment();
-            case 3:
+            case 2:
                 return new home_fragment();
-            case 4:
+            case 3:
                 return new map_fragment();
-            case 5:
+            case 4:
                 return new athletics_fragment();
-            case 6:
+            case 5:
                 return new first_year_fragment();
             default:
                 return new home_fragment();

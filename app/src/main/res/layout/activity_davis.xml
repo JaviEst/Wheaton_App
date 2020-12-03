@@ -4,17 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dining.DavisActivity">
+    tools:context=".Dining.DavisActivity"
+    android:background="#BCBCBC">
 
     <LinearLayout
         android:id="@+id/ActionBarDavis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0069aa"
+        android:background="@color/wheaton"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/DavisHomeButton"
@@ -24,28 +30,40 @@
             android:onClick="DavisHomeButton"
             android:text="Home" />
 
-        <Button
-            android:id="@+id/DavisMenuButton"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="DavisMenuButton"
-            android:text="Menu" />
+            android:layout_weight="1" />
 
     </LinearLayout>
 
     <ImageView
         android:id="@+id/DavisBG"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:layout_marginTop="222dp"
+        android:layout_marginBottom="683dp"
+        android:adjustViewBounds="true"
+
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/veggies"
+        app:layout_constraintVertical_bias="0.208"
+        app:srcCompat="@color/colorAccent" />
+
+    <ImageView
+        android:id="@+id/veggies"
+        android:layout_width="0dp"
+        android:layout_height="99dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ActionBarDavis"
-        app:srcCompat="@color/colorAccent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/veggies" />
 
     <TextView
         android:id="@+id/titleDavis"
@@ -53,16 +71,14 @@
         android:layout_height="wrap_content"
         android:background="#000000"
         android:gravity="center"
-        android:text="Davis Spencer Cafe"
+        android:text="@string/MenuName"
         android:textColor="#ffffff"
         android:textSize="33dp"
-        app:layout_constraintBottom_toBottomOf="@+id/DavisBG"
+        app:layout_constraintBottom_toBottomOf="@+id/veggies"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ActionBarDavis"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintTop_toTopOf="@+id/veggies" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
