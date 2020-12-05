@@ -145,6 +145,8 @@ public class events_fragment extends Fragment implements LoaderManager.LoaderCal
             eventListView.setAdapter(adapter);
             // Notify the adapter
             adapter.notifyDataSetChanged();
+            // Set the current filters to the lastFilter
+            lastFilters = filters;
             // Set tempCheck to 0
             tempCheck = 0;
         }
